@@ -8,6 +8,8 @@
 	$proveedor = $_POST['proveedor'];
   $piso = $_POST['piso'];
   $pasillo = $_POST['pasillo'];
+
+  
   $peldaño = $_POST['peldaño'];
   $estante = $_POST['estante'];
   $facturas = $_POST['facturas'];
