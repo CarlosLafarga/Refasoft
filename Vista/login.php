@@ -12,7 +12,7 @@
       <script src="../Content/js/materialize.min.js"></script>
       
 </head>
-<body BACKGROUND="../Content/img/LOGO.png" class="responsive-img">
+<body >
  
 
 <br><br>
