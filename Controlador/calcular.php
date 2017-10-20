@@ -9,6 +9,9 @@
   $piso = $_POST['piso'];
   $pasillo = $_POST['pasillo'];
 
+
+
+
   
   $peldaño = $_POST['peldaño'];
   $estante = $_POST['estante'];
