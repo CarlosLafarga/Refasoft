@@ -35,6 +35,6 @@ if(!isset($_SESSION["nombre"])){
    </div>
 
 </body>
-  <?PHP include("../Section/js.php");?>
+<?PHP include("../Section/js.php");?>
 
 </html>
