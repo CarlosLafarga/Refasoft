@@ -19,12 +19,8 @@ if(!isset($_SESSION["nombre"])){
   <div id="wrapper">
      <div id="page-wrapper" class="gray-bg">
           <?PHP include("../Section/menu.php");?>
-<<<<<<< HEAD
 
 
-
-
-<h2><?php echo $_SESSION["nombre"]; echo $_SESSION["apellido"];?></h2>
 
     <?PHP include("../Section/footer.php"); ?>
      </div>
