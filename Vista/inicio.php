@@ -14,12 +14,12 @@ if(!isset($_SESSION["nombre"])){
 	<title>. : RefaSoft : .</title>
 	<?PHP include("../Section/css.php");?>
 
-
 </head>
 <body class="top-navigation">
   <div id="wrapper">
      <div id="page-wrapper" class="gray-bg">
           <?PHP include("../Section/menu.php");?>
+<<<<<<< HEAD
 
 
 
@@ -29,6 +29,7 @@ if(!isset($_SESSION["nombre"])){
     <?PHP include("../Section/footer.php"); ?>
      </div>
    </div>
+
 
 
           <?PHP include("../Section/footer.php"); ?>
