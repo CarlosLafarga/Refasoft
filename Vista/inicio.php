@@ -14,27 +14,28 @@ if(!isset($_SESSION["nombre"])){
 	<title>. : RefaSoft : .</title>
 	<?PHP include("../Section/css.php");?>
 
-       <script type="text/javascript">
-       $(document).ready(function() {
-		      $('select').material_select();
-		      $(".dropdown-button").dropdown();
-      });
-      
-      </script>
-  
+
 </head>
 <body class="top-navigation">
-    <?PHP include("../Section/menu.php");?>
+  <div id="wrapper">
+     <div id="page-wrapper" class="gray-bg">
+          <?PHP include("../Section/menu.php");?>
 
 
 
-<?php echo $_SESSION["nombre"];?>
+
+<h2><?php echo $_SESSION["nombre"]; echo $_SESSION["apellido"];?></h2>
 
     <?PHP include("../Section/footer.php"); ?>
      </div>
    </div>
 
+
+          <?PHP include("../Section/footer.php"); ?>
+      </div>
+  </div>
 </body>
+
 <?PHP include("../Section/js.php");?>
 
 </html>

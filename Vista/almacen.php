@@ -13,122 +13,13 @@ if(!isset($_SESSION["nombre"])){
 <html>
 <head>
 	<title>ALMACEN</title>
-	<link type="text/css" rel="stylesheet" href="../Content/css/materialize.min.css"  media="screen,projection"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <meta charset="utf-8">
-      <link href="../Content/fonts/fuentes.css" rel="stylesheet">
-      <script src="../Content/js/jquery.min.js"></script>
-      <script src="../Content/js/materialize.min.js"></script>
-      <script src="../Content/sweetalert.min.js"></script>
-      <link rel="stylesheet" type="text/css" href="../Content/sweetalert.css">
-       <link rel="stylesheet" type="text/css" href="../Content/css/formulario.css">
+      <?PHP include("../Section/css.php");?>
+      <?PHP include("../Section/js.php");?>
 
-       <script type="text/javascript">
-      
-      
-
-
-          function validaletra(e) { 
-          tecla = (document.all) ? e.keyCode : e.which; 
-          if (tecla==8) return true; 
-          patron =/[A-Za-z\s]/; 
-          te = String.fromCharCode(tecla); 
-          return patron.test(te); 
-          }
-           function validacorreo(e) { 
-          tecla = (document.all) ? e.keyCode : e.which; 
-          if (tecla==8) return true; 
-          patron =/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i; 
-          te = String.fromCharCode(tecla); 
-          return patron.test(te); 
-          }
-
-          function validanum(e){
-          tecla = (document.all) ? e.keyCode : e.which;
-
-          if (tecla==8){
-              return true;
-          }
-              patron =/^([0-9])/;
-              tecla_final = String.fromCharCode(tecla);
-              return patron.test(tecla_final);
-          }
-
-          function validaPiso(e){
-          tecla = (document.all) ? e.keyCode : e.which;
-
-          if (tecla==8){
-              return true;
-          }
-              patron =/^([1-2])/;
-              tecla_final = String.fromCharCode(tecla);
-              return patron.test(tecla_final);
-          }
-           function validaPasillo(e){
-          tecla = (document.all) ? e.keyCode : e.which;
-
-          if (tecla==1){
-              return true;
-          }
-              patron =/^([1-4])/;
-              tecla_final = String.fromCharCode(tecla);
-              return patron.test(tecla_final);
-          }
-          function validaEstantePeldaño(e){
-          tecla = (document.all) ? e.keyCode : e.which;
-
-          if (tecla==1){
-              return true;
-          }
-              patron =/^([0-9])/;
-              tecla_final = String.fromCharCode(tecla);
-              return patron.test(tecla_final);
-          }
-
-          function validadecimal(e){
-          tecla = (document.all) ? e.keyCode : e.which;
-
-          if (tecla==8){
-              return true;
-          }
-              patron =/^([0-9.]*$)/;
-              tecla_final = String.fromCharCode(tecla);
-              return patron.test(tecla_final);
-          }
-
-         $(document).ready(function() {
-            $('select').material_select();
-         });     
-      </script>
-    
-      <script type="text/javascript">
-         $(".dropdown-button").dropdown();
-         $( document ).ready(function);
-      </script>
-  
 </head>
-<body BACKGROUND="../Content/img/LOGO.png" class="responsive-img" >
-<div class="navbar-fixed">
-<ul id="dropdown1" class="dropdown-content">
-  <li><i class="material-icons left">shopping_cart</i><a href="" >Venta</a></li>
-  <li><i class="material-icons left">add_shopping_cart</i><a href="almacen.php" >Almacen</a></li>
-  <li><i class="material-icons left">person_add</i><a href="usuarios.php" >Usuarios</a></li>
-</ul>
+<body class="top-navigation">
+    <?PHP include("../Section/menu.php");?>
 
-<nav class="button-collapse">
-  <div class="nav-wrapper #9e9e9e grey " >
-    <a href="#!" class="brand-logo" align="right"></a>
-     
-    <ul id="nav-mobile" class="left hide-on-med-and-down">
-      <li><a href="inicio.php" ><i class="material-icons left" hidden="home">home</i>Inicio</a></li>
-      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" style="margin-left: 20px;margin-right: 20px;width: 200px;"><i class="material-icons left">menu</i>Menú</a></li>
-      </ul>
-      <ul class="right hide-on-med-and-down">
-      <li><a href="../Controlador/Salir.php"><i class="material-icons left prefix">account_circle</i>Cerrar sesión</a></li>
-    </ul>
-    
-  </div>
-</nav></div>
 <div class="container #eeeeee grey lighten-3 z-depth-5" style="border-radius: 9px;">
  <center><h4>Almacen</h4></center>
     <div class="row" style="margin-left: 25px;">
@@ -257,11 +148,6 @@ if(!isset($_SESSION["nombre"])){
     
   ?>
 
-  <!--Import jQuery before materialize.js-->
-  <script type="text/javascript" src="../Content/js/jquery.js"></script>
-  <script type="text/javascript" src="../Content/js/materialize.min.js"></script>
-  <script type="text/javascript" src="../Content/js/validate.js"></script>
-
   <script type="text/javascript">
     //$(document).ready(function(){
         $("#fregistro").validate({
@@ -379,44 +265,8 @@ if(!isset($_SESSION["nombre"])){
 </div>     
  </div>  
 </div>
+<?PHP include("../Section/footer.php"); ?>
 </div>
-
-<script>
-        function EventoAlert(){
-          var codigo=document.getElementById('codigo').value;
-          var producto=document.getElementById('producto').value;
-          var unidad=document.getElementById('unidad').value;
-          var proveedor=document.getElementById('proveedor').value;
-          var precio=document.getElementById('precio').value;
-          var cantidad=document.getElementById('cantidad').value;
-          if(codigo==''){
-                swal("ERROR","LLENAR LOS CAMPOS","error");
-                return;
-                }
-          if(producto==''){
-                swal("ERROR","LLENAR LOS CAMPOS","error");
-                return;
-                }
-           if(unidad==''){
-                swal("ERROR","LLENAR LOS CAMPOS","error");
-                return;
-                }
-             if(proveedor==''){
-                swal("ERROR","LLENAR LOS CAMPOS","error");
-                return;
-                }
-          if(precio==''){
-                swal("ERROR","LLENAR LOS CAMPOS","error");
-                return;
-                }
-          if(cantidad==''){
-                swal("ERROR","LLENAR LOS CAMPOS","error");
-                return;
-                }
-        }
-
-
-    </script>
 
 </body>
 </html>

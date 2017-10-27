@@ -23,4 +23,80 @@
     <!-- Peity demo -->
     <script src="../Include/js/demo/peity-demo.js"></script>
 
+    <!-- Validaciones -->
+    <script type="text/javascript">
+      
+          function validaletra(e) { 
+          tecla = (document.all) ? e.keyCode : e.which; 
+          if (tecla==8) return true; 
+          patron =/[A-Za-z\s]/; 
+          te = String.fromCharCode(tecla); 
+          return patron.test(te); 
+          }
+           function validacorreo(e) { 
+          tecla = (document.all) ? e.keyCode : e.which; 
+          if (tecla==8) return true; 
+          patron =/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i; 
+          te = String.fromCharCode(tecla); 
+          return patron.test(te); 
+          }
+
+          function validanum(e){
+          tecla = (document.all) ? e.keyCode : e.which;
+
+          if (tecla==8){
+              return true;
+          }
+              patron =/^([0-9])/;
+              tecla_final = String.fromCharCode(tecla);
+              return patron.test(tecla_final);
+          }
+
+          function validaPiso(e){
+          tecla = (document.all) ? e.keyCode : e.which;
+
+          if (tecla==8){
+              return true;
+          }
+              patron =/^([1-2])/;
+              tecla_final = String.fromCharCode(tecla);
+              return patron.test(tecla_final);
+          }
+           function validaPasillo(e){
+          tecla = (document.all) ? e.keyCode : e.which;
+
+          if (tecla==1){
+              return true;
+          }
+              patron =/^([1-4])/;
+              tecla_final = String.fromCharCode(tecla);
+              return patron.test(tecla_final);
+          }
+          function validaEstantePeldaño(e){
+          tecla = (document.all) ? e.keyCode : e.which;
+
+          if (tecla==1){
+              return true;
+          }
+              patron =/^([0-9])/;
+              tecla_final = String.fromCharCode(tecla);
+              return patron.test(tecla_final);
+          }
+
+          function validadecimal(e){
+          tecla = (document.all) ? e.keyCode : e.which;
+
+          if (tecla==8){
+              return true;
+          }
+              patron =/^([0-9.]*$)/;
+              tecla_final = String.fromCharCode(tecla);
+              return patron.test(tecla_final);
+          }
+
+         $(document).ready(function() {
+            $('select').material_select();
+         });     
+      </script>
+
 
