@@ -15,29 +15,16 @@
                         <li class="dropdown">
                         <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Funciones <span class="caret"></span></a>
                         <ul role="menu" class="dropdown-menu">
-<<<<<<< HEAD
 
-                           <h2>
-                           <li class="landing_link">
-                           <a href="" ><i class="fa fa-shopping-cart"></i><span class="nav-label"> Venta</span></a>
-                           </li><br>
-                            <li class="landing_link">
-                            <a href="almacen.php" ><i class="fa fa-cubes"></i><span class="nav-label"> Almacen</span></a>
-                            </li><br>
-                            <li class="landing_link">
-                            <a href="usuarios.php" ><i class="fa fa-user-circle-o"></i><span class="nav-label"> Usuarios</span></a></li>
-                            </h2>
 
-=======
->>>>>>> 8f5013ef84a57075c5ef71d5713c955d95fcd080
+                         
+
+
                             <li><a href=""><i class="fa fa-shopping-cart"></i>&nbsp;&nbsp;Venta</a></li>
                             <li><a href="almacen.php"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Almacen</a></li>
                             <li><a href="usuarios.php"><i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;Usuarios</a></li>
                             
-<<<<<<< HEAD
 
-=======
->>>>>>> 8f5013ef84a57075c5ef71d5713c955d95fcd080
                         </ul>
                     </li>
                         
