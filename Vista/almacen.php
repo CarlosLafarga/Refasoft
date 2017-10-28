@@ -18,7 +18,9 @@ if(!isset($_SESSION["nombre"])){
 
 </head>
 <body class="top-navigation">
-    <?PHP include("../Section/menu.php");?>
+  <div id="wrapper">
+     <div id="page-wrapper" class="gray-bg">
+          <?PHP include("../Section/menu.php");?>
 
 <div class="container #eeeeee grey lighten-3 z-depth-5" style="border-radius: 9px;">
  <center><h4>Almacen</h4></center>
