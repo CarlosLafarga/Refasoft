@@ -1,7 +1,6 @@
 
-<div class="col-md-3">
-</div>
-<div class="col-lg-7">
+
+<div class="col-lg-12">
       <div class="ibox float-e-margins">
           <div class="ibox-title">
                 <h5>Almacen</h5>
@@ -26,6 +25,9 @@
             <div class="ibox-content">
                <div class="row">
                    <div class="col-sm-6 b-r">
+                        <hr>
+                        <center><h4>&nbsp;&nbsp;Producto</h4></center>
+                        <hr> 
                        <form method="POST"  action="../Controlador/calcular.php" role="form">
                            <div class="form-group">
                 				<label>&nbsp;Codigo</label>
@@ -47,7 +49,7 @@
             			   </div>
         
             			   <div class="form-group">
-                    			<label>&nbsp;Proveedor</label>
+                    		<label>&nbsp;Proveedor</label>
                 				<select class="select2_demo_3 form-control" id="proveedor" name="proveedor" required="llenar campo">
                    					<option value="">Seleccione Proveedor</option>
                    					<option value="Pernor">Pernor</option>
@@ -65,12 +67,14 @@
                 			<div class="form-group">
                 				<label>&nbsp;Cantidad</label>
                 				<input type="text" id="cantidad" name="cantidad" placeholder="Cantidad" required="llenar campo" class="form-control">
-                			</div>
-                 		</div>
+                		 	</div>
+                 		  </div>
                  		
-                            <div class="col-sm-4">
-                            	<center><h4>&nbsp;&nbsp;Ubicacion</h4></center>
-                              <div class="form-group">
+                        <div class="col-sm-6">
+                        <hr>
+                        <center><h4>&nbsp;&nbsp;Ubicacion</h4></center>
+                        <hr>  
+                        <div class="form-group">
                 				<label>&nbsp;Piso</label>
                					<input type="text" id="piso" name="piso" placeholder="Piso"  class="form-control">
                   			</div>
@@ -83,13 +87,13 @@
                 				<input type="text" id="estante" name="estante" placeholder="Estante" class="form-control">
                   			</div>
                   			<div class="form-group">
-                			<label>&nbsp;Peldaño</label>
-                			<input type="text" id="peldaño" name="peldaño" placeholder="Peldaño"  class="form-control">
+                			  <label>&nbsp;Peldaño</label>
+                			  <input type="text" id="peldaño" name="peldaño" placeholder="Peldaño"  class="form-control">
                             </div>
-                    	
-                    	<center><h4>&nbsp;&nbsp;Datos de Factura</h4></center>
-                            
-                              <div class="form-group">
+                    	  <hr>
+                    	  <center><h4>&nbsp;&nbsp;Datos de Factura</h4></center>
+                        <hr>
+                        <div class="form-group">
                 				<label>&nbsp;Factura</label>
                					<input type="text" id="factura"  name="factura" placeholder="factura"  class="form-control">
                   			</div>
@@ -100,13 +104,13 @@
                   		
                          </div>    	
                     </div>
-                    
-         	   		<center>
-              		<div class="row">
-              			<div class="input-field col s12">
-              				<input type="submit" value="Visualizar" onclick="EventoAlert()" class="btn btn-primary" >
-              			</div>
-              		</div>
+                    <hr>
+         	   		  <center>
+              		  <div class="row">
+              			   <div class="input-field col s12">
+              				    <input type="submit" value="Visualizar" onclick="EventoAlert()" class="btn btn-primary" >
+              			   </div>
+              		  </div>
               		</center>
 			  
     		</form> 
