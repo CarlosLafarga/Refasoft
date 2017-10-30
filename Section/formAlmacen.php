@@ -1,7 +1,7 @@
 <center><h2>Almacen</h2></center>
 <div class="col-md-3">
 </div>
-<div class="col-md-6">
+<div class="col-md-4">
 <div class="ibox-content">
     <form method="POST"  action="../Controlador/calcular.php">
          
@@ -44,13 +44,34 @@
             	<label>&nbsp;Cantidad</label>
              	<input type="text" id="cantidad" name="cantidad" placeholder="Cantidad" required="llenar campo" class="form-control">
          	</div>
-
+         	
+         	
+         		<div class="form-group">
+            	<label>&nbsp;Piso</label>
+             	<input type="text" id="piso" name="piso" placeholder="Piso"  class="form-control">
+         		</div>
+         		<div class="form-group">
+            	<label>&nbsp;Pasillo</label>
+             	<input type="text" id="pasillo" name="pasillo" placeholder="Pasillo"  class="form-control">
+         		</div>
+         		<div class="form-group">
+            	<label>&nbsp;Estante</label>
+             	<input type="text" id="estante" name="estante" placeholder="Estante" class="form-control">
+         		</div>
+         		<div class="form-group">
+            	<label>&nbsp;Peldaño</label>
+             	<input type="text" id="peldaño" name="peldaño" placeholder="Peldaño"  class="form-control">
+         		
+				
+         		
+         	</div>
          	 <center> <div class="row">
             <div class="input-field col s12">
               <input type="submit" value="Visualizar" onclick="EventoAlert()" class="btn btn-primary" >
             </div>
           </div></center>
     </form>
+
 
  </div>
 </div>

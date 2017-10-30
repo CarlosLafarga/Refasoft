@@ -22,6 +22,7 @@
     <script src="../Include/js/plugins/peity/jquery.peity.min.js"></script>
     <!-- Peity demo -->
     <script src="../Include/js/demo/peity-demo.js"></script>
+    
 
     <!-- Validaciones -->
     <script type="text/javascript">

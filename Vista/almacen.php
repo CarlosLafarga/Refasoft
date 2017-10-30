@@ -22,10 +22,10 @@ if(!isset($_SESSION["nombre"])){
      <div id="page-wrapper" class="gray-bg">
           <?PHP include("../Section/menu.php");?>
           <?PHP include("../Section/formAlmacen.php");?>
-<!-- 
+
 <div class="container #eeeeee grey lighten-3 z-depth-5" style="border-radius: 9px;">
            
-         </div>
+        <!--  </div>
         <h6><p style="margin-left: 15px;">UBICACION</p></h6>
         <div class="input-field col s2">
               <i class="material-icons prefix">find_in_page</i>
@@ -50,8 +50,8 @@ if(!isset($_SESSION["nombre"])){
                 <label for="peldaño">Peldaño</label>
                 <input type="number" id="peldaño" name="peldaño" min="1" max="10" onkeypress="return validaEstantePeldaño(event)" >
               <div class="errorTxt4"></div>
-          </div><BR> 
-         <div class="row">
+          </div><BR>  -->
+         <!-- <div class="row">
           <br><br><br><br><div class="input-field col s5">
             <i class="material-icons prefix">assignment</i>
             <select id="facturas" name="facturas" required="required">
@@ -81,7 +81,7 @@ if(!isset($_SESSION["nombre"])){
             <div class="input-field col s12">
               <input type="submit" value="Visualizar" onclick="EventoAlert()" style="width: 144px; height: 30px; margin-left: 540px;"class="waves-effect waves-light btn z-depth-3">
             </div>
-          </div></center>
+          </div></center> -->
     </form>
     </div>
   </div>
@@ -211,7 +211,7 @@ if(!isset($_SESSION["nombre"])){
 </ul>
 </div>     
  </div>  
-</div> -->
+</div>
 <?PHP include("../Section/footer.php"); ?>
 </div>
 
