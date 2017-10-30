@@ -1,7 +1,28 @@
-<center><h2>Almacen</h2></center>
+
 <div class="col-md-3">
 </div>
-<div class="col-md-4">
+<div class="col-lg-6">
+      <div class="ibox float-e-margins">
+          <div class="ibox-title">
+                <h5>Almacen</h5>
+                <div class="ibox-tools">
+                     <a class="collapse-link">
+                         <i class="fa fa-chevron-up"></i>
+                    </a>
+                       <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                          <i class="fa fa-wrench"></i>
+                      </a>
+                      <ul class="dropdown-menu dropdown-user">
+                          <li><a href="#">Config option 1</a>
+                          </li>
+                          <li><a href="#">Config option 2</a>
+                          </li>
+                      </ul>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                     </a>
+                </div>
+            </div>
 <div class="ibox-content">
     <form method="POST"  action="../Controlador/calcular.php">
          
@@ -24,8 +45,8 @@
            		</select>
          	</div>
      	
-         	<div class="form-group">
-		 		<label>&nbsp;Proveedor</label>
+          	<div class="form-group">
+		 		    <label>&nbsp;Proveedor</label>
            		<select class="select2_demo_3 form-control" id="proveedor" name="proveedor" required="llenar campo">
                    <option value="">Seleccione Proveedor</option>
               	   <option value="Pernor">Pernor</option>
@@ -35,43 +56,48 @@
                    <option value="Dirco">Dirco</option>
                    <option value="Ciosa">Ciosa</option>
            		</select>
-         	</div>
-         	<div class="form-group">
+         	   </div>
+            	<div class="form-group">
              	<label>&nbsp;Precio Proveedor</label>
              	<input type="text" id="precio" name="ppv" placeholder="Precio Proveedor" required="llenar campo" class="form-control">
-         		</div>
-         	<div class="form-group">
+         	  	</div>
+         	    <div class="form-group">
             	<label>&nbsp;Cantidad</label>
              	<input type="text" id="cantidad" name="cantidad" placeholder="Cantidad" required="llenar campo" class="form-control">
-         	</div>
+         	    </div>
          	
          	
-         		<div class="form-group">
+         		  <div class="form-group">
             	<label>&nbsp;Piso</label>
              	<input type="text" id="piso" name="piso" placeholder="Piso"  class="form-control">
-         		</div>
-         		<div class="form-group">
+         		  </div>
+         		  <div class="form-group">
             	<label>&nbsp;Pasillo</label>
              	<input type="text" id="pasillo" name="pasillo" placeholder="Pasillo"  class="form-control">
-         		</div>
-         		<div class="form-group">
+         		  </div>
+         		  <div class="form-group">
             	<label>&nbsp;Estante</label>
              	<input type="text" id="estante" name="estante" placeholder="Estante" class="form-control">
-         		</div>
-         		<div class="form-group">
+         		  </div>
+         		  <div class="form-group">
             	<label>&nbsp;Peldaño</label>
              	<input type="text" id="peldaño" name="peldaño" placeholder="Peldaño"  class="form-control">
          		
 				
          		
-         	</div>
-         	 <center> <div class="row">
-            <div class="input-field col s12">
+            	</div>
+         	    <center>
+              <div class="row">
+              <div class="input-field col s12">
               <input type="submit" value="Visualizar" onclick="EventoAlert()" class="btn btn-primary" >
-            </div>
-          </div></center>
-    </form>
+              </div>
+              </div>
+              </center>
+       </form>
 
 
- </div>
+    </div>
+                        </div>
+<div class="col-md-3">
 </div>
+<br><br><br><br><br><br>

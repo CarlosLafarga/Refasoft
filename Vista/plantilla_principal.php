@@ -10,8 +10,8 @@ if(!isset($_SESSION["nombre"])){
 <!DOCTYPE html>
 <html>
 <head>
-	<title>. : RefaSoft : .</title>
-	<?PHP include("../Section/css.php");?>
+	 <title>. : RefaSoft : .</title>
+	 <?PHP include("../Section/css.php");?>
 
 </head>
 <body class="top-navigation">
@@ -20,17 +20,16 @@ if(!isset($_SESSION["nombre"])){
           <?PHP include("../Section/menu.php");?>
 
           
-          <div class="wrapper wrapper-content">
-              <div class="container">
-               churro
-             </div>
-          </div>
+            <div class="wrapper wrapper-content">
+               <div class="container">
+                   Aqui es donde va el contenido de la pagina
+               </div>
+            </div>
 
 
 
      
-     </div>
-     </div>
+   
 
 
 
