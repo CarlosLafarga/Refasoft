@@ -15,7 +15,6 @@
   
   $peldaño = $_POST['peldaño'];
   $estante = $_POST['estante'];
-  $facturas = $_POST['facturas'];
   $factura = $_POST['factura'];
   $fechafac = $_POST['fechafac'];
  
@@ -176,7 +175,6 @@ if(!isset($_SESSION["nombre"])){
   <input type="text" name="CN" value="<?php echo $CN; ?>" hidden></input>
   <input type="text" name="PB" value="<?php echo $PB; ?>" hidden></input>
   <input type="text" name="PT" value="<?php echo $PT; ?>" hidden></input>
-  <input type="text" name="facturas" value="<?php echo $facturas; ?>" hidden></input>
   <input type="text" name="factura" value="<?php echo $factura; ?>" hidden></input>
   <input type="text" name="fechafac" value="<?php echo $fechafac; ?>" hidden></input>
 

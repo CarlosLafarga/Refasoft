@@ -24,16 +24,16 @@ session_start();
 	$CN=$_POST['CN'];
 	$PB=$_POST['PB'];
 	$PT=$_POST['PT'];
-	$facturas = $_POST['facturas'];
+	
 	$factura = $_POST['factura'];
   	$fechafac = $_POST['fechafac'];
 
 	
-	if ($facturas === '1') {
+	if ($factura === '$factura') {
 		$q=("INSERT INTO productos VALUES ('',' $codigo',' $unidad',' $producto',' $cantidad',' $piso','$pasillo','$estante','$peldaño',' $PT',' $PB',' $proveedor',' $ppv',' $CN')");
 		$r=mysqli_query($con,$q) or die ("error al insertar");
 		
-		$qf=("INSERT INTO compras VALUES ('$factura',' $codigo',' $cantidad',' $fechafac')");
+		$qf=("INSERT INTO compras VALUES ('',$factura',' $codigo',' $cantidad',' $fechafac','$proveedor','$ppv')");
 		$resultado=mysqli_query($con,$qf) or die ("error al insertar");
 	}else{
 		$q=("INSERT INTO productos VALUES ('',' $codigo',' $unidad',' $producto',' $cantidad',' $piso','$pasillo','$estante','$peldaño',' $PT',' $PB',' $proveedor',' $ppv',' $CN')");
