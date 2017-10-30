@@ -1,4 +1,6 @@
 <center><h2>Almacen</h2></center>
+<div class="col-md-3">
+</div>
 <div class="col-md-6">
 <div class="ibox-content">
     <form method="POST"  action="../Controlador/calcular.php">
