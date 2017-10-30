@@ -31,8 +31,8 @@
                 </p>
 
             </div>
-            <div class="col-md-6">
-                <div class="ibox-content">
+<div class="col-md-6">
+    <div class="ibox-content">
   <form method="POST" action="../Modelo/validalogin.php" autocomplete="off">
 
     <div class="form-group">

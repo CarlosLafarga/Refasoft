@@ -21,65 +21,10 @@ if(!isset($_SESSION["nombre"])){
   <div id="wrapper">
      <div id="page-wrapper" class="gray-bg">
           <?PHP include("../Section/menu.php");?>
-
+          <?PHP include("../Section/formAlmacen.php");?>
+<!-- 
 <div class="container #eeeeee grey lighten-3 z-depth-5" style="border-radius: 9px;">
- <center><h4>Almacen</h4></center>
-    <div class="row" style="margin-left: 25px;">
-    <form class="col s12" id="fregistro" method="POST"  action="../Controlador/calcular.php" enctype="multipart/form-data">
-        <div class="row">
-          <div class="input-field col s3">
-              <i class="material-icons prefix">vpn_key</i>
-               <label for="codigo">Codigo</label>
-                <input type="text" id="codigo" name="codigo" required="llenar campo"  >
-                    <div class="errorTxt1"></div>
-          </div>
-          <div class="row">
-            <div class="input-field col s4">
-              <i class="material-icons prefix">description</i>
-              <label for="producto">Producto</label>
-              <input type="text" id="producto" name="producto" required="llenar campo">
-              <div class="errorTxt3"></div>
-          </div>
-           <div class="input-field col s3">
-          <i class="material-icons prefix">view_list</i>
-              <label for="unidad"></label>
-              <select  id="unidad" name="unidad" required="llenar campo" onkeypress="return validaletra(event)">
-                  <option value="">Seleccione Unidad</option>
-                  <option value="Pieza">Pieza</option>
-                  <option value="Metro">Metro</option>
-                  <option value="Litro">Litro</option>
-                  <option value="Juego">Juego</option>
-               </select>
-               <div class="errorTxt4"></div>
-          </div>
-        </div>
-          <div class="input-field col s3">
-          <i class="material-icons prefix">person_add</i>
-            <label for=""></label>
-            <select id="proveedor" name="proveedor" required="llenar campo" onkeypress="return validaletra(event)">
-              <option value="">Seleccione Proveedor</option>
-              <option value="Pernor">Pernor</option>
-              <option value="Apymsa">Apymsa</option>
-              <option value="Serva">Serva</option>
-              <option value="Henlo">Henlo</option>
-              <option value="Dirco">Dirco</option>
-              <option value="Ciosa">Ciosa</option>
-            </select>
-            <div class="errorTxt4"></div>
-          </div>
-          <div class="input-field col s4">
-              <i class="material-icons prefix">monetization_on</i>
-                <label for="ppv">Precio Proveedor</label>
-                <input type="text" id="precio" name="ppv" onkeypress="return validadecimal(event)"  required="llenar campo">
-              <div class="errorTxt4"></div>
-          </div>
-
-         <div class="input-field col s3">
-              <i class="material-icons prefix">add_box</i>
-                <label for="cantidad">Cantidad</label>
-                <input type="text" id="cantidad" name="cantidad" onkeypress="return validanum(event)"  required="llenar campo" >
-              <div class="errorTxt4"></div>
-          </div>
+           
          </div>
         <h6><p style="margin-left: 15px;">UBICACION</p></h6>
         <div class="input-field col s2">
@@ -266,7 +211,7 @@ if(!isset($_SESSION["nombre"])){
 </ul>
 </div>     
  </div>  
-</div>
+</div> -->
 <?PHP include("../Section/footer.php"); ?>
 </div>
 
