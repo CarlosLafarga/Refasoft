@@ -8,22 +8,25 @@
                 <a href="../Vista/inicio.php" class="navbar-brand">REFASOFT 1.0</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar">
-                <ul class="nav navbar-nav">
-                    
-                           
-
-                        <li class="dropdown">
-                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Funciones <span class="caret"></span></a>
+                <ul class="nav navbar-nav">    
+                    <li class="dropdown">
+                        <!--menu de almacen--> 
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Almacen <span class="caret"></span></a>
                           <ul role="menu" class="dropdown-menu">
-
-                            <li><a href=""><i class="fa fa-shopping-cart"></i>&nbsp;&nbsp;Venta</a></li>
-                            <li><a href="almacen.php"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Almacen</a></li>
-                            <li><a href="usuarios.php"><i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;Usuarios</a></li>
-                            
-
+                            <li><a href="almacen.php"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Agregar</a></li>
+                            <li><a href="almacen.php"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Editar</a></li>
                           </ul>
                         </li>
                         <li class="dropdown">
+                        <!--menu de usuarios-->    
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Usuarios <span class="caret"></span></a>
+                          <ul role="menu" class="dropdown-menu">
+                            <li><a href="usuarios.php"><i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;Agregar</a></li>
+                            <li><a href="usuarios.php"><i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;Editar</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown">
+                        <!--menu de punto de venta--> 
                         <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Punto Venta <span class="caret"></span></a>
                           <ul role="menu" class="dropdown-menu">
                             <li><a href="puntoventa.php"><i class="fa fa-calculator"></i>&nbsp;&nbsp;Caja</a></li>
