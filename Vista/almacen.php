@@ -19,18 +19,11 @@ if(!isset($_SESSION["nombre"])){
      <div id="page-wrapper" class="gray-bg">
                 <?PHP include("../Section/menu.php");?>
 
-                
-
                  <div class="wrapper wrapper-content">
                    <div class="container">
                      <?PHP include("../Section/formAlmacen.php");?>
                     </div>
                  </div>
-
-
-  
-
-  
 
                 <?PHP include("../Section/footer.php"); ?>
       </div>

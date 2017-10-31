@@ -1,5 +1,4 @@
 
-
 <div class="col-lg-12">
       <div class="ibox float-e-margins">
           <div class="ibox-title">
@@ -95,7 +94,7 @@
                         <hr>
                         <div class="form-group">
                 				<label>&nbsp;Factura</label>
-               					<input type="text" id="factura" value="1" name="factura" placeholder="factura"  class="form-control">
+               					<input type="text" id="factura" name="factura" placeholder="Factura"  class="form-control">
                   			</div>
                   			<div class="form-group">
                 				<label>&nbsp;Fecha</label>
