@@ -33,8 +33,12 @@ if(!isset($_SESSION["nombre"])){
                             </div>
                             <div class="ibox-content">
                                 <form>
-                                  <label>Producto</label>
-                                  <input type="text" name="producto" class="form-control">
+                                 <div class="input-group">
+                                  <input type="text" class="form-control">
+                                   <span class="input-group-btn">
+                                    <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                                    </span>
+                                  </div>
                                 </form>
                             </div>
                       </div>
