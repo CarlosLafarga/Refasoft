@@ -13,7 +13,7 @@ if(!isset($_SESSION["nombre"])){
 <head>
 	<title>ALMACEN</title>
       <?PHP include("../Section/css.php");?>
-      <?PHP include("../Section/js.php");?>
+          <?PHP include("../Section/js.php");?>
 </head>
 <body class="top-navigation">
   <div id="wrapper">
@@ -31,7 +31,7 @@ if(!isset($_SESSION["nombre"])){
    </div>
 
 </body>
-<?PHP include("../Section/js.php");?>
+
 <script type="text/javascript">
     //$(document).ready(function(){
         $("#fregistro").validate({
