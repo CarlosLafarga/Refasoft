@@ -8,13 +8,9 @@
 	$proveedor = $_POST['proveedor'];
   $piso = $_POST['piso'];
   $pasillo = $_POST['pasillo'];
-
-
-
-
-  
   $peldaño = $_POST['peldaño'];
   $estante = $_POST['estante'];
+  
   $factura = $_POST['factura'];
   $fechafac = $_POST['fechafac'];
  
@@ -96,6 +92,7 @@ if(!isset($_SESSION["nombre"])){
 <head>
 	<title>ALMACEN</title>
   <?PHP include("../Section/css.php");?>
+  <?PHP include("../Section/js.php");?>
   
 </head>
 <body class="top-navigation">
@@ -105,7 +102,8 @@ if(!isset($_SESSION["nombre"])){
 
                  <div class="wrapper wrapper-content">
                    <div class="container">
-                     <?PHP include("../Section/NotaRegistro.php");?>
+                     <?PHP include("../Section/PreRegistro.php");?>
+
                     </div>
                  </div>
            <?PHP include("../Section/footer.php"); ?>
@@ -113,12 +111,11 @@ if(!isset($_SESSION["nombre"])){
    </div>
   
  </body> 
-<script>
+    <script>
         function EventoAlert(){
         swal("PRODUCTO REGISTRADO","","success");
         }
     </script>
-
 
 
 </html>

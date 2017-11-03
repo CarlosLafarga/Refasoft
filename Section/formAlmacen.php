@@ -92,6 +92,7 @@
                     	  <hr>
                     	  <center><h4>&nbsp;&nbsp;Datos de Factura</h4></center>
                         <hr>
+                        <div class="form-inline">
                         <div class="form-group">
                 				<label>&nbsp;Factura</label>
                					<input type="text" id="factura" name="factura" placeholder="Factura"  class="form-control">
@@ -100,7 +101,7 @@
                 				<label>&nbsp;Fecha</label>
                 				<input type="date" id="fechafac" name="fechafac"  class="form-control">
                   			</div>
-                  		
+                  		</div>
                          </div>    	
                     </div>
                     <hr>
@@ -111,7 +112,6 @@
               			   </div>
               		  </div>
               		</center>
-			  
     		</form> 
     	</div>
      </div>

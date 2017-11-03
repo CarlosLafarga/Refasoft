@@ -21,79 +21,12 @@ if(!isset($_SESSION["nombre"])){
   <div id="wrapper">
      <div id="page-wrapper" class="gray-bg">
           <?PHP include("../Section/menu.php");?>
-
+           <?PHP include("../Section/formusuarios.php");?>          
 
 <div>
-<br>
- <center><h1>REGISTRO DE USUARIOS</h1></center><br><br>
-   <form align="center" class="col s12" id="fregistro"  method="POST" action="../Modelo/ValidaRegistro.php">
-   
-   <div class="row" align="center">
-     <div class="input-field col s2">
-              <i class="material-icons prefix">perm_identity</i>
-                <label for="usuario">Usuario</label>
-                <input type="text" id="usuario" name="usuario"  required="llenar campo">
-                <div class="errorTxt3"></div>
-          </div>
-         <div class="input-field col s2">
-              <i class="material-icons prefix">lock</i>
-                <label for="contraseña">Contraseña</label>
-                <input type="password" name="contrasena" required="llenar campo" >
-                <div class="errorTxt3"></div>
-          </div>
-           <div class="input-field col s2">
-              <label for=""></label>
-              <select name="tipo" required="llenar campo">
-                  <option value="">Tipo de usuario</option>
-                  <option value="1">Administrador</option>
-                  <option value="2">Usuario</option>
-               </select>
-          </div>
-            <div class="input-field col s2">
-              <i class="material-icons prefix">person</i>
-              <label for="nombre">Nombre</label>
-              <input id="nombre" name="nombre" maxlength="30" onkeypress="return validaletra(event)" type="text">
-              <div class="errorTxt3"></div>
-          </div>
-            <div class="input-field col s3">
-              <i class="material-icons prefix">person</i>
-              <label for="apellido">Apellidos</label>
-              <input type="text" name="apellido" maxlength="30" onkeypress="return validaletra(event)">
-              <div class="errorTxt3"></div>
-          </div>
-          <br><br><br>
-          <br><br><br><br><br><br><div class="input-field col s3">
-              <i class="material-icons prefix">place</i>
-              <label for="domicilio">Domicilio</label>
-              <input type="text" name="domicilio" required="llenar campo" >
-              <div class="errorTxt3"></div>
-          </div>
-          
-            <div class="input-field col s2">
-              <i class="material-icons prefix">phone</i>
-              <label for="telefono">Telefono</label>
-              <input type="text" name="telefono" onkeypress="return validanum(event)" maxlength="10" required="llenar campo">
-              <div class="errorTxt3"></div>
-          </div>
-          <div class="input-field col s3">
-              <i class="material-icons prefix">contact_mail</i>
-              <label for="email">Correo</label>
-              <input id="correo" type="email" name="correo" required="llenar campo">
-              <div class="errorTxt3"></div>
-          </div>
-           
-            <div class="input-field col s3">
-              <i class="material-icons prefix">date_range</i>
-              <label for="fecha"></label>
-              <input type="date"  name="fecha" >
-              <div class="errorTxt3"></div>
-          </div>
-          </div>
+
       
-     <input TYPE="submit" NAME=OK VALUE="REGISTRAR" style="margin-left: 700px;width: 150px;" class="waves-effect waves-light btn z-depth-3 LEFT" onclick="EventoAlert()"><br><br>
-     
-      
-</form> 
+
   <script type="text/javascript" src="../Content/js/jquery.js"></script>
   <script type="text/javascript" src="../Content/js/materialize.min.js"></script>
   <script type="text/javascript" src="../Content/js/validate.js"></script>
