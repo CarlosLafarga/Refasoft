@@ -29,13 +29,16 @@ session_start();
   	$fechafac = $_POST['fechafac'];
 
 	//CHECAR ESTE IF
-	if ($factura <> '0') {
+	if (!empty($factura)) {
+
 		$q=("INSERT INTO productos VALUES ('',' $codigo',' $unidad',' $producto',' $cantidad',' $piso','$pasillo','$estante','$peldaño',' $PT',' $PB',' $proveedor',' $ppv',' $CN')");
 		$r=mysqli_query($con,$q) or die ("error al insertar");
 		
 		$qf=("INSERT INTO compras VALUES ('',$factura',' $codigo',' $cantidad',' $fechafac','$proveedor','$ppv')");
 		$resultado=mysqli_query($con,$qf) or die ("error al insertar");
+
 	}else{
+
 		$q=("INSERT INTO productos VALUES ('',' $codigo',' $unidad',' $producto',' $cantidad',' $piso','$pasillo','$estante','$peldaño',' $PT',' $PB',' $proveedor',' $ppv',' $CN')");
 		$r=mysqli_query($con,$q) or die ("error al insertar");
 	}
