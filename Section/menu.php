@@ -22,7 +22,7 @@
                         <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Usuarios <span class="caret"></span></a>
                           <ul role="menu" class="dropdown-menu">
                             <li><a href="usuarios.php"><i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;Agregar</a></li>
-                            <li><a href="usuarios.php"><i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;Editar</a></li>
+                            <li><a href="EditUsuario.php"><i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;Editar</a></li>
                           </ul>
                         </li>
                         <li class="dropdown">
