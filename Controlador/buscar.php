@@ -19,7 +19,7 @@ if (isset($consultaBusqueda)) {
 
 	
 	$cn = Conectarse();
-	$consulta = "SELECT * FROM productos2 WHERE codigo  = '".$consultaBusqueda."' ";
+	$consulta = "SELECT * FROM productos2 WHERE codigo  like '%".$consultaBusqueda."%' OR Descripcion Like '%".$consultaBusqueda."%' ";
 	$ejecutar = mysql_query($consulta,$cn) or die(mysql_error());
 
 	//Obtiene la cantidad de filas que hay en la consulta
