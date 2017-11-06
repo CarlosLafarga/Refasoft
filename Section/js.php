@@ -23,7 +23,10 @@
     <!-- Peity demo -->
     <script src="../Include/js/demo/peity-demo.js"></script>
      <!-- iCheck -->
-    <script src="js/plugins/iCheck/icheck.min.js"></script>
+    <script src="../Include/js/plugins/iCheck/icheck.min.js"></script>
+    
+    <script src="../Include/js/busqueda.js"></script>
+
         <script>
             $(document).ready(function () {
                 $('.i-checks').iCheck({
@@ -107,7 +110,7 @@
           }
 
          $(document).ready(function() {
-            $('select').material_select();
+            //$('select').material_select();
          });     
       </script>
 

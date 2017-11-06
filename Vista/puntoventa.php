@@ -32,14 +32,18 @@ if(!isset($_SESSION["nombre"])){
                                 <h5>Productos</h5>
                             </div>
                             <div class="ibox-content">
-                                <form>
+                                <form name="" >
                                  <div class="input-group">
-                                  <input type="text" class="form-control">
+                                  <input type="text" id="producto" name="producto" placeholder="" maxlength="30" autocomplete="off" onKeyUp="buscar();" class="form-control">
                                    <span class="input-group-btn">
-                                    <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                                    <button type="button" name="agregar" id="agregar" class="btn btn-primary">Agregar</button>
                                     </span>
                                   </div>
                                 </form>
+
+                                <div id="resultadoBusqueda">
+                                  
+                                </div>
                             </div>
                       </div>
 
@@ -62,7 +66,7 @@ if(!isset($_SESSION["nombre"])){
                                     <th></th>
                                 </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="tablita">
                                 
                                 </tbody>
                             </table>
