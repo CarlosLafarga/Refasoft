@@ -1,5 +1,5 @@
 <?php 
-
+ 
 $servidor="localhost";
 $basededatos="refaccionaria";
 $usuario="root";

@@ -30,27 +30,27 @@
                         <?php include("../Section/buscarUser.php"); ?>
                      
                          <div class="form-group">
-                        <label for="usuario">&nbsp;usuario</label>
-                        <input type="text" name="text" value="<?php echo $usuario ?>" required="llenar campo" class="form-control">
+                        <label for="usuario">&nbsp;Usuario</label>
+                        <input type="text" name="text" value="<?php if(isset($_POST['buscar'])){ echo $usuario;} ?>" required="llenar campo" class="form-control">
                      </div>
 
             			   <div class="form-group">
                 				<label for="contraseña">&nbsp;Contraseña</label>
-                        <input type="text" name="contrasena" value="<?php echo $contrasena ?>" required="llenar campo" class="form-control">
+                        <input type="text" name="contrasena" value="<?php  if(isset($_POST['buscar'])){ echo $contrasena;}  ?>" required="llenar campo" class="form-control">
             			   </div>
                      <div class="form-group">
                             <label for="nombre">&nbsp;Tipo</label>
-                            <input type="text" id="tipo" name="tipo" value="<?php echo $tipo ?>" class="form-control">
+                            <input type="text" id="tipo" name="tipo" value="<?php  if(isset($_POST['buscar'])){ echo $tipo;}  ?>" class="form-control">
                      </div>
             			  
                      <div class="form-group">
                             <label for="nombre">&nbsp;Nombre</label>
-                            <input type="text" id="nombre" name="nombre" value="<?php echo $nombre ?>" maxlength="30" class="form-control">
+                            <input type="text" id="nombre" name="nombre" value="<?php if(isset($_POST['buscar'])){ echo $nombre;}  ?>" maxlength="30" class="form-control">
                      </div>
             			
                 			<div class="form-group">
                 				<label for="apellido">&nbsp;Apellidos</label>
-                        <input type="text" name="apellido" value="<?php echo $apellido ?>" maxlength="30" class="form-control">
+                        <input type="text" name="apellido" value="<?php  if(isset($_POST['buscar'])){ echo $apellido;}  ?>" maxlength="30" class="form-control">
                 				</div>
                       </div>
                       
@@ -58,19 +58,19 @@
                     
                       <div class="form-group">
                         <label for="domicilio">&nbsp;Domicilio</label>
-                        <input type="text" name="domicilio"  value="<?php echo $domicilio ?>" required="llenar campo" class="form-control">
+                        <input type="text" name="domicilio"  value="<?php  if(isset($_POST['buscar'])){ echo $domicilio;}  ?>" required="llenar campo" class="form-control">
                       </div>
                       <div class="form-group">
                 				<label for="telefono">&nbsp;Telefono</label>
-                        <input type="telephone" name="telefono" value="<?php echo $telefono ?>"  required="llenar campo" class="form-control">
+                        <input type="telephone" name="telefono" value="<?php  if(isset($_POST['buscar'])){ echo $telefono;}  ?>"  required="llenar campo" class="form-control">
                   		</div>
                   		<div class="form-group">
                 				<label for="email">&nbsp;Correo</label>
-                        <input id="correo" type="email" name="correo" value="<?php echo $correo ?>" required="llenar campo" class="form-control">
+                        <input id="correo" type="email" name="correo" value="<?php  if(isset($_POST['buscar'])){ echo $correo;}  ?>" required="llenar campo" class="form-control">
                   		</div>
                   		<div class="form-group">
                 				<label for="fecha">&nbsp;Fecha</label>
-                        <input type="text"  name="fecha" value="<?php echo $fecha ?>" class="form-control">
+                        <input type="text"  name="fecha" value="<?php  if(isset($_POST['buscar'])){ echo $fecha;}  ?>" class="form-control">
                   		</div>
                   	</div>
                   </div>
