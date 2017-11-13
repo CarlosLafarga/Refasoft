@@ -26,6 +26,7 @@
     <script src="../Include/js/plugins/iCheck/icheck.min.js"></script>
     
     <script src="../Include/js/busqueda.js"></script>
+    <script src="../Include/js/plugins/dataTables/datatables.min.js"></script>
 
         <script>
             $(document).ready(function () {
@@ -33,8 +34,53 @@
                     checkboxClass: 'icheckbox_square-green',
                     radioClass: 'iradio_square-green',
                 });
+
+               listar();
+
             });
+
+
+
+            var listar = function(){
+            
+
+            var table = $("#productos").DataTable({
+                "destroy":true,
+                "ajax":{
+                    "method" : "POST",
+                    "url": "../Section/listarprodController.php"
+                },
+                "columns":[
+                    {"data":"Num_Producto"},
+                    {"data":"codigo"},
+                    {"data":"unidad"},
+                    {"data":"Descripcion"},
+                    {"data":"PT"},
+                    {"data":"PB"},
+                    {"data":"ppv"},
+                    {"data":"Proveedor"},
+                    {"data":"Grupo"},
+                    {"defaultContent": "<button type='button'  class='editar btn btn-primary'>Editar</button> <span></span><button type='button'  class='eliminar btn btn-danger'>Eliminar</button>"}
+                    
+                ]
+            });
+
+
+            obtener_serie("#productos",table);
+
+        }
+
+        var obtener_serie = function(tbody,table){
+                $(tbody).on("click", "button.editar", function(){
+                    var data = table.row($(this).parents("tr")).data();
+                    location.href = "EditAlmacen.php?id="+data.Num_Producto+"";
+                    console.log(data.Num_Producto);
+                });
+        }
+ 
         </script>
+          
+
     
     
 

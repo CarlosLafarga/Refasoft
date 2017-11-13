@@ -11,7 +11,14 @@
                         
                       <?php 
                        include("../Controlador/conexionEdit.php");
-                        $busca = $_POST['busca'];
+                        
+                        if(isset($_POST['buscar'])){
+
+                          $busca = $_POST['busca'];
+                        }else{
+
+                          $busca = '';
+                        }
                         
                         $registro = mysql_query("SELECT * FROM usuario WHERE Nombre = '$busca';");
 

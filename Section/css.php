@@ -4,4 +4,5 @@
 
     <link href="../Include/css/animate.css" rel="stylesheet">
     <link href="../Include/css/style.css" rel="stylesheet">
+    <link href="../Include/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
       

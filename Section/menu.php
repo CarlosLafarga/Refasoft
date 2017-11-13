@@ -13,6 +13,7 @@
                         <!--menu de almacen--> 
                         <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Almacen <span class="caret"></span></a>
                           <ul role="menu" class="dropdown-menu">
+                            <li><a href="listar_prod.php"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Lista Almacen</a></li>
                             <li><a href="almacen.php"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Agregar</a></li>
                             <li><a href="EditAlmacen.php"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Editar</a></li>
                           </ul>

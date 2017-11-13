@@ -10,7 +10,13 @@
                         
                       <?php 
                        include("../Controlador/conexionEditAlm.php");
-                        $busca = $_POST['busca'];
+                        if(isset($_POST['buscar'])){
+
+                          $busca = $_POST['busca'];
+                        }else{
+
+                          $busca = '';
+                        }
                         
                         $busqueda = mysql_query("SELECT * FROM productos WHERE producto = '$busca';");
                         
