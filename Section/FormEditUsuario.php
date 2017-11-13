@@ -39,7 +39,7 @@
                         <input type="text" name="contrasena" value="<?php  if(isset($_POST['buscar'])){ echo $contrasena;}  ?>" required="llenar campo" class="form-control">
             			   </div>
                      <div class="form-group">
-                            <label for="nombre">&nbsp;Tipo</label>
+                            <label for="tipo">&nbsp;Tipo</label>
                             <input type="text" id="tipo" name="tipo" value="<?php  if(isset($_POST['buscar'])){ echo $tipo;}  ?>" class="form-control">
                      </div>
             			  

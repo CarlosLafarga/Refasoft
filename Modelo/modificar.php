@@ -10,7 +10,7 @@
     mysql_select_db($basededatos ,$cn) or die("Error seleccionando la Base de datos");
    
 
-if (isset($_POST['edit'])) {
+if (isset($_POST['buscar'])) {
 
 $usuario=$_POST['usuario'];
 $contrasena=$_POST['contrasena'];
