@@ -19,7 +19,8 @@ if(!isset($_SESSION["nombre"])){
 
 	include("../conect/conexion.php");
 	$cn = Conectarse();
-	$sql = "SELECT * FROM productos2 WHERE Num_Producto = '".$id."' ";
+	$sql = "SELECT * FROM productos2 LEFT JOIN compras ON productos2.codigo = compras.codigo WHERE Num_Producto = '".$id."' ";
+	
 	$ejecutar  = mysql_query($sql,$cn) or die(mysql_error());
 
 	   while ($reg = mysql_fetch_array($ejecutar)) {
@@ -34,6 +35,9 @@ if(!isset($_SESSION["nombre"])){
                           $pasillo = $reg['Pasillo'];
                           $peldaño = $reg['Peldano'];
                           $estante = $reg['Estante'];
+                          $factura = $reg['factura'];
+                          $fechafac = $reg['fechafac'];
+                         
       }
 
 ?>
@@ -52,11 +56,11 @@ if(!isset($_SESSION["nombre"])){
           <?PHP include("../Section/menu.php");?>
           <?PHP include("../Section/FormEditAlmacen.php");?>          
 
-<div>
+</div>
+</div>
 
-      
-
-<?PHP include("../Section/footer.php"); ?>
 </body>
+<!--<?PHP #include("../Section/footer.php"); ?> -->
+
 </html>
 

@@ -84,11 +84,11 @@
                         <div class="form-inline">
                         <div class="form-group">
                 				<label>&nbsp;Factura</label>
-               					<input type="text" id="factura" name="factura" placeholder="Factura"  class="form-control">
+               					<input type="text" id="factura" name="factura" placeholder="Factura"  value="<?php  echo $factura; ?>"  class="form-control">
                   			</div>
                   			<div class="form-group">
                 				<label>&nbsp;Fecha</label> 
-                				<input type="text" id="fechafac" name="fechafac"  placeholder="Fecha Factura" class="form-control">
+                				<input type="text" id="fechafac" name="fechafac"  placeholder="Fecha Factura"  value="<?php  echo $fechafac; ?>"  class="form-control">
                   			</div>
                   		</div>
                          </div>    	
@@ -105,3 +105,4 @@
     	</div>
      </div>
 </div>
+
