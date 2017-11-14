@@ -1,36 +1,40 @@
-
 <?php
 
-	$servidor="localhost";
-    $basededatos="refaccionaria";
-    $usuario="root";
-    $clave="";
+	$codigo=$_POST['codigo'];
+	$producto=$_POST['producto'];
+	$unidad=$_POST['unidad'];
+	$proveedor=$_POST['proveedor'];
+	$cantidad = $_POST['cantidad'];
+	$piso = $_POST['piso'];
+  	$pasillo = $_POST['pasillo'];
+  	$estante = $_POST['estante'];
+  	$peldaño = $_POST['peldaño'];
+	$ppv=$_POST['ppv'];
+	
+	$factura = $_POST['factura'];
+  	$fechafac = $_POST['fechafac'];
 
-    $cn=mysql_connect($servidor,$usuario,$clave) or die ("Error conectando a la base de datos");
-    mysql_select_db($basededatos ,$cn) or die("Error seleccionando la Base de datos");
-   
+  	include("../conect/conexion.php");
+	$cn = Conectarse();
 
-if (isset($_POST['buscar'])) {
+  	if(isset($_GET['codigo'])){
 
-$usuario=$_POST['usuario'];
-$contrasena=$_POST['contrasena'];
-$tipo=$_POST['tipo'];
-$nombre=$_POST['nombre'];
-$apellido=$_POST['apellido'];
-$domicilio=$_POST['domicilio'];
-$telefono=$_POST['telefono'];
-$correo=$_POST['correo'];
-$fecha=$_POST['fecha'];
+		$codigo = $_GET['codigo'];
 
+	}
+  
 
-    $q = mysql_query("UPDATE usuario SET Usuario = '$usuario', Contrasena = '$contrasena', Tipo = '$tipo', Domicilio = '$domicilio', Telefono = '$telefono', Correo = '$correo', fecha = '$fecha' WHERE Nombre = '$nombre'");
-}
+		$q = ("UPDATE productos2 SET unidad='$unidad',producto='$producto',cantidad='$cantidad',piso='$piso',pasillo='$pasillo',estante='$estante',peldaño='$peldaño',Proveedor='$proveedor',ppv='$ppv' WHERE codigo='".$codigo."' ");
 
-$ejecutar_q=mysql_query($cn,$q) or die("error al insertar");
-header("location: ../Vista/usuarios.php");
-echo "<br> Registro Insertado Correctamente! <br>";
+		$r=mysql_query($q,$cn) or die ("error al insertar");
+		
+		$qf=("UPDATE compras SET factura='$factura',codigo='$codigo',cantidad='$cantidad',fechafac='$fechafac',proveedor='$proveedor',ppv='$ppv' WHERE codigo='".$codigo."'");
+		$resultado=mysql_query($qf,$cn) or die ("error al insertar");
+
+	header("location: ../Vista/listar_prod.php");
+	echo "<br> Registro Insertado Correctamente! <br>";
 
 
+	?>
+	
 
-
-?>

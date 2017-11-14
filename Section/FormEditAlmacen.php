@@ -26,7 +26,7 @@
                <div class="row">
                    <div class="col-sm-6 b-r">
                     
-                     <form method="POST"  action="" role="form">
+                     <form method="POST"  action="../Modelo/modificar.php" role="form">
                    
                         <hr>
                         <center><h4>&nbsp;&nbsp;Producto</h4></center>
@@ -97,7 +97,7 @@
          	   		  <center>
               		  <div class="row">
               			   <div class="input-field col s12">
-              				    <input type="submit" value="Editar" onclick="EventoAlert()" class="btn btn-primary" >
+              				    <input type="submit" value="Editar"  class="btn btn-primary" >
               			   </div>
               		  </div>
               		</center>
