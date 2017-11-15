@@ -19,7 +19,7 @@ if(!isset($_SESSION["nombre"])){
 
 	include("../conect/conexion.php");
 	$cn = Conectarse();
-	$sql = "SELECT * FROM productos2 LEFT JOIN compras ON productos2.codigo = compras.codigo WHERE Num_Producto = '".$id."' ";
+	$sql = "SELECT * FROM productos2 LEFT JOIN compras ON productos2.codigo = compras.codigo WHERE Num_Producto = '".$id."' ";  
 	
 	$ejecutar  = mysql_query($sql,$cn) or die(mysql_error());
 
