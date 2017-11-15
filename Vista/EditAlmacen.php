@@ -19,7 +19,7 @@ if(!isset($_SESSION["nombre"])){
 
 	include("../conect/conexion.php");
 	$cn = Conectarse();
-	$sql = "SELECT * FROM productos2 LEFT JOIN compras ON productos2.codigo = compras.codigo WHERE Num_Producto = '".$id."' ";  
+	$sql = "SELECT productos2.codigo as codigoprod,productos2.*,compras.* FROM productos2 LEFT JOIN compras ON productos2.codigo = compras.codigo_compra WHERE Num_Producto = '".$id."' ";  
 	
 	$ejecutar  = mysql_query($sql,$cn) or die(mysql_error());
 
@@ -35,7 +35,7 @@ if(!isset($_SESSION["nombre"])){
                           $pasillo = $reg['Pasillo'];
                           $peldaño = $reg['Peldano'];
                           $estante = $reg['Estante'];
-                          $factura = $reg['factura'];
+                          $factura = $reg['factura_compra'];
                           $fechafac = $reg['fechafac'];
                          
       }
