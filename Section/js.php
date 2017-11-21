@@ -60,7 +60,7 @@
                     {"data":"ppv"},
                     {"data":"Proveedor"},
                     {"data":"Grupo"},
-                    {"defaultContent": "<button type='button'  class='editar btn btn-primary'>Editar</button> <span></span><button type='button'  class='eliminar btn btn-danger'>Eliminar</button>"}
+                    {"defaultContent": "<button type='button'  class='editar btn btn-primary'>Editar</button> <span></span><button type='button' class='eliminar btn btn-danger' >Eliminar</button>"}
                     
                 ]
             });
@@ -76,14 +76,23 @@
                     location.href = "EditAlmacen.php?id="+data.Num_Producto+"";
                     console.log(data.Num_Producto);
                 });
+
+                  $(tbody).on("click", "button.eliminar", function(){
+                    var data = table.row($(this).parents("tr")).data();
+                     if (confirm('¿Desea eliminar el producto' + data.Num_Producto + '?')) { 
+                    window.location.href = "../Modelo/funcionborrar.php?id="+data.Num_Producto+"";
+                    console.log(data.Num_Producto);
+                    }
+                });
+
+
         }
- 
+
         </script>
           
 
-    
-    
 
+    
     <!-- Validaciones -->
     <script type="text/javascript">
       
