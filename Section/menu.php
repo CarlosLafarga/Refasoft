@@ -13,9 +13,8 @@
                         <!--menu de almacen--> 
                         <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Almacen <span class="caret"></span></a>
                           <ul role="menu" class="dropdown-menu">
-                            <li><a href="listar_prod.php"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Lista Almacen</a></li>
                             <li><a href="almacen.php"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Agregar</a></li>
-                            <li><a href="EditAlmacen.php"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Editar</a></li>
+                            <li><a href="listar_prod.php"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Lista Almacen</a></li>
                           </ul>
                         </li>
                         <li class="dropdown">
@@ -24,6 +23,13 @@
                           <ul role="menu" class="dropdown-menu">
                             <li><a href="usuarios.php"><i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;Agregar</a></li>
                             <li><a href="EditUsuario.php"><i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;Editar</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown">
+                        <!--menu de facturas--> 
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Compras <span class="caret"></span></a>
+                          <ul role="menu" class="dropdown-menu">
+                            <li><a href="listar_comp.php"><i class="fa fa-file-text"></i>&nbsp;&nbsp;Listar Compras</a></li>
                           </ul>
                         </li>
                         <li class="dropdown">

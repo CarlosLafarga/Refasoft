@@ -1,5 +1,5 @@
 
-            <div class="ibox-content m-b-sm border-bottom">
+        <div class="ibox-content m-b-sm border-bottom">
                <form method="POST"  action="../Modelo/ValidaAlmacen.php">
                 <div class="row">
                     <CENTER><h2> PRE-REGISTRO</h2></CENTER><BR>

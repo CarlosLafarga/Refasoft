@@ -60,7 +60,7 @@
                     {"data":"ppv"},
                     {"data":"Proveedor"},
                     {"data":"Grupo"},
-                    {"defaultContent": "<button type='button'  class='editar btn btn-primary'>Editar</button> <span></span><button type='button' class='eliminar btn btn-danger' >Eliminar</button>"}
+                    {"defaultContent": " <button type='button' class='editar btn btn-primary'>Editar</button><span></span>  <button type='button' class='eliminar btn btn-danger'>Eliminar</button>"}
                     
                 ]
             });
@@ -73,13 +73,13 @@
         var obtener_serie = function(tbody,table){
                 $(tbody).on("click", "button.editar", function(){
                     var data = table.row($(this).parents("tr")).data();
-                    location.href = "EditAlmacen.php?id="+data.Num_Producto+"";
+                    location.href = "EditAlmacen.php?id="+' ' +data.Num_Producto+"";
                     console.log(data.Num_Producto);
                 });
 
                   $(tbody).on("click", "button.eliminar", function(){
                     var data = table.row($(this).parents("tr")).data();
-                     if (confirm('¿Desea eliminar el producto' + data.Num_Producto + '?')) { 
+                     if (confirm('¿Desea eliminar el producto' +' ' + data.Num_Producto + '?')) { 
                     window.location.href = "../Modelo/funcionborrar.php?id="+data.Num_Producto+"";
                     console.log(data.Num_Producto);
                     }
@@ -89,7 +89,67 @@
         }
 
         </script>
-          
+    <!-- script para listar los datos de las compras -->   
+
+        <script>
+            $(document).ready(function () {
+                $('.i-checks').iCheck({
+                    checkboxClass: 'icheckbox_square-green',
+                    radioClass: 'iradio_square-green',
+                });
+
+               lista();
+
+            });
+
+
+
+            var lista = function(){
+            
+
+            var table = $("#compras").DataTable({
+                "destroy":true,
+                "ajax":{
+                    "method" : "POST",
+                    "url": "../Section/listarcompController.php"
+                },
+                "columns":[
+                    {"data":"id_compra"},
+                    {"data":"factura_compra"},
+                    {"data":"codigo_compra"},
+                    {"data":"cantidad_compra"},
+                    {"data":"fechafac"},
+                    {"data":"Proveedor_compra"},
+                    {"data":"ppv_compra"},
+                    {"defaultContent": " <button type='button' class='editar btn btn-primary'>Editar</button><span></span>  <button type='button' class='eliminar btn btn-danger'>Eliminar</button>"}
+                    
+                ]
+            });
+
+
+            obtener_serie("#compras",table);
+
+        }
+
+        var obtener_serie = function(tbody,table){
+                $(tbody).on("click", "button.editar", function(){
+                    var data = table.row($(this).parents("tr")).data();
+                    location.href = "EditComp.php?id="+data.id_compra+"";
+                    console.log(data.id_compra);
+                });
+
+                  $(tbody).on("click", "button.eliminar", function(){
+                    var data = table.row($(this).parents("tr")).data();
+                     if (confirm('¿Desea eliminar la factura' +' ' + data.factura_compra + '?')) { 
+                    window.location.href = "../Modelo/borrarComp.php?id="+data.id_compra+"";
+                    console.log(data.id_compra);
+                    }
+                });
+
+
+        }
+
+        </script>  
 
 
     

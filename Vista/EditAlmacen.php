@@ -35,8 +35,8 @@ if(!isset($_SESSION["nombre"])){
                           $pasillo = $reg['Pasillo'];
                           $peldaño = $reg['Peldano'];
                           $estante = $reg['Estante'];
-                          $factura = $reg['factura_compra'];
-                          $fechafac = $reg['fechafac'];
+                          $grupo = $reg['Grupo'];
+                          
                          
       }
 

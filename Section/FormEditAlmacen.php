@@ -56,7 +56,8 @@
                 				<label>&nbsp;Cantidad</label>
                 				<input type="text" id="cantidad" name="cantidad" placeholder="Cantidad" value="<?php echo $cantidad; ?>" required="llenar campo" class="form-control">
                 		 	</div>
-                 		  </div>
+                 		<hr>
+                      </div>
                  		
                         <div class="col-sm-6">
                         <hr>
@@ -77,26 +78,17 @@
                   			<div class="form-group">
                 			  <label>&nbsp;Peldaño</label>
                 			  <input type="text" id="peldaño" name="peldano" placeholder="Peldaño" value="<?php  echo $peldaño; ?>"  class="form-control">
-                            </div>
-                    	  <hr>
-                    	  <center><h4>&nbsp;&nbsp;Datos de Factura</h4></center>
-                        <hr>
-                        <div class="form-inline">
+                        </div>
                         <div class="form-group">
-                				<label>&nbsp;Factura</label>
-               					<input type="text" id="factura" name="factura" placeholder="Factura"  value="<?php  echo $factura; ?>"  class="form-control">
-                  			</div>
-                  			<div class="form-group">
-                				<label>&nbsp;Fecha</label> 
-                				<input type="text" id="fechafac" name="fechafac"  placeholder="Fecha Factura"  value="<?php  echo $fechafac; ?>"  class="form-control">
-                  			</div>
-                  		</div>
-                         </div>    	
-                    </div>
-                    <hr>
+                        <label>&nbsp;Grupo</label>
+                        <input type="text" id="grupo" name="grupo" placeholder="Grupo" value="<?php  echo $grupo; ?>"  class="form-control">
+                        </div>
+                    	
+                    	 <hr>
+                   
          	   		  <center>
               		  <div class="row">
-              			   <div class="input-field col s12">
+              			   <div class="input-field col s12"> 
               				    <input type="submit" value="Editar"  class="btn btn-primary" >
               			   </div>
               		  </div>
