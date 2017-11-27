@@ -29,7 +29,7 @@
                         <!--menu de facturas--> 
                         <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Compras <span class="caret"></span></a>
                           <ul role="menu" class="dropdown-menu">
-                            <li><a href="listar_comp.php"><i class="fa fa-file-text"></i>&nbsp;&nbsp;Listar Compras</a></li>
+                            <li><a href="listar_comp.php"><i class="fa fa-file-text"></i>&nbsp;&nbsp;Lista Compras</a></li>
                           </ul>
                         </li>
                         <li class="dropdown">

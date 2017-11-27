@@ -73,7 +73,7 @@
         var obtener_serie = function(tbody,table){
                 $(tbody).on("click", "button.editar", function(){
                     var data = table.row($(this).parents("tr")).data();
-                    location.href = "EditAlmacen.php?id="+' ' +data.Num_Producto+"";
+                    location.href = "EditAlmacen.php?id="+data.Num_Producto+"";
                     console.log(data.Num_Producto);
                 });
 
@@ -121,20 +121,20 @@
                     {"data":"fechafac"},
                     {"data":"Proveedor_compra"},
                     {"data":"ppv_compra"},
-                    {"defaultContent": " <button type='button' class='editar btn btn-primary'>Editar</button><span></span>  <button type='button' class='eliminar btn btn-danger'>Eliminar</button>"}
+                    {"defaultContent": " <button type='button' class='edita btn btn-primary'>Editar</button><span></span>  <button type='button' class='eliminar btn btn-danger'>Eliminar</button>"}
                     
                 ]
             });
 
 
-            obtener_serie("#compras",table);
+            obtener("#compras",table);
 
         }
 
-        var obtener_serie = function(tbody,table){
-                $(tbody).on("click", "button.editar", function(){
+        var obtener = function(tbody,table){
+                $(tbody).on("click", "button.edita", function(){
                     var data = table.row($(this).parents("tr")).data();
-                    location.href = "EditComp.php?id="+data.id_compra+"";
+                    location.href = "EditComp.php?id="+' '+data.id_compra+"";
                     console.log(data.id_compra);
                 });
 
