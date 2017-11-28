@@ -60,7 +60,7 @@
                     {"data":"ppv"},
                     {"data":"Proveedor"},
                     {"data":"Grupo"},
-                    {"defaultContent": " <button type='button' class='editar btn btn-primary'>Editar</button><span></span>  <button type='button' class='eliminar btn btn-danger'>Eliminar</button>"}
+                    {"defaultContent": " <button type='button' class='editar btn-sm btn-primary'><i class='fa fa-edit'></i></button><span>|</span><button type='button' class='eliminar btn-sm btn-danger'><i class='fa fa-trash'></i></button>"}
                     
                 ]
             });
@@ -121,7 +121,7 @@
                     {"data":"fechafac"},
                     {"data":"Proveedor_compra"},
                     {"data":"ppv_compra"},
-                    {"defaultContent": " <button type='button' class='edita btn btn-primary'>Editar</button><span></span>  <button type='button' class='eliminar btn btn-danger'>Eliminar</button>"}
+                    {"defaultContent": " <center><button type='button' class='editar btn-sm btn-primary'><i class='fa fa-edit'></i>&nbsp;Editar</button><span>|</span><button type='button' class='eliminar btn-sm btn-danger'><i class='fa fa-trash'></i>&nbsp;Eliminar</button></center>"}
                     
                 ]
             });
