@@ -1,6 +1,6 @@
 
 
-<BR><BR><div class="col-lg-8">
+<BR><BR><div class="col-md-12">
       <div class="ibox float-e-margins">
           <div class="ibox-title">
                 <h5>EDITAR COMPRAS</h5>
@@ -26,24 +26,24 @@
                <div  class="row">
                    <div class="col-sd-9">
                     
-                     <form method="POST"  action="../Modelo/modificar.php" role="form">
+                     <form method="POST"  action="../Modelo/modificaCompra.php" role="form">
                    
                         
                         <center><h4>&nbsp;&nbsp;Datos de Compras</h4></center>
                         <hr>
                     <div class="row">
+                       <div class="col-md-4">
+                        <div class="form-group">
+                        <label>&nbsp;Codigo</label>
+                        <input type="text" id="codigo" name="codigo" value="<?php echo $codigo; ?>" placeholder="Codigo"  class="form-control">
+                     </div>
+                    </div>
                     
                     <div class="col-md-4">
                         <div class="form-group">
                         <label>&nbsp;Factura</label>
                         <input type="text" id="factura" name="factura" placeholder="Factura" value="<?php echo $factura;?>"  class="form-control">
                      </div> 
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                        <label>&nbsp;Codigo</label>
-                        <input type="text" id="codigo" name="codigo" value="<?php echo $codigo; ?>" placeholder="Codigo"  class="form-control">
-                     </div>
                     </div>
                     <div class="col-md-4">
                      <div class="form-group">
@@ -55,8 +55,8 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                        <label>&nbsp;Fecha</label>
-                        <input type="text" id="fecha" name="fecha" placeholder="Fecha" value="<?php echo $fechafac; ?>"  class="form-control">
+                        <label>&nbsp;Fecha Factura</label>
+                        <input type="date" id="fechafac" name="fechafac" placeholder="Fecha" value="<?php echo $fechafac; ?>"  class="form-control">
                       </div>
                         </div>
                  
@@ -78,7 +78,7 @@
          	   		  <center>
               		  <div class="row">
               			   <div class="input-field col s12"> 
-              				    <input type="submit" value="Editar"  class="btn btn-primary" >
+              				     <button type='submit' class='editar btn-sm btn-primary'><i class='fa fa-edit'></i>&nbsp;Editar</button>
               			   </div>
               		  </div>
               		</center>

@@ -36,6 +36,7 @@ if(!isset($_SESSION["nombre"])){
                           $peldaño = $reg['Peldano'];
                           $estante = $reg['Estante'];
                           $grupo = $reg['Grupo'];
+                          $factura = $reg['factura'];
                           
                          
       }
@@ -60,7 +61,7 @@ if(!isset($_SESSION["nombre"])){
 </div>
 
 </body>
-<!--<?PHP #include("../Section/footer.php"); ?> -->
-
+<!-- <?PHP //include("../Section/footer.php"); ?> 
+ -->
 </html>
 

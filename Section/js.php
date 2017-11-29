@@ -132,9 +132,9 @@
         }
 
         var obtener = function(tbody,table){
-                $(tbody).on("click", "button.edita", function(){
+                $(tbody).on("click", "button.editar", function(){
                     var data = table.row($(this).parents("tr")).data();
-                    location.href = "EditComp.php?id="+' '+data.id_compra+"";
+                    window.location.href = "EditComp.php?id="+' '+data.id_compra+"";
                     console.log(data.id_compra);
                 });
 

@@ -20,7 +20,7 @@
                         <i class="fa fa-times"></i>
                      </a>
                 </div>
-            </div>
+            
             <div class="ibox-content">
                <div class="row">
                    <div class="col-md-6 b-r">
@@ -38,6 +38,7 @@
                 				<label for="contraseña">&nbsp;Contraseña</label>
                         <input type="text" name="contrasena" value="<?php  if(isset($_POST['buscar'])){ echo $contrasena;}  ?>" required="llenar campo" class="form-control">
             			   </div>
+
                      <div class="form-group">
                             <label for="tipo">&nbsp;Tipo</label>
                             <input type="text" id="tipo" name="tipo" value="<?php  if(isset($_POST['buscar'])){ echo $tipo;}  ?>" class="form-control">
@@ -78,7 +79,7 @@
                     <center>
                     <div class="row">
                        <div class="input-field col s12">
-                          <input TYPE="submit" NAME="edit" VALUE="EDITAR" class="btn btn-primary"><br>
+                           <button type='submit' class='editar btn-sm btn-primary'><i class='fa fa-edit'></i>&nbsp;Editar</button>
                        </div>
                     </div>
                   </center>

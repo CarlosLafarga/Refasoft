@@ -24,8 +24,9 @@ if(!isset($_SESSION["nombre"])){
           
            <?PHP include("../Section/FormEditUsuario.php");?>          
 
-<div>
+	</div>
 
+</div>
       
 
 <?PHP include("../Section/footer.php"); ?>
