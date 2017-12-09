@@ -42,7 +42,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                         <label>&nbsp;Factura</label>
-                        <input type="text" id="factura" name="factura" placeholder="Factura" value="<?php echo $factura;?>"  class="form-control">
+                        <input type="text" id="factura" name="factura" placeholder="Factura" value="<?php echo $factura; ?>"  class="form-control">
                      </div> 
                     </div>
                     <div class="col-md-4">
@@ -63,7 +63,15 @@
                     <div class="col-md-4">
                      <div class="form-group">
                         <label>&nbsp;Proveedor</label>
-                        <input type="text" id="proveedor" name="proveedor" placeholder="Proveedor" value="<?php  echo $proveedor; ?>"  class="form-control">
+                         <select class="select2_demo_3 form-control" id="proveedor" name="proveedor" required="llenar campo">
+                            <option value="<?php  echo $proveedor; ?>"><?php  echo $proveedor; ?></option>
+                            <option value="Pernor">Pernor</option>
+                            <option value="Apymsa">Apymsa</option>
+                            <option value="Serva">Serva</option>
+                            <option value="Henlo">Henlo</option>
+                            <option value="Dirco">Dirco</option>
+                            <option value="Ciosa">Ciosa</option>
+                        </select>
                      </div>
                     </div>
                     <div class="col-md-4">

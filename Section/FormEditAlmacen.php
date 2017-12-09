@@ -42,12 +42,18 @@
             			   </div>
             			  <div class="form-group">
                         <label>&nbsp;unidad</label>
-                        <input type="text" id="unidad" name="unidad" placeholder="Unidad" value="<?php  echo $unidad; ?>" required="llenar campo" class="form-control">
+                        <select class="select2_demo_3 form-control" id="unidad" name="unidad" required="llenar campo">
+                            <option value="<?php  echo $unidad; ?>"><?php  echo $unidad; ?></option>
+                            <option value="Pieza">Pieza</option>
+                            <option value="Metro">Metro</option>
+                            <option value="Litro">Litro</option>
+                            <option value="Juego">Juego</option>
+                        </select>
                      </div>
                       <div class="form-group">
                         <label>&nbsp;Proveedor</label>
                         <select class="select2_demo_3 form-control" id="proveedor" name="Proveedor" required="llenar campo">
-                            <option value=""><?php  echo $proveedor; ?></option>
+                            <option value="<?php  echo $proveedor; ?>"><?php  echo $proveedor; ?></option>
                             <option value="Pernor">Pernor</option>
                             <option value="Apymsa">Apymsa</option>
                             <option value="Serva">Serva</option>

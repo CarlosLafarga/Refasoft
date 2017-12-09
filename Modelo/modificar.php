@@ -91,22 +91,17 @@
 		#$resultado=mysql_query($qf,$cn) or die (mysql_error());
 
 
-		if (!empty($factura)) {
+		if (!empty($codigo)) {
 
-		$q = ("UPDATE productos2 SET unidad='$unidad',producto='$producto',cantidad='$cantidad',piso='$piso',Pasillo='$pasillo',Estante='$estante',Peldano='$peldano',Proveedor='$proveedor',ppv='$ppv',CN='$CN',PT='$PT',PB='$PB', factura='$factura' WHERE codigo='".$codigo."' ");
+		$q = ("UPDATE productos2 SET unidad='$unidad', Descripcion='$producto',cantidad='$cantidad',piso='$piso',Pasillo='$pasillo',Estante='$estante',Peldano='$peldano',Proveedor='$proveedor',ppv='$ppv',CN='$CN',PT='$PT',PB='$PB', factura='$factura' WHERE codigo='".$codigo."' ");
 
 		$r=mysql_query($q,$cn) or die (mysql_error());
+
+		$qf=("UPDATE compras SET codigo_compra='$codigo',cantidad_compra='$cantidad',proveedor_compra='$proveedor',ppv_compra='$ppv' WHERE factura_compra='".$factura."'");
+		$resultado=mysql_query($qf,$cn) or die (mysql_error());
 		
-		/*$qf=("UPDATE compras SET factura_compra='$factura',codigo_compra='$codigo',cantidad_compra='$cantidad',fechafac='$fechafac',proveedor_compra='$proveedor',ppv_compra='$ppv' WHERE codigo_compra='".$codigo."'");
-		$resultado=mysql_query($qf,$cn) or die (mysql_error());*/
 
-	}/*else{
-
-		$q = ("UPDATE productos2 SET unidad='$unidad',producto='$producto',cantidad='$cantidad',piso='$piso',Pasillo='$pasillo',Estante='$estante',Peldano='$peldano',Proveedor='$proveedor',ppv='$ppv', Grupo='$grupo' WHERE codigo='".$codigo."' ");
-
-		$r=mysql_query($q,$cn) or die (mysql_error());
-	}*/
-
+	}
 
 	header("location: ../Vista/listar_prod.php");
 	echo "<br> Registro Insertado Correctamente! <br>";

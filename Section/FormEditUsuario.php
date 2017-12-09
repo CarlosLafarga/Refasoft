@@ -1,5 +1,5 @@
 
-<BR><BR><div class="col-md-12">
+<BR><div class="col-md-12">
       <div class="ibox float-e-margins">
           <div class="ibox-title">
                 <h5>EDITAR USUARIO</h5>
@@ -40,8 +40,12 @@
             			   </div>
 
                      <div class="form-group">
-                            <label for="tipo">&nbsp;Tipo</label>
-                            <input type="text" id="tipo" name="tipo" value="<?php  if(isset($_POST['buscar'])){ echo $tipo;}  ?>" class="form-control">
+                          <label for="">&nbsp;Tipo Usuario</label>
+                         <select name="tipo" required="llenar campo" class="form-control">
+                              <option value=""><?php   echo $tipo;  ?></option>
+                              <option value="1">Administrador</option>
+                              <option value="2">Usuario</option>
+                        </select>
                      </div>
             			  
                      <div class="form-group">

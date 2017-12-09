@@ -21,8 +21,7 @@ if(!isset($_SESSION["nombre"])){
   <div id="wrapper">
      <div id="page-wrapper" class="gray-bg">
           <?PHP include("../Section/menu.php");?>
-          
-           <?PHP include("../Section/FormEditUsuario.php");?>          
+          <?PHP include("../Section/FormEditUsuario.php");?>          
 
 	</div>
 
