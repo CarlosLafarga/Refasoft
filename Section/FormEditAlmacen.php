@@ -1,34 +1,16 @@
-
-
-<BR><div class="col-lg-12">
-      <div class="ibox float-e-margins">
-          <div class="ibox-title">
-                <h5>EDITAR PRODUCTO</h5>
-                <div class="ibox-tools">
-                     <a class="collapse-link">
-                         <i class="fa fa-chevron-up"></i>
-                    </a>
-                       <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                          <i class="fa fa-wrench"></i>
-                      </a>
-                      <ul class="dropdown-menu dropdown-user">
-                          <li><a href="#">Config option 1</a>
-                          </li>
-                          <li><a href="#">Config option 2</a>
-                          </li>
-                      </ul>
-                    <a class="close-link">
-                        <i class="fa fa-times"></i>
-                     </a>
-                </div>
-
-            
-            <div class="ibox-content">
+               <div class="wrapper wrapper-content">
+               <div class="container">
                <div class="row">
-                   <div class="col-sm-6 b-r">
-                    
+               <div class="col-md-12">
+
+                     <div class="ibox">
+                    <div class="ibox-title">
+                        <span class="pull-right"></span>
+                        <h5>Productos</h5>
+                    </div>
+                    <div class="ibox-content">
                      <form method="POST"  action="../Modelo/modificar.php" role="form">
-                   
+                        <div class="col-sm-6">
                         <hr>
                         <center><h4>&nbsp;&nbsp;Producto</h4></center>
                         <hr> 
@@ -71,8 +53,8 @@
                 				<label>&nbsp;Cantidad</label>
                 				<input type="text" id="cantidad" name="cantidad" placeholder="Cantidad" value="<?php echo $cantidad; ?>" required="llenar campo" class="form-control">
                 		 	</div>
-                 		
-                      </div>
+                 		</div>
+                      
                  		
                         <div class="col-sm-6">
                         <hr>
@@ -104,20 +86,23 @@
                         <input type="text" readonly="factura" id="factura" name="factura" placeholder="Factura" value="<?php echo $factura; ?>"  class="form-control">
                         </div>
                         </div>     
-                    </div>
-                    <hr>
                    
-         	   		  <center>
-              		  <div class="row">
-              			   <div class="input-field col s12"> 
+                        <div class="row">
+         	   		        <div class="col-md-12">
+                        <center>
                         <button type='submit' class='editar btn-sm btn-primary'><i class='fa fa-edit'></i>&nbsp;Editar</button>
-              				    
-              			   </div>
-              		  </div>
-              		</center>
-    		</form> 
-    	</div>
-    </div>
-    
+                        </center>
+              				  </div>  
+              			    </div>
+
+    	         	       </form> 
+                       </div>
+                      </div>
+
+             </div>
+             </div>
+             </div>
+             </div>
+    	
      
 

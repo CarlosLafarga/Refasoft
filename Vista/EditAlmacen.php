@@ -36,7 +36,7 @@ if(!isset($_SESSION["nombre"])){
                           $peldaño = $reg['Peldano'];
                           $estante = $reg['Estante'];
                           $grupo = $reg['Grupo'];
-                          $factura = $reg['factura'];
+                          $factura = $reg['factura_prod'];
                           
                          
       }
@@ -57,11 +57,15 @@ if(!isset($_SESSION["nombre"])){
           <?PHP include("../Section/menu.php");?>
           <?PHP include("../Section/FormEditAlmacen.php");?>          
 
+
+
+<?PHP include("../Section/footer.php"); ?>
 </div>
+
 </div>
 
 </body>
-<!-- <?PHP //include("../Section/footer.php"); ?> 
- -->
+ 
+
 </html>
 

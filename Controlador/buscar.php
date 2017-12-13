@@ -28,7 +28,7 @@ if (isset($consultaBusqueda)) {
 	//Si no existe ninguna fila que sea igual a $consultaBusqueda, entonces mostramos el siguiente mensaje
 	if ($filas === 0) {
 
-		$mensaje = "<p>No hay ningún producto con ese codigo       <b>".$consultaBusqueda."</b></p>";
+		$mensaje = "<p>No hay ningún producto con ese codigo   <b>".$consultaBusqueda."</b></p>";
 
 	} else {
 
@@ -51,6 +51,13 @@ if (isset($consultaBusqueda)) {
 			<strong>Precio:</strong> ' . $precio_publico . '<br>
 			</p>';
 
+
+			$producto_desglosado = array(
+			'codigo'=>$codigo,
+			'producto'=>$producto,
+			'precio'=>$precio_publico	
+			);
+
 		};//Fin while $resultados
 
 	}; //Fin else $filas
@@ -58,5 +65,5 @@ if (isset($consultaBusqueda)) {
 };//Fin isset $consultaBusqueda
 
 //Devolvemos el mensaje que tomará jQuery
-echo $mensaje;
+echo json_encode($producto_desglosado,JSON_FORCE_OBJECT);
 ?>
