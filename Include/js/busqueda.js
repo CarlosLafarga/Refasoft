@@ -12,13 +12,23 @@ function buscar() {
 
         $.post("../Controlador/buscar.php",{valorbusqueda:producto},function(mensaje){
 
-            $("#resultadoBusqueda").html(mensaje);
-            console.log(mensaje); 
+            //$("#resultadoBusqueda").html(mensaje);
+
+            if(mensaje != "" ){
+
+            var types = JSON.parse(mensaje);
+            console.log(types); 
+
+            }else{
+
+                $("#resultadoBusqueda").html('<p>No hay Resultados</p>');
+
+            }
 
          }); 
      } else { 
 
-        $("#resultadoBusqueda").html('<p></p>');
+        $("#resultadoBusqueda").html('<p>No hay Resultados</p>');
 
         };
 };

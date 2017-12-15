@@ -63,8 +63,7 @@
                     <div class="col-md-4">
                      <div class="form-group">
                         <label>&nbsp;Proveedor</label>
-                         <select class="select2_demo_3 form-control" id="proveedor" name="proveedor" required="llenar campo">
-                            <option value="<?php  echo $proveedor; ?>"><?php  echo $proveedor; ?></option>
+                         <select class="select2_demo_3 form-control" value="<?php  echo $proveedor; ?>"  id="proveedor" name="proveedor" required="llenar campo">
                             <option value="Pernor">Pernor</option>
                             <option value="Apymsa">Apymsa</option>
                             <option value="Serva">Serva</option>

@@ -28,12 +28,12 @@ if (isset($consultaBusqueda)) {
 	//Si no existe ninguna fila que sea igual a $consultaBusqueda, entonces mostramos el siguiente mensaje
 	if ($filas === 0) {
 
-		$mensaje = "<p>No hay ningún producto con ese codigo   <b>".$consultaBusqueda."</b></p>";
+		$consultaBusqueda;
 
 	} else {
 
 		//Si existe alguna fila que sea igual a $consultaBusqueda, entonces mostramos el siguiente mensaje
-		echo 'Resultados para <strong>'.$consultaBusqueda.'</strong><br>';
+		$consultaBusqueda;
 
 		//La variable $resultado contiene el array que se genera en la consulta, así que obtenemos los datos y los mostramos en un bucle
 		while($resultados = mysql_fetch_array($ejecutar)) {
@@ -44,26 +44,37 @@ if (isset($consultaBusqueda)) {
 			
 
 			//Output
-			$mensaje .= '
+			/*$mensaje .= '
 			<p>
 			<strong>Codigo:</strong> ' . $codigo . '<br>
 			<strong>Producto:</strong> ' . $producto . '<br>
 			<strong>Precio:</strong> ' . $precio_publico . '<br>
-			</p>';
+			</p>';*/
 
 
 			$producto_desglosado = array(
 			'codigo'=>$codigo,
 			'producto'=>$producto,
 			'precio'=>$precio_publico	
+			
 			);
 
-		};//Fin while $resultados
 
-	}; //Fin else $filas
+		};  //Fin while $resultados
 
-};//Fin isset $consultaBusqueda
+	};  //Fin else $filas
+
+};  //Fin isset $consultaBusqueda
 
 //Devolvemos el mensaje que tomará jQuery
+if(!empty($producto_desglosado)){
 echo json_encode($producto_desglosado,JSON_FORCE_OBJECT);
+
+}else
+{
+
+	$mensaje = "No hay resultado para ese codigo.";
+	echo $mensaje;
+}
+
 ?>
