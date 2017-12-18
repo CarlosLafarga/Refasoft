@@ -23,7 +23,7 @@ if(!isset($_SESSION["nombre"])){
             <div class="wrapper wrapper-content">
                <div class="container">
                    <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-8">
 
                       <!--TABLA DONDE APARECEN LOS PRODUCTOS-->
                       <div class="ibox">
@@ -32,9 +32,12 @@ if(!isset($_SESSION["nombre"])){
                                 <h5>Productos</h5>
                             </div>
                             <div class="ibox-content">
-                                <form name="" >
+                               <!-- <form name="" >
                                  <div class="input-group">
                                   <input type="text" id="producto" name="producto" placeholder="" maxlength="30" autocomplete="off" onKeyUp="buscar();" class="form-control">
+                                  <select id="producto" data-placeholder="Choose a Country..." class="chosen-select"  tabindex="2">
+                                    <option>Seleccionar Producto</option>
+                                  </select>
                                    <span class="input-group-btn">
                                     <button type="button" name="agregar" id="agregar" class="btn btn-primary">Agregar</button>
                                     </span>
@@ -43,12 +46,36 @@ if(!isset($_SESSION["nombre"])){
 
                                 <div id="resultadoBusqueda">
                                   
-                                </div>
+                                </div>-->
+                                <div class="table-responsive">
+                                <table  id="productos" class="table table-striped table-bordered table-hover dataTables-example">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Codigo</th>
+                                    <th>Unidad</th>
+                                    <th>Descripcion</th>
+                                    <th>Precio Taller</th>
+                                    <th>Precio Publico</th>
+                                    <th>Proveedor</th>
+                                    <th>Acciones</th>
+                                </tr>
+                                </thead>
+                                 
+                            </table>
+                            
+
+                            </div>
                             </div>
                       </div>
 
                       <!--TABLA DONDE APARECEN LOS PRODUCTOS-->
-                      <div class="ibox">
+                      
+
+                </div>
+                <!--TOTAL CAJA-->
+                <div class="col-md-4">
+                   <div class="ibox">
                             <div class="ibox-title">
                             <span class="pull-right">(<strong>5</strong>) items</span>
                             <h5>Productos en Venta</h5>
@@ -74,10 +101,6 @@ if(!isset($_SESSION["nombre"])){
 
                             </div>
                      </div>
-
-                </div>
-                <!--TOTAL CAJA-->
-                <div class="col-md-3">
                     <div class="ibox">
                         <div class="ibox-title">
                             <h5>Total Compra</h5>
@@ -124,6 +147,6 @@ if(!isset($_SESSION["nombre"])){
   </div>
 </body>
 
-<?PHP include("../Section/js.php");?>
+<?PHP include("../Section/jscaja.php");?>
 
 </html>

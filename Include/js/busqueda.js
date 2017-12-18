@@ -1,34 +1,21 @@
 
 
-$(document).ready(function() {
-    $("#resultadoBusqueda").html('<p></p>');
+$(document).ready(function () {
+     $('.chosen-select').chosen({width: "100%"});
+            $(".select2_demo_1").select2();
+            
+
+     $.ajax({
+        type:'POST',
+        url:'../Controlador/cargarlistaprod.php'
+     })
+     .done(function(lista){
+
+        $('#producto').html(lista);
+     })
+     .fail(function(){
+
+        alert("Erro al cargar listas de productos")
+     });
 });
 
-function buscar() {
-
-    var producto = $("#producto").val();
- 
-     if (producto != "") {
-
-        $.post("../Controlador/buscar.php",{valorbusqueda:producto},function(mensaje){
-
-            //$("#resultadoBusqueda").html(mensaje);
-
-            if(mensaje != "" ){
-
-            var types = JSON.parse(mensaje);
-            console.log(types); 
-
-            }else{
-
-                $("#resultadoBusqueda").html('<p>No hay Resultados</p>');
-
-            }
-
-         }); 
-     } else { 
-
-        $("#resultadoBusqueda").html('<p>No hay Resultados</p>');
-
-        };
-};
