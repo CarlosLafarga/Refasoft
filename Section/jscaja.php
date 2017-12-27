@@ -28,6 +28,17 @@
     <script src="../Include/js/plugins/select2/select2.full.min.js"></script>
     <script type="text/javascript">
         
+
+        var contador = 0;
+        var cantidad = 0;
+        var prod = "";
+        var precio = 0;
+        var total= 0;
+        var valores = "";
+        var acumulado  = 0;
+        var preciofinal = 0;
+        
+
             $(document).ready(function () {
                
 
@@ -49,37 +60,102 @@
                 "columns":[
                     {"data":"Num_Producto"},
                     {"data":"codigo"},
-                    {"data":"unidad"},
                     {"data":"Descripcion"},
                     {"data":"PT"},
                     {"data":"PB"},
                     {"data":"Proveedor"},
-                    {"defaultContent": " <button type='button' class='btn-sm btn-primary'>Agregar</button>"}
+                    {"defaultContent": " <button type='button' class='agregar btn-sm btn-primary'>Agregar</button>"}
                     
                 ]
             });
 
 
-            obtener_serie("#productos",table);
+            agregar_venta("#productos",table);
 
         }
 
-        var obtener_serie = function(tbody,table){
-                $(tbody).on("click", "button.editar", function(){
+        var agregar_venta = function(tbody,table){
+                    
+                    $(tbody).on("click", "button.agregar", function(){
+                    
                     var data = table.row($(this).parents("tr")).data();
-                    location.href = "EditAlmacen.php?id="+data.Num_Producto+"";
-                    console.log(data.Num_Producto);
+                    prod = data.Descripcion;
+                    precio = data.PB;
+                    total = data.PB;
+                    contador++;
+
+
+                    //console.log(data);
+                    
+                        var fila = "<tr><td>"+prod+"</td><td><input type='number' value='1' name='cantidad' id='cantidad' class='form-control' onchange='onQtyChange(this);' min='1' ></td><td id='precios'>"+precio+"</td><td class='totals'>"+total+"</td><td><button onclick='deleteRow(this)' type='button' class='btn-sm btn-danger'>Eliminar</button></td></tr>";
+
+                   
+
+                   
+
+
+                    var btn = document.createElement("tr");
+                    btn.innerHTML=fila;
+                    document.getElementById("tablita").appendChild(btn);
+                    document.getElementById("num_prod").innerHTML = contador;
+                    acumulado = document.getElementById("total").value;
+                    preciofinal = Number(total) + Number(acumulado);
+                    
+                    document.getElementById("total").value = preciofinal;
+                    
+
                 });
 
-                  $(tbody).on("click", "button.eliminar", function(){
-                    var data = table.row($(this).parents("tr")).data();
-                     if (confirm('¿Desea eliminar el producto' +' ' + data.Num_Producto + '?')) { 
-                    window.location.href = "../Modelo/funcionborrar.php?id="+data.Num_Producto+"";
-                    console.log(data.Num_Producto);
+                  
+
+
+        }
+
+      
+
+
+        function deleteRow(r) {
+
+                   var i = r.parentNode.parentNode.rowIndex;
+          
+            if (confirm('¿Desea eliminar el producto de la venta    '+i+' ?')) { 
+
+                    var total_ventas = document.getElementById('ventas').rows[i].cells[3];
+                    var total_input = document.getElementById("total").value;
+                    chuy = total_ventas.innerHTML;
+
+                    console.log(chuy  + "   Este es el total de la coulmna total");
+                    console.log(total_input + "   Este es el total que esta en el input");
+
+
+                    var preciofinalrow =  Number(total_input) - Number(chuy);
+                    console.log(preciofinalrow + "    Este es precio final que queremos poner en el input ");
+                    contador = contador -1;
+
+                    document.getElementById("total").value = preciofinalrow;
+                    document.getElementById("num_prod").innerHTML = contador;
+                    document.getElementById("ventas").deleteRow(i);
+                    
+                    
+                    
+
                     }
-                });
+                     
 
-
+           
         }
+
+
+            function onQtyChange(e) {
+
+            var row = e.parentNode.parentNode.rowIndex;
+            var total_ventas = document.getElementById('ventas').rows[row].cells[3];
+            var newQty = Number(e.value);
+            var total = precio * newQty;
+            total_ventas.innerText = total;
+            console.log(total_ventas.innerHTML);
+
+            }
+
 
     </script>

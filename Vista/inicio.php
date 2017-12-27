@@ -22,7 +22,7 @@ if(!isset($_SESSION["nombre"])){
           
           <div class="wrapper wrapper-content">
               <div class="container">
-               churro
+               Pagina principal
              </div>
           </div>
 
