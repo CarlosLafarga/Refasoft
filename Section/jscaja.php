@@ -61,6 +61,7 @@
                     {"data":"Num_Producto"},
                     {"data":"codigo"},
                     {"data":"Descripcion"},
+                    {"data":"cantidad"},
                     {"data":"PT"},
                     {"data":"PB"},
                     {"data":"Proveedor"},
@@ -79,15 +80,27 @@
                     $(tbody).on("click", "button.agregar", function(){
                     
                     var data = table.row($(this).parents("tr")).data();
+                    var tipo_precio = document.getElementById("precio").value;
                     prod = data.Descripcion;
-                    precio = data.PB;
-                    total = data.PB;
+
+                    if(tipo_precio == "precio_publico"){
+
+                        precio = data.PB;
+                        total = data.PB;
+
+                    }else if(tipo_precio == "precio_taller"){
+
+                        precio = data.PT;
+                        total = data.PT;
+                    }
+
+                   
                     contador++;
 
 
                     //console.log(data);
                     
-                        var fila = "<tr><td>"+prod+"</td><td><input type='number' value='1' name='cantidad' id='cantidad' class='form-control' onchange='onQtyChange(this);' min='1' ></td><td id='precios'>"+precio+"</td><td class='totals'>"+total+"</td><td><button onclick='deleteRow(this)' type='button' class='btn-sm btn-danger'>Eliminar</button></td></tr>";
+                        var fila = "<tr><td>"+prod+"</td><td><input type='number' value='1' name='cantidad' id='cantidad' class='form-control' onchange='onQtyChange(this);' min='1' ></td><td id='precios'>"+precio+"</td><td class='subtotal'>"+total+"</td><td><button onclick='deleteRow(this)' type='button' class='btn-sm btn-danger'>Eliminar</button></td></tr>";
 
                    
 
@@ -99,9 +112,9 @@
                     document.getElementById("tablita").appendChild(btn);
                     document.getElementById("num_prod").innerHTML = contador;
                     acumulado = document.getElementById("total").value;
-                    preciofinal = Number(total) + Number(acumulado);
+                    preciofinal = parseFloat(total) + parseFloat(acumulado);
                     
-                    document.getElementById("total").value = preciofinal;
+                    document.getElementById("total").value = preciofinal.toFixed(2);
                     
 
                 });
@@ -128,11 +141,11 @@
                     console.log(total_input + "   Este es el total que esta en el input");
 
 
-                    var preciofinalrow =  Number(total_input) - Number(chuy);
+                    var preciofinalrow =  parseFloat(total_input) - parseFloat(chuy);
                     console.log(preciofinalrow + "    Este es precio final que queremos poner en el input ");
                     contador = contador -1;
 
-                    document.getElementById("total").value = preciofinalrow;
+                    document.getElementById("total").value = preciofinalrow.toFixed(2);
                     document.getElementById("num_prod").innerHTML = contador;
                     document.getElementById("ventas").deleteRow(i);
                     
@@ -150,9 +163,29 @@
 
             var row = e.parentNode.parentNode.rowIndex;
             var total_ventas = document.getElementById('ventas').rows[row].cells[3];
-            var newQty = Number(e.value);
-            var total = precio * newQty;
-            total_ventas.innerText = total;
+            var precio_articulo = document.getElementById('ventas').rows[row].cells[2];
+
+
+
+
+
+            var newQty = parseFloat(e.value);
+            var precio_art = parseFloat(precio_articulo.innerText);
+
+            
+            var total = precio_art * newQty;
+            total_ventas.innerText = total.toFixed(2);
+
+            var data = [];
+            $("td.subtotal").each(function(){
+                 data.push(parseFloat($(this).text()));
+                 });
+            var suma = data.reduce(function(a,b){ return a+b; },0);
+
+
+            document.getElementById("total").value = suma.toFixed(2);
+            console.log(suma);
+            console.log(data);
             console.log(total_ventas.innerHTML);
 
             }

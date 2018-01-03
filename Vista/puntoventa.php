@@ -54,6 +54,7 @@ if(!isset($_SESSION["nombre"])){
                                     <th>#</th>
                                     <th>Codigo</th>
                                     <th>Descripcion</th>
+                                    <th>Cantidad</th>
                                     <th>Precio Taller</th>
                                     <th>Precio Publico</th>
                                     <th>Proveedor</th>
@@ -84,26 +85,37 @@ if(!isset($_SESSION["nombre"])){
                         <div class="ibox-content">
                             <div class="col-md-12">
                             <span><h1>Total</h1></span>
-                            <input type="text" style = "font-size: 30px; align-content: left; background-color: #050404; color:#6AE70F; text-align:right" readonly="" id="total" name="total"  value="0" class="form-control"><br>
+                            <input type="text" style = "font-size: 30px; text-align:right" readonly id="total" name="total" 
+                            value="0" class="form-control"><br>
                             </div>
-                            <div class="col-md-4">
-                            <label>Subtotal</label>
-                            <input type="text" readonly="" id="subtotal" name="subtotal"  value="0"class="form-control"><br>
+
+                            <div class="col-md-6">
+                            <label>Tipo de pago</label>
+                            <select name="pago" id="pago" class="form-control">
+                              <option value="Efectivo">Efectivo</option>
+                              <option value="tarjeta">Pago con Tarjeta</option>
+                            </select>
+                            <br>
                             </div>
-                            <div class="col-md-4">
-                            <label>Descuentos</label>
-                            <input type="text" readonly="" id="descuento" name="descuentos"  value="0"class="form-control"><br>
+
+                            <div class="col-md-6">
+                            <label>Tipo Precio</label>
+                            <select name="precio" id="precio" class="form-control">
+                              <option value="precio_publico">Precio Publico</option>
+                              <option value="precio_taller">Precio Taller</option>
+                            </select>
+                            <br>
                             </div>
-                            <div class="col-md-4">
-                            <label>Impuestos</label>
-                            <input type="text" readonly="" id="impuesto" name="impuestos" value="0" class="form-control"><br>
-                            </div>
+
+                            
+
                             <hr/>
                             <span class="text-muted small">
                                 
                             </span>
 
                             <div class="col-md-12">
+                              
                                 <div class="btn-group">
                                 <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i> Pagar</a>
                                 <a href="#" class="btn btn-white btn-sm"> Cancelar</a>
