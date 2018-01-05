@@ -82,6 +82,7 @@
                     var data = table.row($(this).parents("tr")).data();
                     var tipo_precio = document.getElementById("precio").value;
                     prod = data.Descripcion;
+                    cod = data.codigo;
 
                     if(tipo_precio == "precio_publico"){
 
@@ -100,7 +101,7 @@
 
                     //console.log(data);
                     
-                        var fila = "<tr><td>"+prod+"</td><td><input type='number' value='1' name='cantidad' id='cantidad' class='form-control' onchange='onQtyChange(this);' min='1' ></td><td id='precios'>"+precio+"</td><td class='subtotal'>"+total+"</td><td><button onclick='deleteRow(this)' type='button' class='btn-sm btn-danger'>Eliminar</button></td></tr>";
+                        var fila = "<tr><td id='codigo'>"+cod+"</td><td id='producto'>"+prod+"</td><td><input type='number' value='1' name='cantidad' id='cantidad' class='form-control' onchange='onQtyChange(this);' min='1' ></td><td id='precios'>"+precio+"</td><td id='total' class='subtotal'>"+total+"</td><td><button onclick='deleteRow(this)' type='button' class='btn-sm btn-danger'>Eliminar</button></td></tr>";
 
                    
 
@@ -133,7 +134,7 @@
           
             if (confirm('¿Desea eliminar el producto de la venta    '+i+' ?')) { 
 
-                    var total_ventas = document.getElementById('ventas').rows[i].cells[3];
+                    var total_ventas = document.getElementById('ventas').rows[i].cells[4];
                     var total_input = document.getElementById("total").value;
                     chuy = total_ventas.innerHTML;
 
@@ -162,8 +163,8 @@
             function onQtyChange(e) {
 
             var row = e.parentNode.parentNode.rowIndex;
-            var total_ventas = document.getElementById('ventas').rows[row].cells[3];
-            var precio_articulo = document.getElementById('ventas').rows[row].cells[2];
+            var total_ventas = document.getElementById('ventas').rows[row].cells[4];
+            var precio_articulo = document.getElementById('ventas').rows[row].cells[3];
 
 
 
@@ -179,7 +180,7 @@
             var data = [];
             $("td.subtotal").each(function(){
                  data.push(parseFloat($(this).text()));
-                 });
+             });
             var suma = data.reduce(function(a,b){ return a+b; },0);
 
 
@@ -189,6 +190,48 @@
             console.log(total_ventas.innerHTML);
 
             }
+
+
+        $('#save').click(function(){
+
+              var codigo = [];
+              var producto = [];
+              var cantidad = [];
+              var precios = [];
+              var totals = [];
+
+          $('#codigo').each(function(){
+           codigo.push($(this).text());
+          });
+          $('#producto').each(function(){
+           producto.push($(this).text());
+          });
+          $('#cantidad').each(function(){
+           cantidad.push($(this).text());
+          });
+          $('#precios').each(function(){
+           precios.push($(this).text());
+          });
+          $('#total').each(function(){
+           totals.push($(this).text());
+          });
+          $.ajax({
+                 url:"../Controlador/insertar_Ventas.php",
+                 method:"POST",
+                 data:{codigo:codigo, producto:producto, cantidad:cantidad, precios:precios,totals:totals},
+
+                 success:function(data){
+
+                   alert(data);
+                   console.log(data);
+
+                 }
+
+                 });
+
+         });
+ 
+
 
 
     </script>
