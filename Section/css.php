@@ -43,3 +43,5 @@
 
     <link href="../Include/css/animate.css" rel="stylesheet">
     <link href="../Include/css/style.css" rel="stylesheet"> 
+    <link href="../Include/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <link href="../Include/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">

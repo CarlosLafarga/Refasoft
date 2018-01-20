@@ -24,7 +24,7 @@ if(!isset($_SESSION["nombre"])){
                     <div class="row">
                     <div class="col-md-7">
 
-                      <!--TABLA DONDE APARECEN LOS PRODUCTOS-->
+                      <!--TABLA DONDE APARECEN LOS PRODUCTOS
                       <div class="ibox">
                             <div class="ibox-title">
                                 <span class="pull-right"></span>
@@ -38,7 +38,7 @@ if(!isset($_SESSION["nombre"])){
                                     <th>#</th>
                                     <th>Codigo</th>
                                     <th>Descripcion</th>
-                                    <!--<th>Cantidad</th>-->
+                                    <th>Cantidad</th>
                                     <th>Precio Taller</th>
                                     <th>Precio Publico</th>
                                     <th>Proveedor</th>
@@ -52,48 +52,42 @@ if(!isset($_SESSION["nombre"])){
                             </div>
                             </div>
                       </div>
-                      <!--TABLA DONDE APARECEN LOS PRODUCTOS-->
+                      TABLA DONDE APARECEN LOS PRODUCTOS-->
                       </div>
                 <!--TOTAL CAJA-->
-                <div class="col-md-5">
+                <div class="col-md-12">
                      <!--Inicio panel de total acumulado-->
                     <div class="ibox">
                         <div class="ibox-title">
-                            <h5>Total Compra</h5>
+                            <h5>Datos Factura</h5>
                         </div>
                         <div class="ibox-content">
+                          <form id="formFactura">
                             <div class="col-md-12">
-                            <span><h1>Total</h1></span>
-                            <input type="text" style = "font-size: 30px; text-align:right" readonly id="total" name="total" 
-                            value="0" class="form-control"><br>
+                            <span><h1>No.Factura</h1></span>
+                            <input type="text" style = "font-size: 30px;"  id="Factura" name="Factura" 
+                            value="" class="form-control"><br>
                             </div>
 
-                            <div class="col-md-6">
-                            <label>Tipo de pago</label>
-                            <select name="pago" id="pago" class="form-control" onChange="mostrar(this);">
-                            <option value="efectivo">Efectivo</option>
-                            <option value="tarjeta">Pago con Tarjeta</option>
-                            <option value="credito">Credito</option>
-                            </select>
+                            <div class="col-md-4">
+                            <label>Fecha:</label>
+                            <div class="form-group" id="data_1">
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" name="fecha" id="fecha" class="form-control" >
+                                </div>
+                            </div>
                             <br>
                             </div>
 
-                            <div class="col-md-6">
-                            <label>Tipo Precio</label>
-                            <select name="precio" id="tipo_cliente" class="form-control">
-                            <option value="precio_publico">Precio Publico</option>
-                            <option value="precio_taller">Precio Taller</option>
-                            </select>
+                            <div class="col-md-4">
+                            <label>Total Factura</label>
+                            <input type="number" class="form-control" name="total" id="total">
                             <br>
                             </div>
-                            <div class="col-md-6">
-                            <label>Pago con </label>
-                            <input type="number" name="pago_con" class="form-control" id="pagocon" >
-                            <br>
-                            </div>
-                            <div class="col-md-6" style="display: none;" id="clientediv">
-                            <label>Cliente</label>
-                            <input type="text" name="cliente"  id="cliente"  class="typeahead_2 form-control">
+                            
+                            <div class="col-md-4" >
+                            <label>Proveedor</label>
+                            <input type="text" placeholder="PROVEEDOR"  name="proveedor" id="proveedor" class="typeahead_2 form-control" />
                             <br>
                             </div>
                             <hr/>
@@ -101,17 +95,18 @@ if(!isset($_SESSION["nombre"])){
                             </span>
                             <div class="col-md-12">
                               
-                                <div class="btn-group">
-                                <a href="#" id="save" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i>&nbsp;Pagar</a>
-                                <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-times"></i>&nbsp;Cancelar</a>
-                                <a href="#" class="btn btn-success btn-sm"><i class="fa fa-money"></i>&nbsp;Corte de Caja</a>
-                                </div>
-                            </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                              <div class="btn-group">
+                              <a href="#" id="save" class="btn btn-primary btn-sm"><i class="fa fa-save"></i>&nbsp;Guardar</a>
+                              <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-times"></i>&nbsp;Cancelar</a>
+                              </div>
+
+                            </form>
+                            </div><br><br><br><br><br><br><br><br><br><br><br><br>
                             </div>
                     </div>
                   <!--fin de inputs con precio-->
 
-                  <!--Inicio Tabla productos en venta.-->
+                  <!--Inicio Tabla productos en venta
                    <div class="ibox">
                             <div class="ibox-title">
                                    <span class="pull-right">(<strong id="num_prod" value="0" >0</strong>) Articulos</span>
@@ -137,7 +132,7 @@ if(!isset($_SESSION["nombre"])){
                               </div>
                               </div>
                   </div>
-                  <!--fin de tabla productos en venta-->
+                  fin de tabla productos en venta-->
 
 
                   </div>
@@ -159,6 +154,6 @@ if(!isset($_SESSION["nombre"])){
       </div>
       </body>
 
-      <?PHP include("../Section/js_caja.php");?>
+      <?PHP include("../Section/js_factura.php");?>
 
 </html>

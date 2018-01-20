@@ -30,6 +30,8 @@
                         <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Compras <span class="caret"></span></a>
                           <ul role="menu" class="dropdown-menu">
                             <li><a href="listar_comp.php"><i class="fa fa-file-text"></i>&nbsp;&nbsp;Lista Compras</a></li>
+                            <li><a href="factura_nueva.php"><i class="fa fa-file-text"></i>&nbsp;&nbsp;Factura nueva</a></li>
+                            <li><a href="actualizar_productos.php"><i class="fa fa-file-text"></i>&nbsp;&nbsp;Actualizar Productos</a></li>
                           </ul>
                         </li>
                         <li class="dropdown">
@@ -39,11 +41,13 @@
                             <li><a href="puntoventa.php"><i class="fa fa-calculator"></i>&nbsp;&nbsp;Caja</a></li>
                           </ul>
                         </li>
+                        
 
                 </ul>
                 <ul class="nav navbar-top-links navbar-right">
                     <li>
                        <b> Bienvenido:</b>&nbsp;&nbsp;<?php echo $_SESSION["nombre"];?>
+                       <input type="text" hidden name="name" id="name" value="<?php echo $_SESSION["nombre"];?>">
                     </li>
                     <li>
                         <a href="../Controlador/Salir.php">
