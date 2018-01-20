@@ -24,35 +24,7 @@ if(!isset($_SESSION["nombre"])){
                     <div class="row">
                     <div class="col-md-7">
 
-                      <!--TABLA DONDE APARECEN LOS PRODUCTOS
-                      <div class="ibox">
-                            <div class="ibox-title">
-                                <span class="pull-right"></span>
-                                <h5>Productos</h5>
-                            </div>
-                            <div class="ibox-content">
-                                <div class="table-responsive">
-                                <table  id="productos" class="table table-striped table-bordered table-hover dataTables-example">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Codigo</th>
-                                    <th>Descripcion</th>
-                                    <th>Cantidad</th>
-                                    <th>Precio Taller</th>
-                                    <th>Precio Publico</th>
-                                    <th>Proveedor</th>
-                                    <th>Acciones</th>
-                                </tr>
-                                </thead>
-                                 
-                            </table>
-                            
-
-                            </div>
-                            </div>
-                      </div>
-                      TABLA DONDE APARECEN LOS PRODUCTOS-->
+                      
                       </div>
                 <!--TOTAL CAJA-->
                 <div class="col-md-12">
@@ -104,36 +76,7 @@ if(!isset($_SESSION["nombre"])){
                             </div><br><br><br><br><br><br><br><br><br><br><br><br>
                             </div>
                     </div>
-                  <!--fin de inputs con precio-->
-
-                  <!--Inicio Tabla productos en venta
-                   <div class="ibox">
-                            <div class="ibox-title">
-                                   <span class="pull-right">(<strong id="num_prod" value="0" >0</strong>) Articulos</span>
-                                   <h5>Productos en Venta</h5>
-                            </div>
-                        
-                              <div class="ibox-content">
-                              <div class="table-responsive">
-                              <table id="ventas" class="table table-bordered">
-                              <thead>
-                              <tr>
-                                    <th>Producto</th>
-                                    <th>Cantidad</th>
-                                    <th>Precio</th>
-                                    <th>Total</th>
-                                    <th>Eliminar</th>
-                              </tr>
-                              </thead>
-                              <tbody id="tablita">
-                              </tbody>
-                              </table>
-                            
-                              </div>
-                              </div>
-                  </div>
-                  fin de tabla productos en venta-->
-
+                 
 
                   </div>
 

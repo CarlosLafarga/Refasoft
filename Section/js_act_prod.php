@@ -22,7 +22,7 @@
      <!-- iCheck -->
     <script src="../Include/js/plugins/iCheck/icheck.min.js"></script>
     
-    <script src="../Include/js/busqueda.js"></script>
+
     <script src="../Include/js/plugins/dataTables/datatables.min.js"></script>
     <script src="../Include/js/plugins/chosen/chosen.jquery.js"></script>
     <script src="../Include/js/plugins/select2/select2.full.min.js"></script>
