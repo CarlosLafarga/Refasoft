@@ -66,25 +66,32 @@ if(!isset($_SESSION["nombre"])){
                               <button class="btn-sm btn-primary" name="guardar" id="guardar">Guardar</button>
                               <button class="btn-sm btn-danger" name="guardar" id="guardar">Cancelar</button>
                               <br><br>
+
                                 <div class="table-responsive">
-                                <table  id="actualizar" class="table table-striped table-bordered table-hover dataTables-example">
+                                <table  id="actualizar" class="table table-bordered">
                                 <thead>
                                 <tr>
                                     <th>Codigo</th>
                                     <th>Descripcion</th>
                                     <th>Cantidad</th>
+                                    <th>Precio Proveedor</th>
                                     <th>Precio Taller</th>
                                     <th>Precio Publico</th>
                                     <th>Proveedor</th>
                                     <th>Acciones</th>
                                 </tr>
                                 </thead>
+                                <tbody id="tablita">
+                              </tbody>
                                  
                             </table>
                             
 
                             </div>
+
                           </div>
+
+
                       </div>
                     </div>
 

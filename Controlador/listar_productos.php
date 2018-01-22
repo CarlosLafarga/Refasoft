@@ -2,7 +2,7 @@
 include("../conect/conexion.php");
 $cn = Conectarse();
 
-$select = "SELECT * FROM productos2 WHERE cantidad != 0 ORDER BY Num_Producto DESC ";
+$select = "SELECT * FROM productos2 ORDER BY Num_Producto DESC ";
 $result = mysql_query($select,$cn);
 
 
