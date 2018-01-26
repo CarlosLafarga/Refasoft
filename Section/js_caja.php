@@ -156,28 +156,7 @@
 
                    var i = r.parentNode.parentNode.rowIndex;
           
-            /*if (confirm('¿Desea eliminar el producto de la venta    '+i+' ?')) { 
-
-                    var total_ventas = document.getElementById('ventas').rows[i].cells[3];
-                    var total_input = document.getElementById("total").value;
-                    chuy = total_ventas.innerHTML;
-
-                    //console.log(chuy  + "   Este es el total de la coulmna total");
-                    //console.log(total_input + "   Este es el total que esta en el input");
-
-
-                    var preciofinalrow =  parseFloat(total_input) - parseFloat(chuy);
-                   // console.log(preciofinalrow + "    Este es precio final que queremos poner en el input ");
-                    contador = contador -1;
-
-                    document.getElementById("total").value = preciofinalrow.toFixed(2);
-                    document.getElementById("num_prod").innerHTML = contador;
-                    document.getElementById("ventas").deleteRow(i);
-                    
-                    
-                    
-
-                    }*/
+         
 
                     swal({
                          title: "Estas Seguro?",
@@ -282,6 +261,9 @@
           $('.subtotal').each(function(){
            totals.push($(this).text());
           });
+
+          if(pago_con !='' || tipo_pago != 'credito' ){
+
           $.ajax({
                  url:"../Controlador/insertar_Ventas.php",
                  method:"POST",
@@ -398,6 +380,25 @@
                  }
 
                  });
+
+           }else{
+
+
+                         swal({
+                         title:"Cuidado!",
+                         text: "Ingrese el monto en el campo pago con.",
+                         type: "warning",
+                         showCancelButton: false,
+                         confirmButtonText: "Aceptar",
+                         closeOnConfirm: true
+                         },
+                         function(){
+                              
+                          
+                         });
+
+           }
+
 
          });
  
