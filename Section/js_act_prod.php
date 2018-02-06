@@ -21,7 +21,7 @@
     <script src="../Include/js/demo/peity-demo.js"></script>
      <!-- iCheck -->
     <script src="../Include/js/plugins/iCheck/icheck.min.js"></script>
-    
+
 
     <script src="../Include/js/plugins/dataTables/datatables.min.js"></script>
     <script src="../Include/js/plugins/chosen/chosen.jquery.js"></script>
@@ -31,20 +31,20 @@
     <script src="../Include/js/plugins/sweetalert/sweetalert.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
 
-    
+
     <script>
 
        $(document).ready(function () {
-               
+
 
                listar();
-               
+
             });
 
 
 
             var listar = function(){
-            
+
 
             var table = $("#productos").DataTable({
                 "destroy":true,
@@ -59,7 +59,7 @@
                     {"data":"ppv"},
                     {"data":"Proveedor"},
                     {"defaultContent": " <button type='button' class='agregar btn-sm btn-primary'>Agregar</button>"}
-                    
+
                 ]
             });
 
@@ -72,12 +72,12 @@
 
 
          var agregar_venta = function(tbody,table){
-                    
+
                     $(tbody).on("click", "button.agregar", function(){
-                    
+
                     var data = table.row($(this).parents("tr")).data();
-                    
-                    
+
+
                      var id = data.Num_Producto;
                      var prod = data.Descripcion;
                      var cod = data.codigo;
@@ -86,29 +86,29 @@
                      var ppb = data.PB;
                      var cantidad = data.cantidad;
                      var prov = data.Proveedor;
-                     
+
 
 
 
                     //console.log(data);
-                    
+
                     var fila = "<tr><input name='id' hidden id='id' class='id' value="+id+"><td class='codigo'>"+cod+"</td><td id='producto' class='producto'>"+prod+"</td><td><input type='number' value='1' name='cantidad' id='cantidad' class='cantidad form-control' value="+cantidad+" min='1'></td><td><input type='number' class='ppv form-control' onchange='onQtyChange(this);' id='ppv' value='"+ppv+"'></td><td id='pt' class='pt'>"+pt+"</td><td id='ppb' class='ppb'>"+ppb+"</td><td id='prov' class='prov'>"+prov+"</td><td><button onclick='deleteRow(this)' type='button' class='btn-sm btn-danger'>Eliminar</button></td></tr>";
 
-                   
 
-                   
+
+
 
 
                     var btn = document.createElement("tr");
                     btn.innerHTML=fila;
                     document.getElementById("tablita").appendChild(btn);
-                   
-                    
-                    
+
+
+
 
                 });
 
-                  
+
 
 
         }
@@ -117,7 +117,7 @@
         function deleteRow(r) {
 
                    var i = r.parentNode.parentNode.rowIndex;
-          
+
 
                     swal({
                          title: "Estas Seguro?",
@@ -127,12 +127,12 @@
                          confirmButtonColor: '#ed5565',
                          confirmButtonText: 'Si, Estoy seguro!',
                          cancelButtonText: "No, Cancelar!"
-                         
+
                          },
                          function (isConfirm) { /*Your Code Here*/
 
                           if (isConfirm){
-                         
+
                           document.getElementById("actualizar").deleteRow(i);
 
                         }else{
@@ -142,10 +142,10 @@
                         }
                         });
 
-                        
-                     
 
-           
+
+
+
         }
 
 
@@ -161,7 +161,7 @@
             var prove = proveedor.innerText;
 
             var newQty = parseFloat(e.value);
-          
+
             if(prove == 'permor'){
 
                 var ptt = parseFloat((newQty * 1.024)/1.25);
@@ -195,8 +195,8 @@
                 precio_publico.innerText = pb.toFixed(2);
 
             }
-            
-         
+
+
             }
 
 
@@ -215,7 +215,7 @@
                 var precio_publico = [];
                 var proveedor = [];
 
-                
+
 
 
                 $('.id').each(function(){
@@ -257,7 +257,7 @@
 
                  success:function(data){
 
-                 
+
                     var recibi = Number(data);
                    if(recibi == 1){
 
@@ -270,10 +270,10 @@
                          closeOnConfirm: true
                          },
                          function(){
-                              
+
                           location.reload();
                          });
-                         
+
 
                    }else if(recibi == 5 ){
 
@@ -286,7 +286,7 @@
                          closeOnConfirm: true
                          },
                          function(){
-                              
+
                           location.reload();
                          });
 
@@ -301,10 +301,10 @@
                          closeOnConfirm: true
                          },
                          function(){
-                              
+
                           location.reload();
                          });
-                         
+
 
                    }else if(recibi == 7){
 
@@ -317,10 +317,10 @@
                          closeOnConfirm: true
                          },
                          function(){
-                              
+
                           location.reload();
                          });
-                         
+
 
                    }else if(recibi == 8){
 
@@ -333,15 +333,15 @@
                          closeOnConfirm: true
                          },
                          function(){
-                              
-                          
+
+
                          });
-                         
+
                    }
 
 
                    //location.reload();
-                   
+
 
                  }
 
@@ -350,7 +350,7 @@
 
 
                   }else{
- 
+
 
                       swal({
                          title:"Cuidado!",
@@ -361,8 +361,8 @@
                          closeOnConfirm: true
                          },
                          function(){
-                              
-                          
+
+
                          });
                  }
 

@@ -1,8 +1,9 @@
-<?PHP
+<?php
+
 include "../conect/conexion.php";
 $cn = Conectarse();
 
-$select = "SELECT * FROM compras ORDER BY id_compra DESC ";
+$select = "SELECT * FROM deudas;";
 $result = mysql_query($select, $cn);
 
 if (!$result) {

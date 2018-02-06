@@ -1,25 +1,25 @@
-<?php 
+<?php
 session_start();
 
-if(!isset($_SESSION["nombre"])){ 
-   header("location:../Vista/login.php"); 
-   exit();
-   
+if (!isset($_SESSION["nombre"])) {
+    header("location:../Vista/login.php");
+    exit();
+
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	 <title>. : RefaSoft : .</title>
-	 <?PHP include("../Section/css.php");?>
+   <title>. : RefaSoft : .</title>
+   <?PHP include "../Section/css.php";?>
 
 </head>
 <body class="top-navigation">
   <div id="wrapper">
      <div id="page-wrapper" class="gray-bg">
-          <?PHP include("../Section/menu.php");?>
+          <?PHP include "../Section/menu.php";?>
 
-          
+
             <div class="wrapper wrapper-content">
                <div class="container">
                    Aqui es donde va el contenido de la pagina
@@ -28,16 +28,16 @@ if(!isset($_SESSION["nombre"])){
 
 
 
-     
-   
 
 
 
-          <?PHP include("../Section/footer.php"); ?>
+
+
+          <?PHP include "../Section/footer.php";?>
       </div>
   </div>
 </body>
 
-<?PHP include("../Section/js.php");?>
+<?PHP include "../Section/js.php";?>
 
 </html>

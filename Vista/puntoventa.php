@@ -1,24 +1,24 @@
-<?php 
+<?php
 session_start();
 
-if(!isset($_SESSION["nombre"])){ 
-   header("location:../Vista/login.php"); 
-   exit();
+if (!isset($_SESSION["nombre"])) {
+    header("location:../Vista/login.php");
+    exit();
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	 <title>. : RefaSoft : .</title>
-	 <?PHP include("../Section/css.php");?>
+   <title>. : RefaSoft : .</title>
+   <?PHP include "../Section/css.php";?>
 
 </head>
 <body class="top-navigation">
   <div id="wrapper">
      <div id="page-wrapper" class="gray-bg">
-          <?PHP include("../Section/menu.php");?>
+          <?PHP include "../Section/menu.php";?>
 
-          
+
             <div class="wrapper wrapper-content">
                <div class="container">
                     <div class="row">
@@ -45,9 +45,9 @@ if(!isset($_SESSION["nombre"])){
                                     <th>Acciones</th>
                                 </tr>
                                 </thead>
-                                 
+
                             </table>
-                            
+
 
                             </div>
                             </div>
@@ -64,7 +64,7 @@ if(!isset($_SESSION["nombre"])){
                         <div class="ibox-content">
                             <div class="col-md-12">
                             <span><h1>Total</h1></span>
-                            <input type="text" style = "font-size: 30px; text-align:right" readonly id="total" name="total" 
+                            <input type="text" style = "font-size: 30px; text-align:right" readonly id="total" name="total"
                             value="0" class="form-control"><br>
                             </div>
 
@@ -100,10 +100,10 @@ if(!isset($_SESSION["nombre"])){
                             <span class="text-muted small">
                             </span>
                             <div class="col-md-12">
-                              
+
                                 <div class="btn-group">
                                 <a href="#" id="save" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i>&nbsp;Pagar</a>
-                                <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-times"></i>&nbsp;Cancelar</a>
+                                <a href="#" id="cancelar" class="btn btn-danger btn-sm"><i class="fa fa-times"></i>&nbsp;Cancelar</a>
                                 <a href="#" class="btn btn-success btn-sm"><i class="fa fa-money"></i>&nbsp;Corte de Caja</a>
                                 </div>
                             </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -117,7 +117,7 @@ if(!isset($_SESSION["nombre"])){
                                    <span class="pull-right">(<strong id="num_prod" value="0" >0</strong>) Articulos</span>
                                    <h5>Productos en Venta</h5>
                             </div>
-                        
+
                               <div class="ibox-content">
                               <div class="table-responsive">
                               <table id="ventas" class="table table-bordered">
@@ -133,7 +133,7 @@ if(!isset($_SESSION["nombre"])){
                               <tbody id="tablita">
                               </tbody>
                               </table>
-                            
+
                               </div>
                               </div>
                   </div>
@@ -149,16 +149,16 @@ if(!isset($_SESSION["nombre"])){
 
 
 
-     
-   
 
 
 
-          <?PHP include("../Section/footer.php"); ?>
+
+
+          <?PHP include "../Section/footer.php";?>
       </div>
       </div>
       </body>
 
-      <?PHP include("../Section/js_caja.php");?>
+      <?PHP include "../Section/js_caja.php";?>
 
 </html>

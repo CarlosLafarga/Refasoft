@@ -1,5 +1,5 @@
 <div class="container #eeeeee grey lighten-3 z-depth-5" style="border-radius: 9px;">
-           
+
         <!--  </div>
         <h6><p style="margin-left: 15px;">UBICACION</p></h6>
         <div class="input-field col s2">
@@ -19,7 +19,7 @@
                 <label for="estante">Estante</label>
                 <input type="number" id="estante" name="estante" min="1" max="10" onkeypress="return validaEstantePeldaño(event)">
               <div class="errorTxt4"></div>
-          </div> 
+          </div>
           <div class="input-field col s2">
               <i class="material-icons prefix">find_in_page</i>
                 <label for="peldaño">Peldaño</label>

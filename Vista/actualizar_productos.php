@@ -1,24 +1,24 @@
-<?php 
+<?php
 session_start();
 
-if(!isset($_SESSION["nombre"])){ 
-   header("location:../Vista/login.php"); 
-   exit();
+if (!isset($_SESSION["nombre"])) {
+    header("location:../Vista/login.php");
+    exit();
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	 <title>. : RefaSoft : .</title>
-	 <?PHP include("../Section/css.php");?>
+   <title>. : RefaSoft : .</title>
+   <?PHP include "../Section/css.php";?>
 
 </head>
 <body class="top-navigation">
   <div id="wrapper">
      <div id="page-wrapper" class="gray-bg">
-          <?PHP include("../Section/menu.php");?>
+          <?PHP include "../Section/menu.php";?>
 
-          
+
             <div class="wrapper wrapper-content">
                <div class="container">
 
@@ -43,9 +43,9 @@ if(!isset($_SESSION["nombre"])){
                                     <th>Acciones</th>
                                 </tr>
                                 </thead>
-                                 
+
                             </table>
-                            
+
 
                             </div>
                           </div>
@@ -83,9 +83,9 @@ if(!isset($_SESSION["nombre"])){
                                 </thead>
                                 <tbody id="tablita">
                               </tbody>
-                                 
+
                             </table>
-                            
+
 
                             </div>
 
@@ -96,25 +96,25 @@ if(!isset($_SESSION["nombre"])){
                     </div>
 
 
-                    
+
                   </div>
 
                 </div>
             </div>
-        
 
 
 
-     
-   
 
 
 
-          <?PHP include("../Section/footer.php"); ?>
+
+
+
+          <?PHP include "../Section/footer.php";?>
       </div>
       </div>
       </body>
 
-      <?PHP include("../Section/js_act_prod.php");?>
+      <?PHP include "../Section/js_act_prod.php";?>
 
 </html>

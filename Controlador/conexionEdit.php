@@ -1,16 +1,14 @@
-<?php 
- 
-$servidor="localhost";
-$basededatos="refaccionaria";
-$usuario="root";
-$clave="";
+<?php
 
-$cn=mysql_connect($servidor,$usuario,$clave) or die ("Error conectando a la base de datos");
+$servidor    = "localhost";
+$basededatos = "refaccionaria";
+$usuario     = "root";
+$clave       = "";
 
-mysql_select_db($basededatos ,$cn) or die("Error seleccionando la Base de datos");
+$cn = mysql_connect($servidor, $usuario, $clave) or die("Error conectando a la base de datos");
 
-mysql_query ("SET NAMES 'utf8'");
+mysql_select_db($basededatos, $cn) or die("Error seleccionando la Base de datos");
+
+mysql_query("SET NAMES 'utf8'");
 
 return $cn;
-
-?>

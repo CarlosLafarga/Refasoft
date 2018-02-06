@@ -1,19 +1,19 @@
 <?php
-require('../conect/conexion.php');
-	
-	function getListaProd(){
+require '../conect/conexion.php';
 
-		$cn = Conectarse();
-		$sql = "SELECT Descripcion FROM productos2";
-		$result = mysql_query($sql,$cn) or die(mysql_error());
-		$option = '<option value="0">Buscar Producto</option>';
-		while($row = mysql_fetch_array($result)){
+function getListaProd()
+{
 
-			$option .="<option value='$row[Descripcion]'> $row[Descripcion] </option>";
-		}
+    $cn     = Conectarse();
+    $sql    = "SELECT Descripcion FROM productos2";
+    $result = mysql_query($sql, $cn) or die(mysql_error());
+    $option = '<option value="0">Buscar Producto</option>';
+    while ($row = mysql_fetch_array($result)) {
 
-		return $option;
-	}
+        $option .= "<option value='$row[Descripcion]'> $row[Descripcion] </option>";
+    }
 
-	echo getListaProd();
-?>
+    return $option;
+}
+
+echo getListaProd();

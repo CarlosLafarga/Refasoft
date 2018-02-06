@@ -1,30 +1,30 @@
-<?php 
+<?php
 session_start();
 
-if(!isset($_SESSION["nombre"])){ 
-   header("location:../Vista/login.php"); 
-   exit();
+if (!isset($_SESSION["nombre"])) {
+    header("location:../Vista/login.php");
+    exit();
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	 <title>. : RefaSoft : .</title>
-	 <?PHP include("../Section/css.php");?>
+   <title>. : RefaSoft : .</title>
+   <?PHP include "../Section/css.php";?>
 
 </head>
 <body class="top-navigation">
   <div id="wrapper">
      <div id="page-wrapper" class="gray-bg">
-          <?PHP include("../Section/menu.php");?>
+          <?PHP include "../Section/menu.php";?>
 
-          
+
             <div class="wrapper wrapper-content">
                <div class="container">
                     <div class="row">
                     <div class="col-md-7">
 
-                      
+
                       </div>
                 <!--TOTAL CAJA-->
                 <div class="col-md-12">
@@ -37,7 +37,7 @@ if(!isset($_SESSION["nombre"])){
                           <form id="formFactura">
                             <div class="col-md-12">
                             <span><h1>No.Factura</h1></span>
-                            <input type="text" style = "font-size: 30px;"  id="Factura" name="Factura" 
+                            <input type="text" style = "font-size: 30px;"  id="Factura" name="Factura"
                             value="" class="form-control"><br>
                             </div>
 
@@ -56,7 +56,7 @@ if(!isset($_SESSION["nombre"])){
                             <input type="number" class="form-control" name="total" id="total">
                             <br>
                             </div>
-                            
+
                             <div class="col-md-4" >
                             <label>Proveedor</label>
                             <input type="text" placeholder="PROVEEDOR"  name="proveedor" id="proveedor" class="typeahead_2 form-control" />
@@ -66,7 +66,7 @@ if(!isset($_SESSION["nombre"])){
                             <span class="text-muted small">
                             </span>
                             <div class="col-md-12">
-                              
+
                               <div class="btn-group">
                               <a href="#" id="save" class="btn btn-primary btn-sm"><i class="fa fa-save"></i>&nbsp;Guardar</a>
                               <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-times"></i>&nbsp;Cancelar</a>
@@ -76,7 +76,7 @@ if(!isset($_SESSION["nombre"])){
                             </div><br><br><br><br><br><br><br><br><br><br><br><br>
                             </div>
                     </div>
-                 
+
 
                   </div>
 
@@ -87,16 +87,16 @@ if(!isset($_SESSION["nombre"])){
 
 
 
-     
-   
 
 
 
-          <?PHP include("../Section/footer.php"); ?>
+
+
+          <?PHP include "../Section/footer.php";?>
       </div>
       </div>
       </body>
 
-      <?PHP include("../Section/js_factura.php");?>
+      <?PHP include "../Section/js_factura.php";?>
 
 </html>

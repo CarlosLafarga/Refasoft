@@ -29,7 +29,7 @@
                             <input type="text" id="proveedor" readonly="ver" value="<?php echo $proveedor; ?>" name="proveedor" required="llenar campo" class="form-control">
                             </div>
                         </div>
-                 
+
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label>&nbsp;Precio Proveedor</label>
@@ -50,7 +50,7 @@
                             <input type="text" id="CN" value="<?php echo $CN; ?>" readonly="ver" name="CN" required="llenar campo" class="form-control">
                             </div>
                         </div>
-                 
+
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label>&nbsp;Precio Publico</label>

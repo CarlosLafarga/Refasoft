@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
-  
-  <?php include("../Section/css.php");?>
-      
+    <title>Login</title>
+
+  <?php include "../Section/css.php";?>
+
 </head>
 <body class="gray-bg" >
- 
+
    <div class="loginColumns animated fadeInDown">
         <div class="row">
 
@@ -43,15 +43,15 @@
     <label for="pass" >Contraseña</label>
     <input class="form-control" type="password" name="pass" required onkeypress="return checkPassword(event)" placeholder="Contraseña">
     </div>
-    
+
     <button class="btn btn-primary"  type="submit" name="action">Entrar</button>
-  
-  <?php 
-    if (isset($_GET['error'])==true) {
-       echo "<font style='color: red; font-weight: bold;'><p><center>Usuario o contraseña incorrecto</center></p></font>";
-    }
-  ?>
-  
+
+  <?php
+if (isset($_GET['error']) == true) {
+    echo "<font style='color: red; font-weight: bold;'><p><center>Usuario o contraseña incorrecto</center></p></font>";
+}
+?>
+
   </form>
  <p class="m-t">
                         <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small>
@@ -74,7 +74,7 @@
     var re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     return re.test(str);
   }
-  
+
 </script>
 
 

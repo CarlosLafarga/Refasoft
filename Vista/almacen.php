@@ -1,32 +1,32 @@
-<?php 
+<?php
 session_start();
 
-if(!isset($_SESSION["nombre"])){ 
-   header("location:../Vista/Login.php"); 
-   exit();
-   
-} 
+if (!isset($_SESSION["nombre"])) {
+    header("location:../Vista/Login.php");
+    exit();
 
-?> 
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ALMACEN</title>
-      <?PHP include("../Section/css.php");?>
-          <?PHP include("../Section/js.php");?>
+  <title>ALMACEN</title>
+      <?PHP include "../Section/css.php";?>
+          <?PHP include "../Section/js.php";?>
 </head>
 <body class="top-navigation">
   <div id="wrapper">
      <div id="page-wrapper" class="gray-bg">
-                <?PHP include("../Section/menu.php");?>
+                <?PHP include "../Section/menu.php";?>
 
                  <div class="wrapper wrapper-content">
                    <div class="container">
-                     <?PHP include("../Section/formAlmacen.php");?>
+                     <?PHP include "../Section/formAlmacen.php";?>
                     </div>
                  </div>
 
-                <?PHP include("../Section/footer.php"); ?>
+                <?PHP include "../Section/footer.php";?>
       </div>
    </div>
 
@@ -64,8 +64,8 @@ if(!isset($_SESSION["nombre"])){
                     required: true,
                     notEqualTo: " "
                 },
-                
-                
+
+
           SelectName: { valueNotEquals: "seleccione una opcion! " }
 
             },
@@ -99,9 +99,9 @@ if(!isset($_SESSION["nombre"])){
                     required: "Ingrese la respuesta",
                     notEqualTo : "Seleccione una opcion"
                 },
-                
-               
-               
+
+
+
 
           SelectName: { valueNotEquals: "seleccione una opcion!" }
 
@@ -147,8 +147,8 @@ if(!isset($_SESSION["nombre"])){
 
 
 <?php
-    if(isset($_POST['submit'])){
-      require('calcular.php');
-    }
-    
+if (isset($_POST['submit'])) {
+    require 'calcular.php';
+}
+
 ?>

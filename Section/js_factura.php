@@ -21,7 +21,7 @@
     <script src="../Include/js/demo/peity-demo.js"></script>
      <!-- iCheck -->
     <script src="../Include/js/plugins/iCheck/icheck.min.js"></script>
-    
+
     <script src="../Include/js/busqueda.js"></script>
     <script src="../Include/js/plugins/dataTables/datatables.min.js"></script>
     <script src="../Include/js/plugins/chosen/chosen.jquery.js"></script>
@@ -32,36 +32,36 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
 
     <?PHP
-   include("../conect/conexion.php");
-   $cn = Conectarse();
-   $sql = "SELECT * FROM proveedores";
-   $resultado = mysql_query($sql,$cn) or die(mysql_error());
-   $array = array();
-    if ($resultado) {
-        
-        while ($row = mysql_fetch_array($resultado)) {
-          
-          $cliente = utf8_decode($row['PROVEEDOR']);
-          array_push($array, $cliente);
-        }
+include "../conect/conexion.php";
+$cn        = Conectarse();
+$sql       = "SELECT * FROM proveedores";
+$resultado = mysql_query($sql, $cn) or die(mysql_error());
+$array     = array();
+if ($resultado) {
+
+    while ($row = mysql_fetch_array($resultado)) {
+
+        $cliente = utf8_decode($row['PROVEEDOR']);
+        array_push($array, $cliente);
     }
-    ?>
+}
+?>
 
     <script type="text/javascript">
-        
 
-        
+
+
 
             $(document).ready(function () {
-               
 
-               
-               var items = <?= json_encode($array) ?>
-               
+
+
+               var items = <?=json_encode($array)?>
+
                /*Script Para el campo de proveedor autocompletar*/
                $('.typeahead_2').typeahead({
                      source: items
-               }); 
+               });
 
                /*Script Para el Campo de Fecha*/
               $('#data_1 .input-group.date').datepicker({
@@ -77,7 +77,7 @@
 
             $('#save').click(function(){
 
-           
+
 
               var factura = $("#Factura").val();
               var fecha = $("#fecha").val();
@@ -85,7 +85,7 @@
               var proveedor = $("#proveedor").val();
 
               var datestring = moment(fecha).format('YYYY/MM/DD HH:MM:SS');
-            
+
             if(factura !='' && fecha != '' && total != '' && proveedor != ''){
 
             $.ajax({
@@ -111,8 +111,8 @@
                       alert("Error al insertar la deuda.");
 
                     }
-                    
-                  
+
+
 
                  }
 
@@ -128,12 +128,12 @@
           }
 
          });
- 
 
-        
-       
-        
 
-        
+
+
+
+
+
 
     </script>

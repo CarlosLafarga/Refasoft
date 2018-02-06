@@ -8,9 +8,9 @@
                 <a href="../Vista/inicio.php" class="navbar-brand">REFASOFT 1.0</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar">
-                <ul class="nav navbar-nav">    
+                <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <!--menu de almacen--> 
+                        <!--menu de almacen-->
                         <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Almacen <span class="caret"></span></a>
                           <ul role="menu" class="dropdown-menu">
                             <li><a href="almacen.php"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Agregar</a></li>
@@ -18,7 +18,7 @@
                           </ul>
                         </li>
                         <li class="dropdown">
-                        <!--menu de usuarios-->    
+                        <!--menu de usuarios-->
                         <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Usuarios <span class="caret"></span></a>
                           <ul role="menu" class="dropdown-menu">
                             <li><a href="usuarios.php"><i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;Agregar</a></li>
@@ -26,28 +26,29 @@
                           </ul>
                         </li>
                         <li class="dropdown">
-                        <!--menu de facturas--> 
+                        <!--menu de facturas-->
                         <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Compras <span class="caret"></span></a>
                           <ul role="menu" class="dropdown-menu">
                             <li><a href="listar_comp.php"><i class="fa fa-file-text"></i>&nbsp;&nbsp;Lista Compras</a></li>
                             <li><a href="factura_nueva.php"><i class="fa fa-file-text"></i>&nbsp;&nbsp;Factura nueva</a></li>
+                            <li><a href="listar_factura.php"><i class="fa fa-file-text"></i>&nbsp;&nbsp;Listado de Facturas</a></li>
                             <li><a href="actualizar_productos.php"><i class="fa fa-file-text"></i>&nbsp;&nbsp;Actualizar Productos</a></li>
                           </ul>
                         </li>
                         <li class="dropdown">
-                        <!--menu de punto de venta--> 
+                        <!--menu de punto de venta-->
                         <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Punto Venta <span class="caret"></span></a>
                           <ul role="menu" class="dropdown-menu">
                             <li><a href="puntoventa.php"><i class="fa fa-calculator"></i>&nbsp;&nbsp;Caja</a></li>
                           </ul>
                         </li>
-                        
+
 
                 </ul>
                 <ul class="nav navbar-top-links navbar-right">
                     <li>
-                       <b> Bienvenido:</b>&nbsp;&nbsp;<?php echo $_SESSION["nombre"];?>
-                       <input type="text" hidden name="name" id="name" value="<?php echo $_SESSION["nombre"];?>">
+                       <b> Bienvenido:</b>&nbsp;&nbsp;<?php echo $_SESSION["nombre"]; ?>
+                       <input type="text" hidden name="name" id="name" value="<?php echo $_SESSION["nombre"]; ?>">
                     </li>
                     <li>
                         <a href="../Controlador/Salir.php">
@@ -57,6 +58,5 @@
                 </ul>
             </div>
         </nav>
-        
+
         </div>
-        
