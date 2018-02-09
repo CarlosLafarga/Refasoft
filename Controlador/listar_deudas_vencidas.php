@@ -3,7 +3,7 @@
 include "../conect/conexion.php";
 $cn = Conectarse();
 
-$select = "SELECT *  FROM deudas WHERE DATEDIFF(NOW(),fecha_alta)  <= 23 ;";
+$select = "SELECT *  FROM deudas WHERE DATEDIFF(NOW(),fecha_alta) > 30 ;";
 $result = mysql_query($select, $cn);
 
 if (!$result) {

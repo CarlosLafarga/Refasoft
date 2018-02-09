@@ -29,10 +29,10 @@
                         <!--menu de facturas-->
                         <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Compras <span class="caret"></span></a>
                           <ul role="menu" class="dropdown-menu">
-                            <li><a href="listar_comp.php"><i class="fa fa-file-text"></i>&nbsp;&nbsp;Lista Compras</a></li>
-                            <li><a href="factura_nueva.php"><i class="fa fa-file-text"></i>&nbsp;&nbsp;Factura nueva</a></li>
-                            <li><a href="listar_factura.php"><i class="fa fa-file-text"></i>&nbsp;&nbsp;Listado de Facturas</a></li>
-                            <li><a href="actualizar_productos.php"><i class="fa fa-file-text"></i>&nbsp;&nbsp;Actualizar Productos</a></li>
+                            <li><a href="listar_comp.php"><i class="fa fa-list-ul"></i>&nbsp;&nbsp;Lista Compras</a></li>
+                            <li><a href="factura_nueva.php"><i class="fa fa-pencil-square-o"></i>&nbsp;&nbsp;Factura nueva</a></li>
+                            <li><a href="listar_factura.php"><i class="fa fa-list-ul"></i>&nbsp;&nbsp;Listado de Facturas</a></li>
+                            <li><a href="actualizar_productos.php"><i class="fa fa-spinner"></i>&nbsp;&nbsp;Actualizar Productos</a></li>
                           </ul>
                         </li>
                         <li class="dropdown">
@@ -40,6 +40,7 @@
                         <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Punto Venta <span class="caret"></span></a>
                           <ul role="menu" class="dropdown-menu">
                             <li><a href="puntoventa.php"><i class="fa fa-calculator"></i>&nbsp;&nbsp;Caja</a></li>
+                            <li><a href="corte_caja.php"><i class="fa fa-money"></i>&nbsp;&nbsp;Ventas</a></li>
                           </ul>
                         </li>
 

@@ -38,7 +38,7 @@ if (!isset($_SESSION["nombre"])) {
                                     <th>#</th>
                                     <th>Codigo</th>
                                     <th>Descripcion</th>
-                                    <!--<th>Cantidad</th>-->
+                                    <th>Cantidad</th>
                                     <th>Precio Taller</th>
                                     <th>Precio Publico</th>
                                     <th>Proveedor</th>
@@ -104,7 +104,7 @@ if (!isset($_SESSION["nombre"])) {
                                 <div class="btn-group">
                                 <a href="#" id="save" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i>&nbsp;Pagar</a>
                                 <a href="#" id="cancelar" class="btn btn-danger btn-sm"><i class="fa fa-times"></i>&nbsp;Cancelar</a>
-                                <a href="#" class="btn btn-success btn-sm"><i class="fa fa-money"></i>&nbsp;Corte de Caja</a>
+
                                 </div>
                             </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                             </div>

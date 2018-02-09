@@ -1,9 +1,9 @@
-<?php
-
+<?PHP
 include "../conect/conexion.php";
-$cn = Conectarse();
+$cn    = Conectarse();
+$fecha = $_GET['fecha'];
 
-$select = "SELECT *  FROM deudas WHERE DATEDIFF(NOW(),fecha_alta)  <= 23 ;";
+$select = "SELECT * FROM ventas WHERE DATE(fecha_venta) =  '" . DATE($fecha) . "'; ";
 $result = mysql_query($select, $cn);
 
 if (!$result) {
@@ -18,6 +18,8 @@ if (!$result) {
 
     }
     echo json_encode($arreglo);
+
 }
+
 mysql_free_result($result);
 mysql_close($cn);

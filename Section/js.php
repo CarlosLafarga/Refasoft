@@ -115,6 +115,13 @@
                     {"data":"Grupo"},
                     {"defaultContent": " <button type='button' class='editar btn-sm btn-primary'><i class='fa fa-edit'></i></button><span>|</span><button type='button' class='eliminar btn-sm btn-danger'><i class='fa fa-trash'></i></button>"}
 
+                ],
+                    dom: '<"html5buttons"B>lTfgitp',
+                         //'Bfrtip',
+
+                 "buttons":[
+
+                    {extend: 'excel', title: 'Productos Almacen'}
                 ]
             });
 

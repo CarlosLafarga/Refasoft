@@ -84,7 +84,7 @@ if ($resultado) {
                     {"data":"Num_Producto"},
                     {"data":"codigo"},
                     {"data":"Descripcion"},
-                    //{"data":"cantidad"},
+                    {"data":"cantidad"},
                     {"data":"PT"},
                     {"data":"PB"},
                     {"data":"Proveedor"},

@@ -71,7 +71,7 @@
                 "destroy":true,
                 "ajax":{
                     "method" : "POST",
-                    "url": "../Controlador/listar_deudas.php"
+                    "url": "../Controlador/listar_deudas_vencer.php"
                 },
                 "columns":[
                     {"data":"no_factura"},
@@ -96,7 +96,7 @@
                 "destroy":true,
                 "ajax":{
                     "method" : "POST",
-                    "url": "../Controlador/listar_deudas.php"
+                    "url": "../Controlador/listar_deudas_vencidas.php"
                 },
                 "columns":[
                     {"data":"no_factura"},
