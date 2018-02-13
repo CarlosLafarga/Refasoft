@@ -2,6 +2,31 @@
 
 //include("../conect/conexion.php");
 //$cn = Conectarse();
+function crearfolio()
+{
+    require_once '../conect/conexion.php';
+    $cn           = Conectarse();
+    $consulta_rpt = mysql_query("select * from ventas order by id desc", $cn);
+    $row_rpt      = mysql_fetch_array($consulta_rpt);
+    $anioact      = date('y');
+    $ultfolio     = $row_rpt['no_tiket'];
+
+    @list($prefijo, $consecutivo) = explode('-', $ultfolio);
+    if ($anioact == $prefijo) {
+        $num      = $consecutivo + 1;
+        $longitud = strlen($num);
+        $faltan   = 5 - $longitud;
+        if ($faltan == 4) {$folio = $prefijo . '-' . '0000' . $num;}
+        if ($faltan == 3) {$folio = $prefijo . '-' . '000' . $num;}
+        if ($faltan == 2) {$folio = $prefijo . '-' . '00' . $num;}
+        if ($faltan == 1) {$folio = $prefijo . '-' . '0' . $num;}
+        if ($faltan == 0) {$folio = $prefijo . '-' . $num;}
+        return $folio;
+    } else {
+        $folio = $anioact . '-00001';
+        return $folio;
+    }
+}
 $link = mysqli_connect("localhost", "root", "", "refaccionaria");
 
 if (isset($_POST["codigo"])) {
@@ -24,7 +49,8 @@ if (isset($_POST["codigo"])) {
 
     $int_rand = rand(100000, 1000000);
     date_default_timezone_set('America/Hermosillo');
-    $hoy = date("Y-m-d H:i:s");
+    $tiket = crearfolio();
+    $hoy   = date("Y-m-d H:i:s");
 
     $query  = '';
     $update = '';
@@ -36,7 +62,7 @@ if (isset($_POST["codigo"])) {
         $cantidad_clean = mysqli_real_escape_string($link, $cantidad[$count]);
         $precios_clean  = mysqli_real_escape_string($link, $precios[$count]);
         $total_clean    = mysqli_real_escape_string($link, $total[$count]);
-        $random         = mysqli_real_escape_string($link, $int_rand);
+        $random         = mysqli_real_escape_string($link, $tiket);
         $fecha          = mysqli_real_escape_string($link, $hoy);
 
         if ($codigo_clean != '' && $producto_clean != '' && $cantidad_clean != '' && $precios_clean != '' && $total_clean != '') {

@@ -452,7 +452,7 @@ if ($resultado) {
 
             }else{
 
-              if(pago_con < total_total){
+              if(Number(pago_con) < total_total){
 
                   swal({
                          title:"Cuidado!",

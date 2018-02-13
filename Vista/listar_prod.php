@@ -38,6 +38,7 @@ if (!isset($_SESSION["nombre"])) {
                                     <th>Codigo</th>
                                     <th>Unidad</th>
                                     <th>Descripcion</th>
+                                    <th>Cantidad</th>
                                     <th>Precio Taller</th>
                                     <th>Precio Publico</th>
                                     <th>Precio Proveedor</th>

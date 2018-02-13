@@ -1,9 +1,27 @@
 <?php
 
 include "../conect/conexion.php";
-$cn = Conectarse();
+$cn         = Conectarse();
+@$proveedor = $_GET['proveedor'];
+@$tipo_fact = $_GET['tipo_fact'];
 
-$select = "SELECT *  FROM deudas WHERE DATEDIFF(NOW(),fecha_alta)  <= 23 ;";
+if ($tipo_fact == 1) {
+
+    $select = "SELECT *  FROM deudas WHERE DATEDIFF(NOW(),fecha_alta)  <= 23  AND proveedor_a_pagar = '" . $proveedor . "';";
+
+} elseif ($tipo_fact == 2) {
+
+    $select = "SELECT *  FROM deudas WHERE DATEDIFF(NOW(),fecha_alta)  > 23  AND  DATEDIFF(NOW(),fecha_alta)  < 30 AND proveedor_a_pagar = '" . $proveedor . "';";
+
+} elseif ($tipo_fact == 3) {
+
+    $select = "SELECT *  FROM deudas WHERE DATEDIFF(NOW(),fecha_alta) > 30 AND proveedor_a_pagar = '" . $proveedor . "' ;";
+
+} else {
+
+    $select = "SELECT * FROM deudas";
+}
+
 $result = mysql_query($select, $cn);
 
 if (!$result) {

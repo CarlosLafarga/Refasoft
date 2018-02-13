@@ -108,6 +108,7 @@
                     {"data":"codigo"},
                     {"data":"unidad"},
                     {"data":"Descripcion"},
+                    {"data":"cantidad"},
                     {"data":"PT"},
                     {"data":"PB"},
                     {"data":"ppv"},

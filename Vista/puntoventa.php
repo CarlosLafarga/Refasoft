@@ -81,8 +81,8 @@ if (!isset($_SESSION["nombre"])) {
                             <div class="col-md-6">
                             <label>Tipo Precio</label>
                             <select name="precio" id="tipo_cliente" class="form-control">
-                            <option value="precio_publico">Precio Publico</option>
                             <option value="precio_taller">Precio Taller</option>
+                            <option value="precio_publico">Precio Publico</option>
                             </select>
                             <br>
                             </div>

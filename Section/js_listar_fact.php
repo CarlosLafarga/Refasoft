@@ -34,19 +34,29 @@
 
 
                listar();
-               listar_por_ven();
-               listar_ven();
+
+               $.ajax({
+                    type:"POST",
+                    url: "../Controlador/listar_proveedores.php",
+                    success: function(response){
+
+                      $('#proveedor').html(response).fadeIn();
+                    }
+                    });
 
             });
 
        var listar = function(){
 
+            var tipo_fact =  $("#tipo_fact").val();
+            var proveedor = $("#proveedor").val();
 
+            console.log(tipo_fact);
             var table = $("#facturas_pen").DataTable({
                 "destroy":true,
                 "ajax":{
                     "method" : "POST",
-                    "url": "../Controlador/listar_deudas.php"
+                    "url": "../Controlador/listar_deudas.php?proveedor="+proveedor+"&tipo_fact="+tipo_fact+""
                 },
                 "columns":[
                     {"data":"no_factura"},
@@ -63,54 +73,13 @@
 
         }
 
+        function filtrar(proveedor){
 
-        var listar_por_ven = function(){
-
-
-            var table = $("#facturas_por_ven").DataTable({
-                "destroy":true,
-                "ajax":{
-                    "method" : "POST",
-                    "url": "../Controlador/listar_deudas_vencer.php"
-                },
-                "columns":[
-                    {"data":"no_factura"},
-                    {"data":"fecha_alta"},
-                    {"data":"total_de_factura"},
-                    {"data":"proveedor_a_pagar"},
-                    {"defaultContent": " <button type='button' class='agregar btn-sm btn-primary'>Agregar</button>"}
-
-                ]
-            });
-
-
-            //agregar_venta("#productos",table);
+           listar();
 
         }
 
 
-         var listar_ven = function(){
 
-
-            var table = $("#facturas_ven").DataTable({
-                "destroy":true,
-                "ajax":{
-                    "method" : "POST",
-                    "url": "../Controlador/listar_deudas_vencidas.php"
-                },
-                "columns":[
-                    {"data":"no_factura"},
-                    {"data":"fecha_alta"},
-                    {"data":"total_de_factura"},
-                    {"data":"proveedor_a_pagar"},
-                    {"defaultContent": " <button type='button' class='agregar btn-sm btn-primary'>Agregar</button>"}
-
-                ]
-            });
-
-
-            //agregar_venta("#productos",table);
-
-        }
 
     </script>

@@ -14,9 +14,13 @@ $resultado_credito  = mysql_query($credito, $cn) or die(mysql_error());
 $resultado_total    = mysql_query($total, $cn) or die(mysql_error());
 
 $resultado_efectivo = mysql_result($resultado_efectivo, 0);
-$resultado_tarjeta  = mysql_result($resultado_tarjeta, 0);
-$resultado_credito  = mysql_result($resultado_credito, 0);
-$resultado_total    = mysql_result($resultado_total, 0);
+if ($resultado_efectivo == 0) {$resultado_efectivo = 0;} else { $resultado_efectivo;}
+$resultado_tarjeta = mysql_result($resultado_tarjeta, 0);
+if ($resultado_tarjeta == 0) {$resultado_tarjeta = 0;} else { $resultado_tarjeta;}
+$resultado_credito = mysql_result($resultado_credito, 0);
+if ($resultado_credito == 0) {$resultado_credito = 0;} else { $resultado_credito;}
+$resultado_total = mysql_result($resultado_total, 0);
+if ($resultado_total == 0) {$resultado_total = 0;} else { $resultado_total;}
 
 if ($resultado_total == 0) {
 
