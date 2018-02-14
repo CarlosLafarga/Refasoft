@@ -112,16 +112,23 @@
                     {"data":"cliente_credito"},
                     {"data":"tipo_cliente"},
                     {"data":"fecha_venta"},
-                    {"defaultContent": " <button type='button' class='agregar btn-sm btn-primary'>Agregar</button>"}
+                    {"defaultContent": " <center><button type='button' class='detalles btn-sm btn-primary'>Detalles</button></center>"}
 
                 ]
             });
 
 
-            //agregar_venta("#productos",table);
+            detalles("#ventas",table);
 
         }
 
+         var detalles = function(tbody,table){
 
+                $(tbody).on("click", "button.detalles", function(){
+                    var data = table.row($(this).parents("tr")).data();
+                    window.location.href = "detalles_venta.php?no_tiket="+data.no_tiket+"";
+                    console.log(data.id_compra);
+                });
 
+          }
     </script>
