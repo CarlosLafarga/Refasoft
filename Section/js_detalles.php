@@ -38,7 +38,7 @@
          var listar = function(e){
 
             var no_tiket = e;
-            console.log(e);
+
 
             //console.log(datestring);
             var table = $("#detalles").DataTable({
@@ -55,13 +55,51 @@
                     {"data":"precio"},
                     {"data":"total"},
                     {"data":"fecha_venta"},
-                    {"defaultContent": " <center><button type='button' class='detalles btn-sm btn-danger'>Devolucion</button></center>"}
+                    {"defaultContent": " <center><button type='button' class='devolucion btn-sm btn-danger'>Devolucion</button></center>"}
 
                 ]
             });
 
 
-            //detalles("#ventas",table);
+            obtener_serie("#detalles",table);
 
         }
+
+        var obtener_serie = function(tbody,table){
+
+                $(tbody).on("click", "button.devolucion", function(){
+
+                    var data = table.row($(this).parents("tr")).data();
+                    var no_tiket = data.no_tiket;
+                    var cantidad = data.cantidad;
+                    var precio = data.precio;
+                    var codigo = data.codigo;
+
+                    console.log(no_tiket+"-"+cantidad+"-"+total+""+codigo+"");
+
+
+                $.ajax({
+                    url:"../Controlador/devolucion.php",
+                    method:"POST",
+                    data:{no_tiket:no_tiket,cantidad:cantidad,precio:precio,codigo:codigo},
+
+                    success:function(data){
+
+
+
+
+
+                    }
+
+                 });
+
+
+                });
+
+
+
+        }
+
+
+
     </script>

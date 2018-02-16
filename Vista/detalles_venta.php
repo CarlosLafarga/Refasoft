@@ -52,7 +52,8 @@ if (!isset($_SESSION["nombre"])) {
                                 </thead>
 
                             </table>
-                            <input type="button" name="atras" id="atras">
+
+                            <button class="btn btn-danger" onclick="history.back()" name="atras" id="atras" ><i class="fa fa-arrow-left"></i>&nbsp;Atras</button>
 
                             </div>
                           </div>

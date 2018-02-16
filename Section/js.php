@@ -132,6 +132,7 @@
         }
 
         var obtener_serie = function(tbody,table){
+
                 $(tbody).on("click", "button.editar", function(){
                     var data = table.row($(this).parents("tr")).data();
                     location.href = "EditAlmacen.php?id="+data.Num_Producto+"";
