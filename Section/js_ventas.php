@@ -106,13 +106,13 @@
                 },
                 "columns":[
                     {"data":"no_tiket"},
-                    {"data":"vendedor"},
-                    {"data":"venta_total"},
-                    {"data":"tipo_pago"},
-                    {"data":"cliente_credito"},
-                    {"data":"tipo_cliente"},
+                    {"data":"codigo"},
+                    {"data":"descripcion"},
+                    {"data":"cantidad"},
+                    {"data":"precio"},
+                    {"data":"total"},
                     {"data":"fecha_venta"},
-                    {"defaultContent": " <center><button type='button' class='detalles btn-sm btn-primary'>Detalles</button></center>"}
+                    {"defaultContent": " <button type='button' class='detalles btn-sm btn-primary'>Detalles</button>|<button type='button' class='tiket btn-sm btn-info'><i class='fa fa-print'></i></button>"}
 
                 ]
             });
@@ -124,9 +124,17 @@
 
          var detalles = function(tbody,table){
 
+                $(tbody).off('click');
+
                 $(tbody).on("click", "button.detalles", function(){
                     var data = table.row($(this).parents("tr")).data();
                     window.location.href = "detalles_venta.php?no_tiket="+data.no_tiket+"";
+                    console.log(data.no_tiket);
+                });
+
+                $(tbody).on("click", "button.tiket", function(){
+                    var data = table.row($(this).parents("tr")).data();
+                    window.open("ticket.php?no_ticket="+data.no_tiket+"", "Ticket", "width=600, height=800");
                     console.log(data.no_tiket);
                 });
 

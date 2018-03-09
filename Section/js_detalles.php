@@ -33,6 +33,7 @@
 
             var no_tiket = $("#no_tiket").val();
             listar(no_tiket);
+            var table;
          });
 
          var listar = function(e){
@@ -41,7 +42,7 @@
 
 
             //console.log(datestring);
-            var table = $("#detalles").DataTable({
+             table = $("#detalles").DataTable({
                 "destroy":true,
                 "ajax":{
                     "method" : "POST",
@@ -52,12 +53,14 @@
                     {"data":"codigo"},
                     {"data":"descripcion"},
                     {"data":"cantidad"},
+                    {"defaultContent":"<center><input type='number' id='cant_dev' value='0' min='0' class='form-control'></center>"},
                     {"data":"precio"},
                     {"data":"total"},
                     {"data":"fecha_venta"},
                     {"defaultContent": " <center><button type='button' class='devolucion btn-sm btn-danger'>Devolucion</button></center>"}
 
                 ]
+
             });
 
 
@@ -68,23 +71,77 @@
         var obtener_serie = function(tbody,table){
 
                 $(tbody).on("click", "button.devolucion", function(){
+                   var data = table.row($(this).parents("tr")).data();
+                   swal({
 
-                    var data = table.row($(this).parents("tr")).data();
+                    title: "Estas Seguro?",
+                    text: "¿Desea hacer devolucion del producto ?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: '#DD6B55',
+                    confirmButtonText: 'Si, Estoy seguro!',
+                    cancelButtonText: "No, Cancelar!"
+
+                    },
+
+
+                    function (isConfirm) {
+
+                    if (isConfirm){
+
+
+
+                    //console.log(data);
                     var no_tiket = data.no_tiket;
-                    var cantidad = data.cantidad;
+                    var cantidad = $("#cant_dev").val();
                     var precio = data.precio;
                     var codigo = data.codigo;
+                    var total = data.total;
 
-                    console.log(no_tiket+"-"+cantidad+"-"+total+""+codigo+"");
+                    //console.log(no_tiket+"----"+cantidad+"----"+total+"----"+codigo+"");
 
 
-                $.ajax({
+                    $.ajax({
                     url:"../Controlador/devolucion.php",
                     method:"POST",
                     data:{no_tiket:no_tiket,cantidad:cantidad,precio:precio,codigo:codigo},
 
                     success:function(data){
 
+                            console.log(data);
+                            if(data == 2){
+                                 swal({
+                                     title:"Buen trabajo!",
+                                     text: "Buen Trabajo Deolucion echa con exito.",
+                                     type: "success",
+                                     showCancelButton: false,
+                                     confirmButtonText: "Aceptar",
+                                     closeOnConfirm: true
+                                     },
+                                     function(){
+
+
+                                      location.reload();
+
+                                     });
+                            }else{
+
+                                swal({
+                                    title: "Error!",
+                                    text: "Error al modificar tablas.",
+                                    type: "error",
+                                    showCancelButton: false,
+                                    confirmButtonText: "Aceptar",
+                                    closeOnConfirm: true
+                                    },
+
+                                    function(){
+
+                                     //location.reload();
+
+                                    });
+
+                            }
 
 
 
@@ -93,7 +150,15 @@
 
                  });
 
+                    }else{
 
+                          return false;
+
+                        }
+                    });
+
+
+                /*-------------------*/
                 });
 
 

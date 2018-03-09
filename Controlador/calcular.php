@@ -18,7 +18,7 @@ if ($proveedor == 'Permor') {
     $CN = $ppv * 0.64 * 1.16 * 0.89 * 0.95;
 }
 if ($proveedor == 'Apymsa') {
-    $CN = $ppv * 1.16 * 0.9;
+    $CN = $ppv * 1.044;
 }
 if ($proveedor == 'Serva') {
     $CN = $ppv * 1.16;
@@ -38,7 +38,7 @@ if ($proveedor == 'Permor') {
     $PB = $ppv * 1.024;
 }
 if ($proveedor == 'Apymsa') {
-    $PB = ($ppv * 1.35) * 1.16;
+    $PB = $ppv * 1.70694;
 }
 if ($proveedor == 'Serva') {
     $PB = ($ppv * 1.8) * 1.16;
@@ -58,7 +58,7 @@ if ($proveedor == 'Permor') {
     $PT = $PB / 1.25;
 }
 if ($proveedor == 'Apymsa') {
-    $PT = $PB * 0.8;
+    $PT = $ppv * 1.365552;
 }
 if ($proveedor == 'Serva') {
     $PT = $PB * 0.8;

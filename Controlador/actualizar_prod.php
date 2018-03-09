@@ -15,6 +15,7 @@ if (isset($_POST["id"])) {
     $precio_publico   = $_POST['precio_publico'];
     $factura          = $_POST['factura'];
     $proveedor        = $_POST['proveedor'];
+    $fecha_compra     = $_POST['fecha_compra'];
     /*para insertar en tabla de ventas pero general*/
 
     date_default_timezone_set('America/Hermosillo');
@@ -32,7 +33,7 @@ if (isset($_POST["id"])) {
         $precio_proveedor_clean = mysqli_real_escape_string($link, $precio_proveedor[$count]);
         $proveedor_clean        = mysqli_real_escape_string($link, $proveedor[$count]);
         $factura_clean          = mysqli_real_escape_string($link, $factura);
-        $fecha                  = mysqli_real_escape_string($link, $hoy);
+        $fecha                  = mysqli_real_escape_string($link, $fecha_compra);
 
         if ($codigo_clean != '' && $producto_clean != '' && $cantidad_clean != '' && $precio_proveedor_clean != '' && $proveedor_clean != '' && $factura_clean != '') {
 

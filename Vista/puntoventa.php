@@ -36,12 +36,12 @@ if (!isset($_SESSION["nombre"])) {
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Codigo</th>
-                                    <th>Descripcion</th>
-                                    <th>Cantidad</th>
-                                    <th>Precio Taller</th>
-                                    <th>Precio Publico</th>
-                                    <th>Proveedor</th>
+                                    <th>COD</th>
+                                    <th>PROD</th>
+                                    <th>CANT</th>
+                                    <th>PT</th>
+                                    <th>PB</th>
+                                    <th>PROV</th>
                                     <th>Acciones</th>
                                 </tr>
                                 </thead>
@@ -123,11 +123,11 @@ if (!isset($_SESSION["nombre"])) {
                               <table id="ventas" class="table table-bordered">
                               <thead>
                               <tr>
-                                    <th>Producto</th>
-                                    <th>Cantidad</th>
-                                    <th>Precio</th>
+                                    <th>prod</th>
+                                    <th>cant</th>
+                                    <th>precio</th>
                                     <th>Total</th>
-                                    <th>Eliminar</th>
+                                    <th>Accion</th>
                               </tr>
                               </thead>
                               <tbody id="tablita">

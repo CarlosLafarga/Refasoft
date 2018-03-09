@@ -118,7 +118,9 @@ if (isset($_POST["codigo"])) {
         $link = mysqli_connect("localhost", "root", "", "refaccionaria");
         if (mysqli_multi_query($link, $query)) {
 
-            echo "1";
+            $array = array("numero" => 1, "no_tiket" => $random);
+
+            echo json_encode($array);
 
             mysqli_close($link);
 

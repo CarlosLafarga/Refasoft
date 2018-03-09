@@ -35,11 +35,11 @@ if (!isset($_SESSION["nombre"])) {
                                 <table  id="productos" class="table table-striped table-bordered table-hover dataTables-example">
                                 <thead>
                                 <tr>
-                                    <th>Codigo</th>
-                                    <th>Descripcion</th>
-                                    <th>Cantidad</th>
-                                    <th>Precio Proveedor</th>
-                                    <th>Proveedor</th>
+                                    <th>COD</th>
+                                    <th>PROD</th>
+                                    <th>CANT</th>
+                                    <th>PPV</th>
+                                    <th>PROV</th>
                                     <th>Acciones</th>
                                 </tr>
                                 </thead>
@@ -63,6 +63,14 @@ if (!isset($_SESSION["nombre"])) {
                               <label>No factura:</label>
                               <input type="text" class="form-control" name="factura" id="factura">
                               <br>
+                               <label>Fecha Compra:</label>
+                               <div class="form-group" id="data_1">
+                               <div class="input-group date">
+                                   <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                   <input type="text"  name="fecha_compra" id="fecha_compra" value = "<?php echo date('m/d/Y'); ?>" class="form-control" >
+                               </div>
+                               </div>
+                               <br>
                               <button class="btn-sm btn-primary" name="guardar" id="guardar">Guardar</button>
                               <button class="btn-sm btn-danger" name="guardar" id="guardar">Cancelar</button>
                               <br><br>
@@ -71,14 +79,14 @@ if (!isset($_SESSION["nombre"])) {
                                 <table  id="actualizar" class="table table-bordered">
                                 <thead>
                                 <tr>
-                                    <th>Codigo</th>
-                                    <th>Descripcion</th>
-                                    <th>Cantidad</th>
-                                    <th>Precio Proveedor</th>
-                                    <th>Precio Taller</th>
-                                    <th>Precio Publico</th>
-                                    <th>Proveedor</th>
-                                    <th>Acciones</th>
+                                    <th>COD</th>
+                                    <th>PROD</th>
+                                    <th>CANTIDAD</th>
+                                    <th>PRECIO PROVEEDOR</th>
+                                    <th>PT</th>
+                                    <th>PP</th>
+                                    <th>PROV</th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody id="tablita">

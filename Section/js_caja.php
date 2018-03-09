@@ -125,7 +125,7 @@ if ($resultado) {
 
                     //console.log(data);
 
-                        var fila = "<tr>                                                                                                    <input name='id' hidden id='id' class='id' value="+id+"><input hidden class='codigo' id='codigo' name='codigo' value="+cod+"><td id='producto' class='producto'>"+prod+"</td><td><input type='number' value='1' name='cantidad' id='cantidad"+contador+"' class='cantidad form-control' onchange='onQtyChange(this);' min='1' ></td><td ><input type='number' class='precios form-control' min= '0'id='precios"+contador+"' onchange='preciocambio(this);' value='"+precio+"'></td><td id='totals' class='subtotal'>"+total+"</td><td><button onclick='deleteRow(this)' type='button' class='btn-sm btn-danger'>Eliminar</button></td></tr>";
+                        var fila = "<tr>                                                                                                    <input name='id' hidden id='id' class='id' value="+id+"><input hidden class='codigo' id='codigo' name='codigo' value="+cod+"><td id='producto' class='producto'>"+cod+"/-"+prod+"</td><td><input type='number' value='1' name='cantidad' id='cantidad"+contador+"' class='cantidad form-control' onchange='onQtyChange(this);' min='1' ></td><td ><input type='number' class='precios form-control' min= '0'id='precios"+contador+"' onchange='preciocambio(this);' value='"+precio+"'></td><td id='totals' class='subtotal'>"+total+"</td><td><button onclick='deleteRow(this)' type='button' class='btn-sm btn-danger'><i class='fa fa-trash-o' ></i></button></td></tr>";
 
 
 
@@ -305,14 +305,18 @@ if ($resultado) {
 
                  success:function(data){
 
+                  console.log(data);
+                  var obj = JSON.parse(data);
+                  console.log("Este es el  objeto"+obj.numero);
                   var cambio = Number(data);
+                  console.log("Este es el ticket"+obj.no_tiket);
                   var devolucion = parseFloat(pago_con-total_total);
 
-                   if(cambio == 1){
+                   if(obj.numero == 1){
 
                          swal({
                          title:"Buen trabajo!",
-                         text: "Se guardo venta con exito.",
+                         text: "Se guardo venta con exito \n No.ticket:"+obj.no_tiket+" .",
                          type: "success",
                          showCancelButton: false,
                          confirmButtonText: "Aceptar",
@@ -320,6 +324,7 @@ if ($resultado) {
                          },
                          function(){
 
+                          window.open("ticket.php?no_ticket="+obj.no_tiket+"", "Ticket", "width=600, height=800");
                           location.reload();
                          });
 
@@ -476,14 +481,15 @@ if ($resultado) {
 
                  success:function(data){
 
+                  var obj = JSON.parse(data);
                   var cambio = Number(data);
                   var devolucion = parseFloat(pago_con-total_total);
 
-                   if(cambio == 1){
+                   if(obj.numero == 1){
 
                          swal({
                          title:"Buen trabajo!",
-                         text: "Se guardo venta con exito \n y su cambio es de:    "+devolucion+"",
+                         text: "Se guardo venta con exito. \n  Su cambio es de:    "+devolucion.toFixed(2)+"\n  No.Ticket: "+obj.no_tiket+"",
                          type: "success",
                          showCancelButton: false,
                          confirmButtonText: "Aceptar",
@@ -491,7 +497,9 @@ if ($resultado) {
                          },
                          function(){
 
+                          window.open("ticket.php?no_ticket="+obj.no_tiket+"", "Ticket", "width=600, height=800");
                           location.reload();
+
                          });
 
 

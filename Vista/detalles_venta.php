@@ -44,6 +44,7 @@ if (!isset($_SESSION["nombre"])) {
                                     <th>Codigo</th>
                                     <th>Producto</th>
                                     <th>Cantidad</th>
+                                    <th>Cantidad a devolucion</th>
                                     <th>Precio</th>
                                     <th>Total</th>
                                     <th>Fecha Venta</th>

@@ -36,6 +36,13 @@
 
        $(document).ready(function () {
 
+                $('#data_1 .input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: false,
+                autoclose: true
+                });
 
                listar();
 
@@ -92,7 +99,7 @@
 
                     //console.log(data);
 
-                    var fila = "<tr><input name='id' hidden id='id' class='id' value="+id+"><td class='codigo'>"+cod+"</td><td id='producto' class='producto'>"+prod+"</td><td><input type='number' value='1' name='cantidad' id='cantidad' class='cantidad form-control' value="+cantidad+" min='1'></td><td><input type='number' class='ppv form-control' onchange='onQtyChange(this);' id='ppv' value='"+ppv+"'></td><td id='pt' class='pt'>"+pt+"</td><td id='ppb' class='ppb'>"+ppb+"</td><td id='prov' class='prov'>"+prov+"</td><td><button onclick='deleteRow(this)' type='button' class='btn-sm btn-danger'>Eliminar</button></td></tr>";
+                    var fila = "<tr><input name='id' hidden id='id' class='id' value="+id+"><td class='codigo'>"+cod+"</td><td id='producto' class='producto'>"+prod+"</td><td><input type='number' value='1' name='cantidad' id='cantidad' class='cantidad form-control' value="+cantidad+" min='1'></td><td><input type='number' class='ppv form-control' onchange='onQtyChange(this);' id='ppv' value='"+ppv+"'></td><td id='pt' class='pt'>"+pt+"</td><td id='ppb' class='ppb'>"+ppb+"</td><td id='prov' class='prov'>"+prov+"</td><td><button onclick='deleteRow(this)' type='button' class='btn-sm btn-danger'><i class='fa fa-trash'></i></button></td></tr>";
 
 
 
@@ -121,7 +128,7 @@
 
                     swal({
                          title: "Estas Seguro?",
-                         text: "¿Desea eliminar el producto numero  "+i+" ?",
+                         text: "多Desea eliminar el producto numero  "+i+" ?",
                          type: "error",
                          showCancelButton: true,
                          confirmButtonColor: '#ed5565',
@@ -172,8 +179,8 @@
 
             }else if(prove == 'Apymsa'){
 
-                var ptt = parseFloat(((newQty * 1.35) * 1.16) * .8);
-                var pb = parseFloat((newQty * 1.35) * 1.16);
+                var ptt = parseFloat(newQty * 1.365552);
+                var pb = parseFloat(newQty * 1.70694);
 
                 precio_taller.innerText = ptt.toFixed(2);
                 precio_publico.innerText = pb.toFixed(2);
@@ -203,6 +210,8 @@
             $('#guardar').click(function(){
 
                 var factura  = $("#factura").val();
+                 var fecha  = $("#fecha_compra").val();
+                var fecha_compra = moment(fecha).format('YYYY/MM/DD');
 
             if(factura != ''){
 
@@ -253,7 +262,7 @@
                 $.ajax({
                  url:"../Controlador/actualizar_prod.php",
                  method:"POST",
-                 data:{id:id,codigo:codigo, producto:producto, cantidad:cantidad,precio_prove:precio_prove,precio_taller:precio_taller,precio_publico:precio_publico,proveedor:proveedor,factura:factura},
+                 data:{id:id,codigo:codigo, producto:producto, cantidad:cantidad,precio_prove:precio_prove,precio_taller:precio_taller,precio_publico:precio_publico,proveedor:proveedor,factura:factura,fecha_compra:fecha_compra},
 
                  success:function(data){
 

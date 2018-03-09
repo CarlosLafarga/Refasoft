@@ -3,7 +3,7 @@ include "../conect/conexion.php";
 $cn    = Conectarse();
 $fecha = $_GET['fecha'];
 
-$select = "SELECT * FROM ventas WHERE DATE(fecha_venta) =  '" . DATE($fecha) . "'; ";
+$select = "SELECT * FROM venta_articulos WHERE DATE(fecha_venta) =  '" . DATE($fecha) . "' ORDER BY no_tiket ";
 $result = mysql_query($select, $cn);
 
 if (!$result) {

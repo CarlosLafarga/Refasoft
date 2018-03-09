@@ -24,24 +24,43 @@ if (!isset($_SESSION["nombre"])) {
             <div class="wrapper wrapper-content">
                <div class="container">
                    <div class="row">
+                   <div class="col-lg-12">
+                   <label>Cliente:</label>
+                   <select id="clientes" class="form-control">
+
+                   </select><br>
+                   </div>
+
+
                    <div class="col-lg-3">
-                   <label>Fecha:</label>
+                   <label>De:</label>
                    <div class="form-group" id="data_1">
                    <div class="input-group date">
                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                       <input type="text" onchange="corte(this);" name="fecha" id="fecha" value = "<?php echo date('m/d/Y'); ?>" class="form-control" >
+                       <input type="text"  name="de" id="de" value = "<?php echo date('m/d/Y'); ?>" class="form-control" >
                    </div>
                    </div>
+                   </div>
+                   <div class="col-lg-3">
+                   <label>A:</label>
+                   <div class="form-group" id="data_1">
+                   <div class="input-group date">
+                       <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                       <input type="text"  name="a" id="a" value = "<?php echo date('m/d/Y'); ?>" class="form-control" >
+                   </div>
+                   </div>
+                   </div>
+                   <div class="col-lg-12">
+                   <button class="btn btn-primary" id="consultar" name="consultar">Consultar</button>
+                   <button class="btn btn-info" id="imprimir" name="consultar">Imprimir</button>
                    </div>
                    </div><br>
 
-                   <div id="txtHint">
 
-                   </div>
                     <div class="ibox">
                             <div class="ibox-title">
                             <span class="pull-right"></span>
-                            <h5>Ventas desglosadas</h5>
+                            <h5>Ventas</h5>
                             </div>
 
                             <div class="ibox-content">
@@ -53,13 +72,13 @@ if (!isset($_SESSION["nombre"])) {
                                 <thead>
                                 <tr>
                                     <th>No Ticket</th>
+                                    <th>Vendedor</th>
                                     <th>Codigo</th>
                                     <th>Producto</th>
                                     <th>Cantidad</th>
                                     <th>Precio</th>
                                     <th>Total</th>
                                     <th>Fecha Venta</th>
-                                    <th>Acciones</th>
                                 </tr>
                                 </thead>
 
@@ -87,7 +106,7 @@ if (!isset($_SESSION["nombre"])) {
   </div>
 </body>
 
-<?PHP include "../Section/js_ventas.php";?>
+<?PHP include "../Section/js_creditos.php";?>
 
 
 </html>
