@@ -41,6 +41,7 @@
         var valores = "";
         var acumulado  = 0;
         var preciofinal = 0;
+        var num=1;
 
 
 
@@ -116,7 +117,7 @@
 
                     //console.log(data);
 
-                        var fila = "<tr>                                                                                                    <input name='id' hidden id='id' class='id' value="+id+"><input hidden class='codigo' id='codigo' name='codigo' value="+cod+"><td id='producto' class='producto'>"+cod+"/-"+prod+"</td><td><input type='number' value='1' name='cantidad' id='cantidad"+contador+"' class='cantidad form-control' onchange='onQtyChange(this);' min='1' ></td><td ><input type='number' class='precios form-control' min= '0'id='precios"+contador+"' onchange='preciocambio(this);' value='"+precio+"'></td><td id='totals' class='subtotal'>"+total+"</td><td><button onclick='deleteRow(this)' type='button' class='btn-sm btn-danger'><i class='fa fa-trash-o' ></i></button></td></tr>";
+                        var fila = "<tr>                                                                                                    <input name='id' hidden id='id' class='id' value="+id+"><input hidden class='codigo' id='codigo' name='codigo' value="+cod+"><td id='producto' class='producto'>"+cod+"/-"+prod+"</td><td><input type='number' value='1' name='cantidad' id='cantidad"+contador+"' class='cantidad form-control' onchange='onQtyChange(this);' min='1' ></td><td ><input type='number' class='precios form-control' min= '0'id='precios' onchange='preciocambio(this);' value='"+precio+"'></td><td id='totals' class='subtotal'>"+total+"</td><td><button onclick='deleteRow(this)' type='button' class='btn-sm btn-danger'><i class='fa fa-trash-o' ></i></button></td></tr>";
 
 
 
@@ -146,9 +147,6 @@
         function deleteRow(r) {
 
                    var i = r.parentNode.parentNode.rowIndex;
-
-
-
                     swal({
                          title: "Estas Seguro?",
                          text: "¿Desea eliminar el producto de la venta   "+i+" ?",
@@ -171,7 +169,7 @@
                           document.getElementById("total").value = preciofinalrow.toFixed(2);
                           document.getElementById("num_prod").innerHTML = contador;
                           document.getElementById("ventas").deleteRow(i);
-                          reordenar();
+
                         }else{
 
                           return false;
@@ -184,13 +182,7 @@
 
 
         }
-        function reordenar(){
-        var num=1;
-        $('#ventas tbody tr').each(function(){
-            $(this).find('td').eq(0).text(num);
-            num++;
-         });
-         }
+
 
             function onQtyChange(e) {
 
@@ -199,7 +191,6 @@
             var precio_articulo = document.getElementById('ventas').rows[row].cells[2];
             var precio_input1 = $("#precios"+row+"").val();
             var chuy = precio_articulo.value = Number(precio_input1);
-            console.log(row);
 
 
 
@@ -207,7 +198,12 @@
             var newQty = parseFloat(e.value);
             var precio_art = parseFloat(chuy);
 
+            /*------------------------------------*/
+            console.log("Renglon:"+row);
+            console.log("cantidad del renglon:"+newQty);
+            console.log("Precio del renglon:"+precio_articulo.innerHTML.innerText);
 
+            /*---------------------------------------*/
             var total = precio_art * newQty;
             total_ventas.innerText = total.toFixed(2);
 
