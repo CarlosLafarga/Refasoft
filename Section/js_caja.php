@@ -28,21 +28,7 @@
     <script src="../Include/js/plugins/select2/select2.full.min.js"></script>
     <script src="../Include/js/plugins/typehead/bootstrap3-typeahead.min.js"></script>
     <script src="../Include/js/plugins/sweetalert/sweetalert.min.js"></script>
-    <?PHP
-include "../conect/conexion.php";
-$cn        = Conectarse();
-$sql       = "SELECT * FROM clientes";
-$resultado = mysql_query($sql, $cn) or die(mysql_error());
-$array     = array();
-if ($resultado) {
 
-    while ($row = mysql_fetch_array($resultado)) {
-
-        $cliente = utf8_decode($row['nombre_cliente']);
-        array_push($array, $cliente);
-    }
-}
-?>
 
     <script type="text/javascript">
 
@@ -62,11 +48,16 @@ if ($resultado) {
 
 
                listar();
-               var items = <?=json_encode($array)?>
 
-               $('.typeahead_2').typeahead({
-                     source: items
-               });
+               $.ajax({
+                    type:"POST",
+                    url: "../Controlador/listar_clientes.php",
+                    success: function(response){
+
+                      $('#clientes').html(response).fadeIn();
+                    }
+                    });
+
             });
 
 
@@ -271,7 +262,7 @@ if ($resultado) {
               var tipo_pago = $("#pago").val();
               var nombre_usuario = $("#name").val();
               var tipo_cliente = $("#tipo_cliente").val();
-              var nombre_credito = $("#cliente").val();
+              var nombre_credito = $("#clientes").val();
 
 
           $('.id').each(function(){

@@ -51,12 +51,12 @@
                         <label>&nbsp;Proveedor</label>
                         <select class="select2_demo_3 form-control" id="proveedor" name="proveedor" required="llenar campo">
                             <option value="">Seleccione Proveedor</option>
-                            <option value="Permor">Permor</option>
+                            <option value="permor">permor</option>
                             <option value="Apymsa">Apymsa</option>
-                            <option value="Serva">Serva</option>
-                            <option value="Henlo">Henlo</option>
+                            <option value="serva">serva</option>
                             <option value="Dirco">Dirco</option>
-                            <option value="Ciosa">Ciosa</option>
+                            <option value="ciosa">Ciosa</option>
+                            <option value="BDH">BDH</option>
                         </select>
                        </div>
                       <div class="form-group">

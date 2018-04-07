@@ -111,6 +111,7 @@
                     {"data":"cantidad"},
                     {"data":"precio"},
                     {"data":"total"},
+                    {"data":"tipo_pago"},
                     {"data":"fecha_venta"},
                     {"defaultContent": " <button type='button' class='detalles btn-sm btn-primary'>Detalles</button>|<button type='button' class='tiket btn-sm btn-info'><i class='fa fa-print'></i></button>"}
 

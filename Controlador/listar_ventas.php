@@ -3,7 +3,9 @@ include "../conect/conexion.php";
 $cn    = Conectarse();
 $fecha = $_GET['fecha'];
 
-$select = "SELECT * FROM venta_articulos WHERE DATE(fecha_venta) =  '" . DATE($fecha) . "' ORDER BY no_tiket ";
+$select = "SELECT venta_articulos.*,ventas.tipo_pago FROM venta_articulos LEFT JOIN ventas ON venta_articulos.no_tiket = ventas.no_tiket
+WHERE DATE(venta_articulos.fecha_venta) =  '" . DATE($fecha) . "' AND tipo_pago !='credito'  ORDER BY no_tiket ";
+
 $result = mysql_query($select, $cn);
 
 if (!$result) {

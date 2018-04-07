@@ -93,7 +93,7 @@ if (!isset($_SESSION["nombre"])) {
                             </div>
                             <div class="col-md-6" style="display: none;" id="clientediv">
                             <label>Cliente</label>
-                            <input type="text" name="cliente"  id="cliente"  class="typeahead_2 form-control">
+                            <select id="clientes" class="form-control" ></select>
                             <br>
                             </div>
                             <hr/>
@@ -123,8 +123,8 @@ if (!isset($_SESSION["nombre"])) {
                               <table id="ventas" class="table table-bordered">
                               <thead>
                               <tr>
-                                    <th>prod</th>
-                                    <th>cant</th>
+                                    <th width="20%">prod</th>
+                                    <th width="18%">cant</th>
                                     <th>precio</th>
                                     <th>Total</th>
                                     <th>Accion</th>

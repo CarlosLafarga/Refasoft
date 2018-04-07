@@ -14,13 +14,13 @@ $factura   = $_POST['factura'];
 $fechafac  = $_POST['fechafac'];
 
 //evaluar COSTO NETO
-if ($proveedor == 'Permor') {
+if ($proveedor == 'permor') {
     $CN = $ppv * 0.64 * 1.16 * 0.89 * 0.95;
 }
 if ($proveedor == 'Apymsa') {
     $CN = $ppv * 1.044;
 }
-if ($proveedor == 'Serva') {
+if ($proveedor == 'serva') {
     $CN = $ppv * 1.16;
 }
 if ($proveedor == 'Henlo') {
@@ -29,18 +29,18 @@ if ($proveedor == 'Henlo') {
 if ($proveedor == 'Dirco') {
     $CN = $ppv * 1.16;
 }
-if ($proveedor == 'Ciosa') {
+if ($proveedor == 'ciosa') {
     $CN = $ppv * 1.16;
 }
 
 //evaluar PRECIO PB--------------------------------------------------------------------------*/
-if ($proveedor == 'Permor') {
+if ($proveedor == 'permor') {
     $PB = $ppv * 1.024;
 }
 if ($proveedor == 'Apymsa') {
     $PB = $ppv * 1.70694;
 }
-if ($proveedor == 'Serva') {
+if ($proveedor == 'serva') {
     $PB = ($ppv * 1.8) * 1.16;
 }
 if ($proveedor == 'Henlo') {
@@ -49,18 +49,18 @@ if ($proveedor == 'Henlo') {
 if ($proveedor == 'Dirco') {
     $PB = $ppv * 1.7;
 }
-if ($proveedor == 'Ciosa') {
+if ($proveedor == 'ciosa') {
     $PB = ($ppv * 1.8) * 1.16;
 }
 
 //evaluar PRECIO TALLER----------------------------------------------------------------------*/
-if ($proveedor == 'Permor') {
+if ($proveedor == 'permor') {
     $PT = $PB / 1.25;
 }
 if ($proveedor == 'Apymsa') {
     $PT = $ppv * 1.365552;
 }
-if ($proveedor == 'Serva') {
+if ($proveedor == 'serva') {
     $PT = $PB * 0.8;
 }
 if ($proveedor == 'Henlo') {
@@ -69,7 +69,7 @@ if ($proveedor == 'Henlo') {
 if ($proveedor == 'Dirco') {
     $PT = $PB * 0.8;
 }
-if ($proveedor == 'Ciosa') {
+if ($proveedor == 'ciosa') {
     $PT = $PB * 0.8;
 }
 

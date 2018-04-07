@@ -6,12 +6,15 @@ $fecha = $_GET['fecha'];
 $efectivo = "SELECT SUM(venta_total) FROM ventas WHERE tipo_pago = 'efectivo' AND DATE(fecha_venta) = '" . DATE($fecha) . "' ;";
 $tarjeta  = "SELECT SUM(venta_total) FROM ventas WHERE tipo_pago = 'tarjeta' AND DATE(fecha_venta) = '" . DATE($fecha) . "';";
 $credito  = "SELECT SUM(venta_total) FROM ventas WHERE tipo_pago = 'credito' AND DATE(fecha_venta) = '" . DATE($fecha) . "';";
-$total    = "SELECT SUM(venta_total) FROM ventas WHERE DATE(fecha_venta) = '" . DATE($fecha) . "';";
+$total    = "SELECT SUM(venta_total) FROM ventas WHERE tipo_pago != 'credito' AND DATE(fecha_venta) = '" . DATE($fecha) . "';";
+
+$chkda = "SELECT SUM(total) FROM venta_articulos WHERE codigo = 'chkda' AND DATE(fecha_venta) ='" . DATE($fecha) . "';";
 
 $resultado_efectivo = mysql_query($efectivo, $cn) or die(mysql_error());
 $resultado_tarjeta  = mysql_query($tarjeta, $cn) or die(mysql_error());
 $resultado_credito  = mysql_query($credito, $cn) or die(mysql_error());
 $resultado_total    = mysql_query($total, $cn) or die(mysql_error());
+$resultado_chkda    = mysql_query($chkda, $cn) or die(mysql_error());
 
 $resultado_efectivo = mysql_result($resultado_efectivo, 0);
 if ($resultado_efectivo == 0) {$resultado_efectivo = 0;} else { $resultado_efectivo;}
@@ -19,8 +22,12 @@ $resultado_tarjeta = mysql_result($resultado_tarjeta, 0);
 if ($resultado_tarjeta == 0) {$resultado_tarjeta = 0;} else { $resultado_tarjeta;}
 $resultado_credito = mysql_result($resultado_credito, 0);
 if ($resultado_credito == 0) {$resultado_credito = 0;} else { $resultado_credito;}
+
 $resultado_total = mysql_result($resultado_total, 0);
 if ($resultado_total == 0) {$resultado_total = 0;} else { $resultado_total;}
+
+$resultado_chkda = mysql_result($resultado_chkda, 0);
+if ($resultado_chkda == 0) {$resultado_chkda = 0;} else { $resultado_chkda;}
 
 if ($resultado_total == 0) {
 
@@ -69,10 +76,10 @@ echo '<div class="row">
                         <div class="ibox float-e-margins">
                             <div class="ibox-title">
                                 <span class="label label-primary pull-right">' . DATE($fecha) . '</span>
-                                <h5>CREDITO</h5>
+                                <h5>CHECADAS</h5>
                             </div>
                             <div class="ibox-content">
-                                <h1 class="no-margins">$' . $resultado_credito . '</h1>
+                                <h1 class="no-margins">$' . $resultado_chkda . '</h1>
                                 <div class="stat-percent font-bold text-info">' . round($porcentaje3) . '% <i class="fa fa-level-up"></i></div>
                                 <small>Total</small>
                             </div>

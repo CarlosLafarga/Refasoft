@@ -58,6 +58,7 @@ if (!isset($_SESSION["nombre"])) {
                                     <th>Cantidad</th>
                                     <th>Precio</th>
                                     <th>Total</th>
+                                    <th>Tipo pago</th>
                                     <th>Fecha Venta</th>
                                     <th>Acciones</th>
                                 </tr>
