@@ -171,6 +171,7 @@
                           document.getElementById("total").value = preciofinalrow.toFixed(2);
                           document.getElementById("num_prod").innerHTML = contador;
                           document.getElementById("ventas").deleteRow(i);
+                          reordenar();
                         }else{
 
                           return false;
@@ -183,7 +184,13 @@
 
 
         }
-
+        function reordenar(){
+        var num=1;
+        $('#ventas tbody tr').each(function(){
+            $(this).find('td').eq(0).text(num);
+            num++;
+         });
+         }
 
             function onQtyChange(e) {
 
@@ -192,7 +199,7 @@
             var precio_articulo = document.getElementById('ventas').rows[row].cells[2];
             var precio_input1 = $("#precios"+row+"").val();
             var chuy = precio_articulo.value = Number(precio_input1);
-
+            console.log(row);
 
 
 
