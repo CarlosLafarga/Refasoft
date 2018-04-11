@@ -42,6 +42,7 @@
         var acumulado  = 0;
         var preciofinal = 0;
         var num=1;
+        var uni;
 
 
 
@@ -99,6 +100,7 @@
                     prod = data.Descripcion;
                     cod = data.codigo;
                     id = data.Num_Producto;
+                    uni = data.unidad;
 
                     if(tipo_precio == "precio_publico"){
 
@@ -117,7 +119,7 @@
 
                     //console.log(data);
 
-                        var fila = "<tr>                                                                                                    <input name='id' hidden id='id' class='id' value="+id+"><input hidden class='codigo' id='codigo' name='codigo' value="+cod+"><td id='producto' class='producto'>"+cod+"/-"+prod+"</td><td><input type='number' value='1' name='cantidad' id='cantidad"+contador+"' class='cantidad form-control' onchange='onQtyChange(this);' min='1' ></td><td ><input type='number' class='precios form-control' min= '0'id='precios' onchange='preciocambio(this);' value='"+precio+"'></td><td id='totals' class='subtotal'>"+total+"</td><td><button onclick='deleteRow(this)' type='button' class='btn-sm btn-danger'><i class='fa fa-trash-o' ></i></button></td></tr>";
+                        var fila = "<tr><input name='id' hidden id='id' class='id' value="+id+"><input hidden class='codigo' id='codigo' name='codigo' value="+cod+"><td id='producto' class='producto'>"+cod+""+prod+"</td><td>"+uni+"</td><td><input type='number' value='1' name='cantidad' id='cantidad"+contador+"' class='cantidad form-control' onchange='onQtyChange(this);' min='1' ></td><td ><input type='number' class='precios form-control' min= '0'id='precios' onchange='preciocambio(this);' value='"+precio+"'></td><td id='totals' class='subtotal'>"+total+"</td><td><button onclick='deleteRow(this)' type='button' class='btn-sm btn-danger'><i class='fa fa-trash-o' ></i></button></td></tr>";
 
 
 
@@ -160,9 +162,9 @@
                          function (isConfirm) { /*Your Code Here*/
 
                           if (isConfirm){
-                          var total_ventas = document.getElementById('ventas').rows[i].cells[3];
+                          var total_ventas = document.getElementById('ventas').rows[i].cells[4];
                           var total_input = document.getElementById("total").value;
-                          chuy = total_ventas.innerHTML;
+                          var chuy = total_ventas.innerHTML;
                           var preciofinalrow =  parseFloat(total_input) - parseFloat(chuy);
                           contador = contador -1;
 
@@ -187,8 +189,8 @@
             function onQtyChange(e) {
 
             var row = e.parentNode.parentNode.rowIndex;
-            var total_ventas = document.getElementById('ventas').rows[row].cells[3];
-            var precio_articulo = document.getElementById('ventas').rows[row].cells[2];
+            var total_ventas = document.getElementById('ventas').rows[row].cells[4];
+            var precio_articulo = document.getElementById('ventas').rows[row].cells[3].children[0].value;
             var precio_input1 = $("#precios"+row+"").val();
             var chuy = precio_articulo.value = Number(precio_input1);
 
@@ -198,13 +200,8 @@
             var newQty = parseFloat(e.value);
             var precio_art = parseFloat(chuy);
 
-            /*------------------------------------*/
-            console.log("Renglon:"+row);
-            console.log("cantidad del renglon:"+newQty);
-            console.log("Precio del renglon:"+precio_articulo.innerHTML.innerText);
 
-            /*---------------------------------------*/
-            var total = precio_art * newQty;
+            var total = precio_articulo * newQty;
             total_ventas.innerText = total.toFixed(2);
 
             var data = [];
@@ -215,9 +212,7 @@
 
 
             document.getElementById("total").value = suma.toFixed(2);
-            //console.log(suma);
-            //console.log(data);
-            //console.log(total_ventas.innerHTML);
+
 
             }
 
@@ -227,11 +222,11 @@
                var row = e.parentNode.parentNode.rowIndex;
                var total_ventas = document.getElementById('ventas').rows[row].cells[3];
                var precio_input = parseFloat(e.value);
-               var cantidad = document.getElementById('ventas').rows[row].cells[1];
+               var cantidad = document.getElementById('ventas').rows[row].cells[1].children[0].value;
                var nomas = $("#cantidad"+row+"").val();
-               var chuy = cantidad.innerHTML.value = nomas;
 
-               var mult = chuy * precio_input;
+
+               var mult = cantidad * precio_input;
 
                total_ventas.innerText = mult.toFixed(2);
 

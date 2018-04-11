@@ -53,11 +53,13 @@ if (isset($_POST["id"])) {
         $precio_proveedor_clean2 = mysqli_real_escape_string($link, $precio_proveedor[$contador]);
         $precio_taller_clean2    = mysqli_real_escape_string($link, $precio_taller[$contador]);
         $precio_publico_clean2   = mysqli_real_escape_string($link, $precio_publico[$contador]);
+        $factura_clean2          = mysqli_real_escape_string($link, $factura);
+        $fecha2                  = mysqli_real_escape_string($link, $fecha_compra);
 
         if ($cantidad_clean2 != '' && $id_clean != '' && $precio_proveedor_clean2 != '' && $precio_taller_clean2 != '' && $precio_publico_clean2 != '') {
 
             $update .= '
-   UPDATE productos2 SET cantidad = cantidad +' . $cantidad_clean2 . ',PT = ' . $precio_taller_clean2 . ',PB = ' . $precio_publico_clean2 . ',ppv = ' . $precio_proveedor_clean2 . ' WHERE Num_Producto = ' . $id_clean . ';
+   UPDATE productos2 SET cantidad = cantidad +' . $cantidad_clean2 . ',PT = ' . $precio_taller_clean2 . ',PB = ' . $precio_publico_clean2 . ',ppv = ' . $precio_proveedor_clean2 . ', ult_factura = "' . $factura_clean2 . '" , fecha_ult_fact = "' . $fecha2 . '" WHERE Num_Producto = ' . $id_clean . ';
    ';
 
         }
