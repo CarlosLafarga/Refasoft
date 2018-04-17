@@ -123,11 +123,11 @@ if (!isset($_SESSION["nombre"])) {
                               <table id="ventas" class="table table-bordered">
                               <thead>
                               <tr>
-                                    <th width="10%">prod</th>
-                                    <th>uni</th>
+                                    <th width="5">prod</th>
+                                    <th width="5%">uni</th>
                                     <th width="40%">cant</th>
-                                    <th width="55%">precio</th>
-                                    <th>Total</th>
+                                    <th width="150%">precio</th>
+                                    <th width="20%">Total</th>
                                     <th width="10%">Accion</th>
                               </tr>
                               </thead>

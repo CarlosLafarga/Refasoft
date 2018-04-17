@@ -60,7 +60,7 @@ if (!isset($_SESSION["nombre"])) {
                                     <th>Total</th>
                                     <th>Tipo pago</th>
                                     <th>Fecha Venta</th>
-                                    <th>Acciones</th>
+                                    <th width="15%">Acciones</th>
                                 </tr>
                                 </thead>
 

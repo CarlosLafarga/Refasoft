@@ -119,7 +119,7 @@
 
                     //console.log(data);
 
-                        var fila = "<tr><input name='id' hidden id='id' class='id' value="+id+"><input hidden class='codigo' id='codigo' name='codigo' value="+cod+"><td id='producto' class='producto'>"+cod+""+prod+"</td><td>"+uni+"</td><td><input type='number' value='1' name='cantidad' id='cantidad"+contador+"' class='cantidad form-control' onchange='onQtyChange(this);' min='1' ></td><td ><input type='number' class='precios form-control' min= '0'id='precios' onchange='preciocambio(this);' value='"+precio+"'></td><td id='totals' class='subtotal'>"+total+"</td><td><button onclick='deleteRow(this)' type='button' class='btn-sm btn-danger'><i class='fa fa-trash-o' ></i></button></td></tr>";
+                        var fila = "<tr><input name='id' hidden id='id' class='id' value="+id+"><input hidden class='codigo' id='codigo' name='codigo' value="+cod+"><td id='producto' class='producto'>"+cod+"/"+prod+"</td><td class='unidad'>"+uni+"</td><td><input type='number' value='1' name='cantidad' id='cantidad"+contador+"' class='cantidad form-control' onchange='onQtyChange(this);' min='1' ></td><td ><input type='number' class='precios form-control' min= '0'id='precios' onchange='preciocambio(this);' value='"+precio+"'></td><td id='totals' class='subtotal'>"+total+"</td><td><button onclick='deleteRow(this)' type='button' class='btn-sm btn-danger'><i class='fa fa-trash-o' ></i></button></td></tr>";
 
 
 
@@ -220,9 +220,9 @@
             function preciocambio(e){
 
                var row = e.parentNode.parentNode.rowIndex;
-               var total_ventas = document.getElementById('ventas').rows[row].cells[3];
+               var total_ventas = document.getElementById('ventas').rows[row].cells[4];
                var precio_input = parseFloat(e.value);
-               var cantidad = document.getElementById('ventas').rows[row].cells[1].children[0].value;
+               var cantidad = document.getElementById('ventas').rows[row].cells[2].children[0].value;
                var nomas = $("#cantidad"+row+"").val();
 
 
@@ -249,6 +249,7 @@
         $('#save').click(function(){
 
               var codigo = [];
+              var unidad = [];
               var producto = [];
               var cantidad = [];
               var precios = [];
@@ -272,6 +273,9 @@
           $('.producto').each(function(){
            producto.push($(this).text());
           });
+            $('.unidad').each(function(){
+           unidad.push($(this).text());
+          });
           $('.cantidad').each(function(){
            cantidad.push($(this).val());
           });
@@ -290,7 +294,7 @@
                  $.ajax({
                  url:"../Controlador/insertar_Ventas.php",
                  method:"POST",
-                 data:{id:id,codigo:codigo, producto:producto, cantidad:cantidad, precios:precios,totals:totals,pago_con:pago_con,total_total:total_total,tipo_pago:tipo_pago,nombre_usuario:nombre_usuario,tipo_cliente:tipo_cliente,nombre_credito:nombre_credito},
+                 data:{id:id,codigo:codigo,unidad:unidad,producto:producto, cantidad:cantidad, precios:precios,totals:totals,pago_con:pago_con,total_total:total_total,tipo_pago:tipo_pago,nombre_usuario:nombre_usuario,tipo_cliente:tipo_cliente,nombre_credito:nombre_credito},
 
                  success:function(data){
 
@@ -466,7 +470,8 @@
                   $.ajax({
                  url:"../Controlador/insertar_Ventas.php",
                  method:"POST",
-                 data:{id:id,codigo:codigo, producto:producto, cantidad:cantidad, precios:precios,totals:totals,pago_con:pago_con,total_total:total_total,tipo_pago:tipo_pago,nombre_usuario:nombre_usuario,tipo_cliente:tipo_cliente,nombre_credito:nombre_credito},
+                 data:{id:id,codigo:codigo,unidad:unidad,producto:producto, cantidad:cantidad, precios:precios,totals:totals,pago_con:pago_con,total_total:total_total,tipo_pago:tipo_pago,nombre_usuario:nombre_usuario,tipo_cliente:tipo_cliente,nombre_credito:nombre_credito},
+
 
                  success:function(data){
 

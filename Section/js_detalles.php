@@ -34,6 +34,8 @@
             var no_tiket = $("#no_tiket").val();
             listar(no_tiket);
             var table;
+            var i = 0;
+            var renglon = i++;
          });
 
          var listar = function(e){
@@ -71,12 +73,14 @@
         var obtener_serie = function(tbody,table){
 
                 $(tbody).on("click", "button.devolucion", function(){
+
                    var data = table.row($(this).parents("tr")).data();
+                   console.log(data);
                    swal({
 
                     title: "Estas Seguro?",
                     text: "¿Desea hacer devolucion del producto ?",
-                    type: "warning",
+                    type: "error",
                     showCancelButton: true,
                     confirmButtonColor: '#DD6B55',
                     confirmButtonText: 'Si, Estoy seguro!',
@@ -89,16 +93,13 @@
 
                     if (isConfirm){
 
-
-
-                    //console.log(data);
                     var no_tiket = data.no_tiket;
                     var cantidad = $("#cant_dev").val();
                     var precio = data.precio;
                     var codigo = data.codigo;
                     var total = data.total;
 
-                    //console.log(no_tiket+"----"+cantidad+"----"+total+"----"+codigo+"");
+                    console.log(no_tiket+"----"+cantidad+"----"+total+"----"+codigo+"");
 
 
                     $.ajax({
@@ -108,7 +109,7 @@
 
                     success:function(data){
 
-                            console.log(data);
+                            //console.log(data);
                             if(data == 2){
                                  swal({
                                      title:"Buen trabajo!",
@@ -149,7 +150,7 @@
                     }
 
                  });
-
+                    /*else del if confirm*/
                     }else{
 
                           return false;

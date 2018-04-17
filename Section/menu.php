@@ -42,6 +42,7 @@
                             <li><a href="puntoventa.php"><i class="fa fa-calculator"></i>&nbsp;&nbsp;Caja</a></li>
                             <li><a href="corte_caja.php"><i class="fa fa-money"></i>&nbsp;&nbsp;Ventas</a></li>
                             <li><a href="creditos.php"><i class="fa fa-credit-card"></i>&nbsp;&nbsp;Creditos</a></li>
+                            <li><a href="devolucion.php"><i class="fa fa-exchange"></i>&nbsp;&nbsp;Devoluciones</a></li>
                           </ul>
                         </li>
 

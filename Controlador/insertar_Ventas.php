@@ -32,6 +32,7 @@ $link = mysqli_connect("localhost", "root", "", "refaccionaria");
 if (isset($_POST["codigo"])) {
     /*para insertar en tabla de ventas pero por unidad*/
     $codigo   = $_POST["codigo"];
+    $unidad   = $_POST["unidad"];
     $producto = $_POST["producto"];
     $cantidad = $_POST["cantidad"];
     $precios  = $_POST["precios"];
@@ -58,6 +59,7 @@ if (isset($_POST["codigo"])) {
     for ($count = 0; $count < count($codigo); $count++) {
 
         $codigo_clean   = mysqli_real_escape_string($link, $codigo[$count]);
+        $unidad_clean   = mysqli_real_escape_string($link, $unidad[$count]);
         $producto_clean = mysqli_real_escape_string($link, $producto[$count]);
         $cantidad_clean = mysqli_real_escape_string($link, $cantidad[$count]);
         $precios_clean  = mysqli_real_escape_string($link, $precios[$count]);
@@ -68,8 +70,8 @@ if (isset($_POST["codigo"])) {
         if ($codigo_clean != '' && $producto_clean != '' && $cantidad_clean != '' && $precios_clean != '' && $total_clean != '') {
 
             $query .= '
-   INSERT INTO venta_articulos (no_tiket,codigo,descripcion,cantidad,precio,total,fecha_venta)
-   VALUES("' . $random . '","' . $codigo_clean . '", "' . $producto_clean . '", "' . $cantidad_clean . '", "' . $precios_clean . '","' . $total_clean . '","' . $fecha . '");
+   INSERT INTO venta_articulos (no_tiket,codigo,descripcion,unidad,cantidad,precio,total,fecha_venta)
+   VALUES("' . $random . '","' . $codigo_clean . '", "' . $producto_clean . '","' . $unidad_clean . '", "' . $cantidad_clean . '", "' . $precios_clean . '","' . $total_clean . '","' . $fecha . '");
    ';
 
         }
