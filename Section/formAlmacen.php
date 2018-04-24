@@ -65,7 +65,7 @@
                         </div>
                       <div class="form-group">
                         <label>&nbsp;Cantidad</label>
-                        <input type="text" id="cantidad" name="cantidad" placeholder="Cantidad" required="llenar campo" class="form-control">
+                        <input type="number" value="0" min="0" id="cantidad" name="cantidad" placeholder="Cantidad" required="llenar campo" class="form-control">
                       </div>
                       </div>
 
@@ -87,7 +87,7 @@
                         </div>
                         <div class="form-group">
                         <label>&nbsp;Peldaño</label>
-                        <input type="text" id="peldaño" name="peldaño" placeholder="Peldaño"  class="form-control">
+                        <input type="text" id="peldano" name="peldaño" placeholder="Peldaño"  class="form-control">
                             </div>
                         <hr>
                         <center><h4>&nbsp;&nbsp;Datos de Factura</h4></center>

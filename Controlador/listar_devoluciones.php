@@ -1,25 +1,25 @@
 <?PHP
 include "../conect/conexion.php";
-$cn = Conectarse();
+$cn    = Conectarse();
+$fecha = $_GET['q'];
 
-$select = "SELECT * FROM ventas";
+date_default_timezone_set('America/Hermosillo');
+$hoy = date("Y-m-d H:i:s");
 
-$result = mysql_query($select, $cn);
+$select = "SELECT * FROM ventas WHERE DATE(fecha_venta) = " . DATE($fecha) . "";
 
-if (!$result) {
+$result        = mysql_query($select, $cn);
+$reg_existente = mysql_num_rows($result);
 
-    die(mysql_error());
+echo $reg_existente;
 
-} else {
-    $arreglo["data"] = [];
-    while ($data = mysql_fetch_assoc($result)) {
-
-        $arreglo["data"][] = $data;
-
-    }
-    echo json_encode($arreglo);
-
+while ($row_rpt = mysql_fetch_array($result)) {
+    echo "< tr >
+            < td > " . $row_rpt['no_tiket'] . " <  / td >
+            < td > " . $row_rpt['venta_total'] . " <  / td >
+            < td > " . $row_rpt['vendedor'] . " <  / td >
+            < td > " . $row_rpt['tipo_pago'] . " <  / td >
+            < td > " . $row_rpt['fecha_venta'] . " <  / td >
+            < td > <button>Detalles</button> <  / td >
+          < tr >";
 }
-
-mysql_free_result($result);
-mysql_close($cn);

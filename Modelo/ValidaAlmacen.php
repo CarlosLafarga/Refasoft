@@ -27,15 +27,15 @@ $fechafac = $_POST['fechafac'];
 //CHECAR ESTE IF
 if (!empty($factura)) {
 
-    $q = ("INSERT INTO productos2(codigo,unidad,Descripcion,cantidad,PT,PB,Proveedor,ppv,CN,Piso,Pasillo,Estante,Peldano) VALUES ('$codigo',' $unidad',' $producto',' $cantidad','$PT',' $PB',' $proveedor',' $ppv',' $CN',' $piso','$pasillo','$estante','$peldaño')");
+    $q = ("INSERT INTO productos2(codigo,unidad,Descripcion,cantidad,PT,PB,Proveedor,ppv,CN,Piso,Pasillo,Estante,Peldano) VALUES ('$codigo',' $unidad',' $producto',' $cantidad','$PT','$PB','$proveedor','$ppv','$CN','$piso','$pasillo','$estante','$peldaño')");
     $r = mysqli_query($con, $q) or die("error al insertar");
 
-    $qf        = ("INSERT INTO compras VALUES ('$factura',' $codigo',' $cantidad',' $fechafac','$proveedor','$ppv')");
+    $qf        = ("INSERT INTO compras VALUES ('$factura','$codigo','$cantidad','$fechafac','$proveedor','$ppv')");
     $resultado = mysqli_query($con, $qf) or die("error al insertar");
 
 } else {
 
-    $q = ("INSERT INTO productos2(codigo,unidad,Descripcion,cantidad,PT,PB,Proveedor,ppv,CN,Piso,Pasillo,Estante,Peldano) VALUES ('$codigo',' $unidad',' $producto',' $cantidad','$PT',' $PB',' $proveedor',' $ppv',' $CN',' $piso','$pasillo','$estante','$peldaño')");
+    $q = ("INSERT INTO productos2(codigo,unidad,Descripcion,cantidad,PT,PB,Proveedor,ppv,CN,Piso,Pasillo,Estante,Peldano) VALUES ('$codigo','$unidad',' $producto','$cantidad','$PT','$PB','$proveedor','$ppv','$CN','$piso','$pasillo','$estante','$peldaño')");
     $r = mysqli_query($con, $q) or die("error al insertar");
 }
 

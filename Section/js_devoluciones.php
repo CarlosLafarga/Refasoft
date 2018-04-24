@@ -33,40 +33,28 @@
 
     <script type="text/javascript">
 
-       $(document).ready(function () {
-
-
-               listar();
-
-        });
-
-
-       var listar = function(){
 
 
 
-
-            var table = $("#ventas").DataTable({
-                "destroy":true,
-                "ajax":{
-                    "method" : "POST",
-                    "url": "../Controlador/listar_devoluciones.php"
-                },
-                "columns":[
-                    {"data":"no_tiket"},
-                    {"data":"venta_total"},
-                    {"data":"vendedor"},
-                    {"data":"tipo_pago"},
-                    {"data":"fecha_venta"},
-                    {"defaultContent": " <button type='button' class='detalle btn-sm btn-primary'>Detalles</button>"}
-
-                ]
-            });
+     function cambio(num) {
 
 
-            //agregar_venta("#productos",table);
-
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
-
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET","../Controlador/listar_devoluciones.php?q="+num,true);
+        xmlhttp.send();
+        this.load();
+    //}
+    }
 
     </script>

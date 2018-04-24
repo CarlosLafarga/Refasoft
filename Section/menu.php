@@ -40,9 +40,10 @@
                         <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Punto Venta <span class="caret"></span></a>
                           <ul role="menu" class="dropdown-menu">
                             <li><a href="puntoventa.php"><i class="fa fa-calculator"></i>&nbsp;&nbsp;Caja</a></li>
-                            <li><a href="corte_caja.php"><i class="fa fa-money"></i>&nbsp;&nbsp;Ventas</a></li>
+                            <li><a href="corte_caja.php"><i class="fa fa-line-chart"></i>&nbsp;&nbsp;Ventas</a></li>
                             <li><a href="creditos.php"><i class="fa fa-credit-card"></i>&nbsp;&nbsp;Creditos</a></li>
-                            <li><a href="devolucion.php"><i class="fa fa-exchange"></i>&nbsp;&nbsp;Devoluciones</a></li>
+                            <!--<li><a href="devolucion.php"><i class="fa fa-exchange"></i>&nbsp;&nbsp;Devoluciones</a></li>-->
+                            <li><a href="pagos_abonos.php"><i class="fa fa-money"></i>&nbsp;&nbsp;Pagos y Abonos</a></li>
                           </ul>
                         </li>
 

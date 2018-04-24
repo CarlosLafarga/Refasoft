@@ -40,7 +40,7 @@ if ($resultado_total == 0) {
 
     $porcentaje1 = ($resultado_efectivo * 100) / $resultado_total;
     $porcentaje2 = ($resultado_tarjeta * 100) / $resultado_total;
-    $porcentaje3 = ($resultado_credito * 100) / $resultado_total;
+    $porcentaje3 = ($resultado_chkda * 100) / $resultado_total;
     $porcentaje4 = ($resultado_total * 100) / $resultado_total;
 
 }

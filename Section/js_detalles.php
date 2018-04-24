@@ -72,6 +72,7 @@
 
         var obtener_serie = function(tbody,table){
 
+
                 $(tbody).on("click", "button.devolucion", function(){
 
                    var data = table.row($(this).parents("tr")).data();

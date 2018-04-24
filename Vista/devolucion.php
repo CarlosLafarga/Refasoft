@@ -23,7 +23,8 @@ if (!isset($_SESSION["nombre"])) {
 
                <div class="wrapper wrapper-content">
                  <div class="container">
-
+                  <label>Fecha:</label>
+                    <input class="form-control" type="date" onchange="cambio(this.value)" name="fecha" id="fecha"><br>
                      <div class="ibox">
                             <div class="ibox-title">
                             <span class="pull-right"></span>
@@ -46,6 +47,10 @@ if (!isset($_SESSION["nombre"])) {
                                     <th>Acciones</th>
                                 </tr>
                                 </thead>
+                                <tbody id="txtHint">
+
+
+                                </tbody>
 
                             </table>
 
