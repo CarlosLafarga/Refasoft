@@ -87,4 +87,32 @@
 
 
         });
+
+
+        $('#cancelar1').click(function(){
+
+                   swal({
+                         title: "Estas Seguro?",
+                         text: "¿Desea cancelar la transaccion?",
+                         type: "warning",
+                         showCancelButton: true,
+                         confirmButtonColor: '#DD6B55',
+                         confirmButtonText: 'Si, Estoy seguro!',
+                         cancelButtonText: "No, Cancelar!"
+
+                         },
+                         function (isConfirm) { /*Your Code Here*/
+
+                          if (isConfirm){
+
+                              location.reload();
+
+                              }else{
+
+                               return false;
+
+                             }
+                        });
+
+        });
     </script>

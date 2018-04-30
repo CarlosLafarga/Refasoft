@@ -43,7 +43,7 @@
                             <li><a href="corte_caja.php"><i class="fa fa-line-chart"></i>&nbsp;&nbsp;Ventas</a></li>
                             <li><a href="creditos.php"><i class="fa fa-credit-card"></i>&nbsp;&nbsp;Creditos</a></li>
                             <!--<li><a href="devolucion.php"><i class="fa fa-exchange"></i>&nbsp;&nbsp;Devoluciones</a></li>-->
-                            <li><a href="pagos_abonos.php"><i class="fa fa-money"></i>&nbsp;&nbsp;Pagos y Abonos</a></li>
+                            <li><a href="pagos_abonos.php"><i class="fa fa-money"></i>&nbsp;&nbsp;Prestamos o Pagos</a></li>
                           </ul>
                         </li>
 
