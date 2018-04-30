@@ -9,12 +9,14 @@ $credito  = "SELECT SUM(venta_total) FROM ventas WHERE tipo_pago = 'credito' AND
 $total    = "SELECT SUM(venta_total) FROM ventas WHERE tipo_pago != 'credito' AND DATE(fecha_venta) = '" . DATE($fecha) . "';";
 
 $chkda = "SELECT SUM(total) FROM venta_articulos WHERE codigo = 'chkda' AND DATE(fecha_venta) ='" . DATE($fecha) . "';";
+$prestamo = "SELECT SUM(monto) FROM prestamos WHERE  DATE(fecha) ='" . DATE($fecha) . "';";
 
 $resultado_efectivo = mysql_query($efectivo, $cn) or die(mysql_error());
 $resultado_tarjeta  = mysql_query($tarjeta, $cn) or die(mysql_error());
 $resultado_credito  = mysql_query($credito, $cn) or die(mysql_error());
 $resultado_total    = mysql_query($total, $cn) or die(mysql_error());
 $resultado_chkda    = mysql_query($chkda, $cn) or die(mysql_error());
+$resultado_prestamo    = mysql_query($prestamo, $cn) or die(mysql_error());
 
 $resultado_efectivo = mysql_result($resultado_efectivo, 0);
 if ($resultado_efectivo == 0) {$resultado_efectivo = 0;} else { $resultado_efectivo;}
@@ -28,6 +30,10 @@ if ($resultado_total == 0) {$resultado_total = 0;} else { $resultado_total;}
 
 $resultado_chkda = mysql_result($resultado_chkda, 0);
 if ($resultado_chkda == 0) {$resultado_chkda = 0;} else { $resultado_chkda;}
+
+
+$resultado_prestamo = mysql_result($resultado_prestamo, 0);
+if ($resultado_prestamo == 0) {$resultado_prestamo = 0;} else { $resultado_prestamo;}
 
 if ($resultado_total == 0) {
 
@@ -89,7 +95,33 @@ echo '<div class="row">
                         <div class="ibox float-e-margins">
                             <div class="ibox-title">
                                 <span class="label label-primary pull-right">' . DATE($fecha) . '</span>
-                                <h5>TOTAL</h5>
+                                <h5>EFECTIVO EN CAJA</h5>
+                            </div>
+                            <div class="ibox-content">
+                                <h1 class="no-margins">$' .( $resultado_total - $resultado_prestamo). '</h1>
+                                <div class="stat-percent font-bold text-info">' . $porcentaje4 . '% <i class="fa fa-level-up"></i></div>
+                                <small>Total</small>
+                            </div>
+                        </div>
+            </div>
+            <div class="col-lg-3">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <span class="label label-primary pull-right">' . DATE($fecha) . '</span>
+                                <h5>PRESTAMOS DEL DIA</h5>
+                            </div>
+                            <div class="ibox-content">
+                                <h1 class="no-margins">$' . $resultado_prestamo . '</h1>
+                                <div class="stat-percent font-bold text-info">' . $porcentaje4 . '% <i class="fa fa-level-up"></i></div>
+                                <small>Total</small>
+                            </div>
+                        </div>
+            </div>
+            <div class="col-lg-3">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <span class="label label-primary pull-right">' . DATE($fecha) . '</span>
+                                <h5>PAGOS O ABONOS</h5>
                             </div>
                             <div class="ibox-content">
                                 <h1 class="no-margins">$' . $resultado_total . '</h1>
