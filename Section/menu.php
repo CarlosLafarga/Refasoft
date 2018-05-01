@@ -15,6 +15,7 @@
                           <ul role="menu" class="dropdown-menu">
                             <li><a href="almacen.php"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Agregar</a></li>
                             <li><a href="listar_prod.php"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Lista Almacen</a></li>
+                            <li><a href="listar_faltantes.php"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Faltantes</a></li>
                           </ul>
                         </li>
                         <li class="dropdown">
