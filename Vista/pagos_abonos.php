@@ -38,7 +38,7 @@ if (!isset($_SESSION["nombre"])) {
                                     <div class="panel-options">
                                         <ul class="nav nav-tabs">
                                             <li class="active"><a href="#tab-1" data-toggle="tab">Prestamos</a></li>
-                                            <li class=""><a href="#tab-2" data-toggle="tab">Pagos</a></li>
+                                            <li class=""><a href="#tab-2" data-toggle="tab">Pagos o Abonos</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -64,7 +64,23 @@ if (!isset($_SESSION["nombre"])) {
                                 </div>
                                 <!---->
                                 <div class="tab-pane" id="tab-2">
-
+                                <form id="pagos">
+                                <label>Nombre de la persona:</label>
+                                <input type="text" id="nombre2" name="nombre" class="form-control"><br>
+                                <label>Tipo de pago:</label>
+                                <select class="form-control" name="tipo_pago" id="tipo_pago">
+                                    <option value="abono">Abono</option>
+                                    <option value="pago">Pago</option>
+                                </select><br>
+                                <label>Monto:</label>
+                                <input type="number" id="monto2" name="monto" min="0" value="0" class="form-control"><br>
+                                <label>Fecha:</label>
+                                <input type="date" id="fecha2" name="fecha"  class="form-control" value="<?php echo date("Y-m-d"); ?>"><br>
+                                <label>Observaci&oacute;n:</label>
+                                <textarea id="obs2" class="form-control"></textarea><br>
+                                </form>
+                                <button id="aceptar2" class="btn btn-primary">Aceptar</button>
+                                <button id="cancelar2" class="btn btn-danger">Cancelar</button>
 
 
                                 </div>

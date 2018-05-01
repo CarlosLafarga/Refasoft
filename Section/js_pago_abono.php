@@ -115,4 +115,87 @@
                         });
 
         });
+
+
+
+
+        $( "#aceptar2" ).click(function() {
+
+            var nombre = $("#nombre2").val();
+            var tipo_pago = $("#tipo_pago").val();
+            var monto = $("#monto2").val();
+            var fecha = $("#fecha2").val();
+            var obs = $("#obs2").val();
+            //console.log(nombre+"-----"+monto +"---"+fecha+"---"+obs);
+            if(nombre != "" && monto > 0  && obs !="" ){
+
+                 $.ajax({
+                 url:"../Controlador/insertar_pago_abono.php",
+                 method:"POST",
+                 data:{nombre:nombre,tipo_pago:tipo_pago,monto:monto,fecha:fecha,obs:obs},
+
+                 success:function(data){
+
+                    var numero = Number(data);
+                    if(numero == 1 ){
+
+
+                       swal({
+                         title:"Buen trabajo!",
+                         text: "Se agrego pago o prestamo con exito",
+                         type: "success"
+                         });
+                         $("#pagos")[0].reset();
+
+                    }else if(numero = 2){
+
+                      alert("Error al insertar pago o prestamo.");
+                      $("#pagos")[0].reset();
+
+                    }
+
+
+
+                 }
+
+                 });
+            }else{
+
+                   swal({
+                         title:"Cuidado!",
+                         text: "Debe Rellenar todos los campos requeridos.",
+                         type: "warning"
+                         });
+
+            }
+
+
+        });
+
+        $('#cancelar2').click(function(){
+
+                   swal({
+                         title: "Estas Seguro?",
+                         text: "¿Desea cancelar la transaccion?",
+                         type: "warning",
+                         showCancelButton: true,
+                         confirmButtonColor: '#DD6B55',
+                         confirmButtonText: 'Si, Estoy seguro!',
+                         cancelButtonText: "No, Cancelar!"
+
+                         },
+                         function (isConfirm) { /*Your Code Here*/
+
+                          if (isConfirm){
+
+                              location.reload();
+
+                              }else{
+
+                               return false;
+
+                             }
+                        });
+
+        });
     </script>
