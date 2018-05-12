@@ -45,6 +45,7 @@
                             <li><a href="creditos.php"><i class="fa fa-credit-card"></i>&nbsp;&nbsp;Creditos</a></li>
                             <!--<li><a href="devolucion.php"><i class="fa fa-exchange"></i>&nbsp;&nbsp;Devoluciones</a></li>-->
                             <li><a href="pagos_abonos.php"><i class="fa fa-money"></i>&nbsp;&nbsp;Prestamos o Pagos</a></li>
+                            <li><a href="borrar_tiket.php"><i class="fa fa-trash"></i>&nbsp;&nbsp;Borrar Tiket Completo</a></li>
                           </ul>
                         </li>
 

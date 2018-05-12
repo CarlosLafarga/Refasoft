@@ -3,10 +3,10 @@ include "../conect/conexion.php";
 $cn    = Conectarse();
 $fecha = $_GET['fecha'];
 
-$efectivo = "SELECT SUM(venta_total) FROM ventas WHERE tipo_pago = 'efectivo' AND DATE(fecha_venta) = '" . DATE($fecha) . "' ;";
-$tarjeta  = "SELECT SUM(venta_total) FROM ventas WHERE tipo_pago = 'tarjeta' AND DATE(fecha_venta) = '" . DATE($fecha) . "';";
-$credito  = "SELECT SUM(venta_total) FROM ventas WHERE tipo_pago = 'credito' AND DATE(fecha_venta) = '" . DATE($fecha) . "';";
-$total    = "SELECT SUM(venta_total) FROM ventas WHERE tipo_pago != 'credito' AND DATE(fecha_venta) = '" . DATE($fecha) . "';";
+$efectivo = "SELECT SUM(venta_total) FROM ventas WHERE tipo_pago = 'efectivo' AND DATE(fecha_venta) = '" . DATE($fecha) . "' AND cancelado != 1 ;";
+$tarjeta  = "SELECT SUM(venta_total) FROM ventas WHERE tipo_pago = 'tarjeta' AND DATE(fecha_venta) = '" . DATE($fecha) . "' AND cancelado != 1;";
+$credito  = "SELECT SUM(venta_total) FROM ventas WHERE tipo_pago = 'credito' AND DATE(fecha_venta) = '" . DATE($fecha) . "' AND cancelado != 1;";
+$total    = "SELECT SUM(venta_total) FROM ventas WHERE tipo_pago != 'credito' AND DATE(fecha_venta) = '" . DATE($fecha) . "' AND cancelado != 1;";
 
 $chkda        = "SELECT SUM(total) FROM venta_articulos WHERE codigo = 'chkda' AND DATE(fecha_venta) ='" . DATE($fecha) . "';";
 $prestamo     = "SELECT SUM(monto) FROM prestamos WHERE  DATE(fecha) ='" . DATE($fecha) . "';";
