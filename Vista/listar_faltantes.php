@@ -22,11 +22,25 @@ if (!isset($_SESSION["nombre"])) {
 
             <div class="wrapper wrapper-content">
                <div class="container">
+                <div class="row">
+                  <div class="col col-sm-4">
+
+                    <label>Cliente</label><br>
+                    <select id="clientes" class="form-control">
+
+                    </select><br>
+
+                    <label>Fecha:</label><br>
+                    <input id='fecha' class='form-control' type="date"  ><br>
+                    <button id="consultar" class="btn btn-primary">Consultar</button><br>
+                   <br>
+                  </div>
+                </div>
 
                       <div class="ibox">
                             <div class="ibox-title">
                             <span class="pull-right"></span>
-                            <h5>Productos Almacen</h5>
+                            <h5>Productos Faltantes</h5>
                             </div>
 
                             <div class="ibox-content">
@@ -39,7 +53,6 @@ if (!isset($_SESSION["nombre"])) {
                                     <th>Unidad</th>
                                     <th>Cantidad</th>
                                     <th>Fecha</th>
-                                    <th>Acciones</th>
                                 </tr>
                                 </thead>
 

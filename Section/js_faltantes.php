@@ -86,21 +86,37 @@
 
        $(document).ready(function () {
 
+              $.ajax({
+                    type:"POST",
+                    url: "../Controlador/listar_clientes.php",
+                    success: function(response){
 
-               listar();
+                      $('#clientes').html(response).fadeIn();
+                    }
+                    });
+
+
+
+
 
 
             });
 
 
-            var listar = function(){
 
+
+
+            $( "#consultar" ).click(function() {
+
+            var fecha = $("#fecha").val();
+            var cliente = $("#clientes").val();
+            console.log(cliente);
 
             var table = $("#faltantes").DataTable({
                 "destroy":true,
                 "ajax":{
                     "method" : "POST",
-                    "url": "../Controlador/listar_faltantes.php"
+                    "url": "../Controlador/listar_faltantes.php?cliente="+cliente+"&fecha="+fecha+""
                 },
                 "columns":[
                     {"data":"codigo"},
@@ -108,7 +124,7 @@
                     {"data":"unidad"},
                     {"data":"cantidad"},
                     {"data":"fecha_venta"},
-                    {"defaultContent": " <button type='button' class='agregar btn-sm btn-primary'>Agregar</button>"}
+
 
                 ],
                  dom: '<"html5buttons"B>lTfgitp',
@@ -123,5 +139,5 @@
 
            // agregar_venta("#productos",table);
 
-        }
+        });
        </script>

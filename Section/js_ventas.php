@@ -96,7 +96,7 @@
        var listar = function(e){
 
             var datestring = moment(e.value).format('YYYY/MM/DD');
-
+            console.log(datestring);
             //console.log(datestring);
             var table = $("#ventas").DataTable({
                 "destroy":true,
