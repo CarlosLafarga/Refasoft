@@ -87,6 +87,7 @@
        $(document).ready(function () {
 
             listar();
+            listar2();
 
             });
 
@@ -111,8 +112,39 @@
                     {"data":"cantidad"},
                     {"data":"proveedor"},
                     {"data":"fecha_venta"},
+                ],
+                 dom: '<"html5buttons"B>lTfgitp',
+                         //'Bfrtip',
+
+                 "buttons":[
+
+                    {extend: 'excel', title: 'Faltantes'}
+                ]
+            });
 
 
+           // agregar_venta("#productos",table);
+          }
+
+
+           var listar2 = function(){
+
+
+
+            var table = $("#faltantes2").DataTable({
+                "destroy":true,
+                "ajax":{
+                    "method" : "POST",
+                    "url": "../Controlador/listar_faltantes2.php"
+                },
+                "columns":[
+                    {"data":"codigo"},
+                    {"data":"Descripcion"},
+                    {"data":"unidad"},
+                    {"data":"cantidad"},
+                    {"data":"Proveedor"},
+                    {"data":"Grupo"},
+                    {"data":"ult_factura"},
                 ],
                  dom: '<"html5buttons"B>lTfgitp',
                          //'Bfrtip',
