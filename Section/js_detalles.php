@@ -29,26 +29,29 @@
     <script src="../Include/js/plugins/sweetalert/sweetalert.min.js"></script>
     <script type="text/javascript">
 
+
         $(document).ready(function () {
 
             var no_tiket = $("#no_tiket").val();
-            listar(no_tiket);
+            var codigo = $("#codigo").val();
+            listar(no_tiket,codigo);
             var table;
-            var i = 0;
-            var renglon = i++;
+
          });
 
-         var listar = function(e){
+         var listar = function(tiket,codig){
 
-            var no_tiket = e;
+            var no_tiket = tiket;
+            var codigo = codig;
 
+            console.log(codigo);
 
-            //console.log(datestring);
              table = $("#detalles").DataTable({
+
                 "destroy":true,
                 "ajax":{
                     "method" : "POST",
-                    "url": "../Controlador/listar_detalles_tiket.php?no_tiket="+no_tiket+""
+                    "url": "../Controlador/listar_detalles_tiket.php?no_tiket="+no_tiket+"&codigo="+codigo+""
                 },
                 "columns":[
                     {"data":"no_tiket"},

@@ -2,6 +2,7 @@
 session_start();
 date_default_timezone_set('America/Hermosillo');
 $no_tiket = $_GET['no_tiket'];
+$codigo   = $_GET['codigo'];
 if (!isset($_SESSION["nombre"])) {
     header("location:../Vista/login.php");
     exit();
@@ -25,6 +26,7 @@ if (!isset($_SESSION["nombre"])) {
             <div class="wrapper wrapper-content">
                <div class="container">
                 <input type="hidden" name="no_tiket" id="no_tiket" value="<?PHP echo $no_tiket; ?>">
+                <input type="hidden" name="codigo" id="codigo" value="<?PHP echo $codigo; ?>">
 
                 <div class="ibox">
                             <div class="ibox-title">

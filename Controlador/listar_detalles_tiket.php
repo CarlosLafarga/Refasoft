@@ -2,8 +2,9 @@
 include "../conect/conexion.php";
 $cn       = Conectarse();
 $no_tiket = $_GET['no_tiket'];
+$codigo   = $_GET['codigo'];
 
-$select = "SELECT * FROM venta_articulos WHERE no_tiket =  '" . $no_tiket . "' AND cantidad != 0; ";
+$select = "SELECT * FROM venta_articulos WHERE no_tiket =  '" . $no_tiket . "' AND codigo = '" . $codigo . "' AND cantidad != 0; ";
 $result = mysql_query($select, $cn);
 
 if (!$result) {

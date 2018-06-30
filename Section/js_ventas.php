@@ -129,7 +129,7 @@
 
                 $(tbody).on("click", "button.detalles", function(){
                     var data = table.row($(this).parents("tr")).data();
-                    window.location.href = "detalles_venta.php?no_tiket="+data.no_tiket+"";
+                    window.location.href = "detalles_venta.php?no_tiket="+data.no_tiket+"&codigo="+data.codigo+"";
                     console.log(data.no_tiket);
                 });
 
