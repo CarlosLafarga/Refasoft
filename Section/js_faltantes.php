@@ -88,6 +88,8 @@
 
             listar();
             listar2();
+            listar3();
+            listar4();
 
             });
 
@@ -106,19 +108,19 @@
                     "url": "../Controlador/listar_faltantes.php"
                 },
                 "columns":[
-                    {"data":"codigo"},
-                    {"data":"descripcion"},
-                    {"data":"unidad"},
                     {"data":"cantidad"},
-                    {"data":"proveedor"},
-                    {"data":"fecha_venta"},
+                    {"data":"codigo"},
+                    {"data":"unidad"},
+                    {"data":"descripcion"},
+                    {"data":"precio"},
+                    {"data":"total"},
                 ],
                  dom: '<"html5buttons"B>lTfgitp',
                          //'Bfrtip',
 
                  "buttons":[
 
-                    {extend: 'excel', title: 'Faltantes'}
+                    {extend: 'excel', title: 'Vale Rosalio'}
                 ]
             });
 
@@ -152,6 +154,73 @@
                  "buttons":[
 
                     {extend: 'excel', title: 'Faltantes'}
+                ]
+            });
+
+
+           // agregar_venta("#productos",table);
+          }
+
+          var listar3 = function(){
+
+
+
+            var table = $("#faltantes3").DataTable({
+                "destroy":true,
+                "ajax":{
+                    "method" : "POST",
+                    "url": "../Controlador/listar_faltantes_ms.php"
+                },
+                "columns":[
+                    {"data":"codigo"},
+                    {"data":"unidad"},
+                    {"data":"descripcion"},
+                    {"data":"cantidad"},
+                    {"data":"inventario"},
+                    {"data":"cliente_credito"},
+                    {"data":"fecha_venta"},
+                    {"data":"Proveedor"},
+                    {"data":"tipo_pago"},
+                ],
+                 dom: '<"html5buttons"B>lTfgitp',
+                         //'Bfrtip',
+
+                 "buttons":[
+
+                    {extend: 'excel', title: 'Faltantes de martes a sabado'}
+                ]
+            });
+
+
+           // agregar_venta("#productos",table);
+          }
+            var listar4 = function(){
+
+
+
+            var table = $("#faltantes4").DataTable({
+                "destroy":true,
+                "ajax":{
+                    "method" : "POST",
+                    "url": "../Controlador/listar_faltantes_lunes.php"
+                },
+                "columns":[
+                    {"data":"codigo"},
+                    {"data":"unidad"},
+                    {"data":"descripcion"},
+                    {"data":"cantidad"},
+                    {"data":"inventario"},
+                    {"data":"cliente_credito"},
+                    {"data":"fecha_venta"},
+                    {"data":"Proveedor"},
+                    {"data":"tipo_pago"},
+                ],
+                 dom: '<"html5buttons"B>lTfgitp',
+                         //'Bfrtip',
+
+                 "buttons":[
+
+                    {extend: 'excel', title: 'Faltantes si hoy es lunes'}
                 ]
             });
 

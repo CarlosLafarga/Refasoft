@@ -10,9 +10,16 @@ $fecha_anterior = dia_anterior($fecha_hoy);
 
 //echo $fecha_anterior;
 
-$select = "SELECT cantidad,codigo,unidad,descripcion,precio,total from ventas,venta_articulos
-where (cliente_credito like '%rosalio%') and venta_articulos.fecha_venta=DATE(NOW())
-and venta_articulos.no_tiket=ventas.no_tiket";
+$select = "SELECT  venta_articulos.codigo, venta_articulos.unidad, venta_articulos.descripcion, venta_articulos.cantidad, tipo_pago,cliente_credito,ventas.fecha_venta,Proveedor,productos2.cantidad AS inventario
+FROM venta_articulos LEFT JOIN ventas ON venta_articulos.no_tiket = ventas.no_tiket 
+LEFT JOIN productos2 ON venta_articulos.codigo = productos2.codigo
+WHERE 
+( ( DATE(ventas.fecha_venta)= (DATE(NOW())-1)  and 
+ventas.cliente_credito not like 'rosalio%'  )   or
+( ( DATE(ventas.fecha_venta)=DATE(NOW())) and 
+ventas.cliente_credito like 'rosalio%'   )   )
+and venta_articulos.cancelado=0 and venta_articulos.devolucion=0         
+order by codigo,Proveedor";
 
 $result = mysql_query($select, $cn);
 

@@ -9,6 +9,14 @@
             </div>
             <div class="navbar-collapse collapse" id="navbar">
                 <ul class="nav navbar-nav">
+                      <li class="dropdown">
+                        <!--menu de Vales-->
+                        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Vales <span class="caret"></span></a>
+                          <ul role="menu" class="dropdown-menu">
+                            <li><a href="vales.php"><i class="fa fa-id-card"></i>&nbsp;&nbsp;Vale chalio</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown">
                     <li class="dropdown">
                         <!--menu de almacen-->
                         <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Almacen <span class="caret"></span></a>
