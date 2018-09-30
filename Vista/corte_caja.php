@@ -38,15 +38,31 @@ if (!isset($_SESSION["nombre"])) {
                    <div id="txtHint">
 
                    </div>
-                    <div class="ibox">
-                            <div class="ibox-title">
-                            <span class="pull-right"></span>
-                            <h5>Ventas desglosadas</h5>
-                            </div>
+                    
+                                                <div class="row m-t-sm">
+                                <div class="col-lg-12">
+                                <div class="panel blank-panel">
+                                <div class="panel-heading">
+                                    <div class="panel-options">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a href="#tab-1" data-toggle="tab">Ventas efectivo y tarjeta</a></li>
+                                            <li class=""><a href="#tab-2" data-toggle="tab">Ventas Credito</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
 
-                            <div class="ibox-content">
+                                <div class="panel-body">
 
+                                <div class="tab-content">
+                                <div class="tab-pane active" id="tab-1">
+                                    
+                                 <div class="ibox">
+                                 <div class="ibox-title">
+                                 <span class="pull-right"></span>
+                                 <h5>Ventas desglosadas</h5>
+                                 </div>
 
+                               <div class="ibox-content">
                                <div class="table-responsive">
 
                                 <table  id="ventas" class="table table-striped table-bordered table-hover dataTables-example">
@@ -64,13 +80,55 @@ if (!isset($_SESSION["nombre"])) {
                                 </tr>
                                 </thead>
 
-                            </table>
+                                </table>
 
 
+                                 </div>
+                                 </div>
+                                 </div>
+
+                                </div>
+                                <div class="tab-pane" id="tab-2">
+
+                                 <div class="ibox">
+                                 <div class="ibox-title">
+                                 <span class="pull-right"></span>
+                                 <h5>Ventas Credito</h5>
+                                 </div>
+
+                               <div class="ibox-content">
+                               <div class="table-responsive">
+
+                                <table  id="ventas_credito" class="table table-striped table-bordered table-hover dataTables-example">
+                                <thead>
+                                <tr>
+                                    <th>No Ticket</th>
+                                    <th>Codigo</th>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio</th>
+                                    <th>Total</th>
+                                    <th>Tipo pago</th>
+                                    <th>Fecha Venta</th>
+                                    <th width="15%">Acciones</th>
+                                </tr>
+                                </thead>
+
+                                </table>
+
+
+                                 </div>
+                                 </div>
+                                 </div>
+
+                                </div>
+                                </div>
+
+                                </div>
+
+                                </div>
+                                </div>
                             </div>
-                          </div>
-                     </div>
-
 
 
               </div>

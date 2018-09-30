@@ -43,7 +43,7 @@ if (!isset($_SESSION["nombre"])) {
                                 <div class="tab-content">
                                 
                                   <!--Panel numero 1 -->
-                                 <div class="tab-pane" id="tab-1">
+                                 <div class="tab-pane active" id="tab-1">
                                   <div class="ibox-title">
                                      <span class="pull-right"></span>
                                      <h5>Productos Faltantes</h5>

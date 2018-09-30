@@ -1,4 +1,4 @@
-    <script src="../Include/js/jquery-3.1.1.min.js"></script>
+<script src="../Include/js/jquery-3.1.1.min.js"></script>
     <script src="../Include/js/bootstrap.min.js"></script>
     <script src="../Include/js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="../Include/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
@@ -24,11 +24,59 @@
 
 
     <script src="../Include/js/plugins/dataTables/datatables.min.js"></script>
+     <!-- Chosen -->
     <script src="../Include/js/plugins/chosen/chosen.jquery.js"></script>
+
+   <!-- JSKnob -->
+   <script src="../Include/js/plugins/jsKnob/jquery.knob.js"></script>
+
+   <!-- Input Mask-->
+    <script src="../Include/js/plugins/jasny/jasny-bootstrap.min.js"></script>
+
+   <!-- Data picker -->
+   <script src="../Include/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
+   <!-- NouSlider -->
+   <script src="../Include/js/plugins/nouslider/jquery.nouislider.min.js"></script>
+
+   <!-- Switchery -->
+   <script src="../Include/js/plugins/switchery/switchery.js"></script>
+
+    <!-- IonRangeSlider -->
+    <script src="../Include/js/plugins/ionRangeSlider/ion.rangeSlider.min.js"></script>
+
+    <!-- iCheck -->
+    <script src="../Include/js/plugins/iCheck/icheck.min.js"></script>
+
+    <!-- MENU -->
+    <script src="../Include/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+    <!-- Color picker -->
+    <script src="../Include/js/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+
+    <!-- Clock picker -->
+    <script src="../Include/js/plugins/clockpicker/clockpicker.js"></script>
+
+    <!-- Image cropper -->
+    <script src="../Include/js/plugins/cropper/cropper.min.js"></script>
+
+    <!-- Date range use moment.js same as full calendar plugin -->
+    <script src="../Include/js/plugins/fullcalendar/moment.min.js"></script>
+
+    <!-- Date range picker -->
+    <script src="../Include/js/plugins/daterangepicker/daterangepicker.js"></script>
+
+    <!-- Select2 -->
     <script src="../Include/js/plugins/select2/select2.full.min.js"></script>
-    <script src="../Include/js/plugins/typehead/bootstrap3-typeahead.min.js"></script>
-    <script src="../Include/js/plugins/datapicker/bootstrap-datepicker.js"></script>
-    <script src="../Include/js/plugins/sweetalert/sweetalert.min.js"></script>
+
+    <!-- TouchSpin -->
+    <script src="../Include/js/plugins/touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+    <!-- Tags Input -->
+    <script src="../Include/js/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+
+    <!-- Dual Listbox -->
+    <script src="../Include/js/plugins/dualListbox/jquery.bootstrap-duallistbox.js"></script>
     <script src="../Include/js/moment.min.js"></script>
 
     <script>
@@ -51,6 +99,7 @@
                 hoy = mm+'/'+dd+'/'+yyyy;
 
                 listar(hoy);
+                listar_credito(hoy);
                 cargar(hoy);
 
 
@@ -67,6 +116,7 @@
        function corte(e){
 
             listar(e);
+            listar_credito(e);
             cargar(e.value);
 
 
@@ -120,6 +170,36 @@
 
 
             detalles("#ventas",table);
+
+        }
+
+        var listar_credito = function(e){
+
+            var datestring = moment(e.value).format('YYYY/MM/DD');
+            console.log(datestring);
+            //console.log(datestring);
+            var table = $("#ventas_credito").DataTable({
+                "destroy":true,
+                "ajax":{
+                    "method" : "POST",
+                    "url": "../Controlador/listar_ventas_credito.php?fecha="+datestring+""
+                },
+                "columns":[
+                    {"data":"no_tiket"},
+                    {"data":"codigo"},
+                    {"data":"descripcion"},
+                    {"data":"cantidad"},
+                    {"data":"precio"},
+                    {"data":"total"},
+                    {"data":"tipo_pago"},
+                    {"data":"fecha_venta"},
+                    {"defaultContent": " <button type='button' class='detalles btn-sm btn-primary'>Detalles</button>|<button type='button' class='tiket btn-sm btn-info'><i class='fa fa-print'></i></button>"}
+
+                ]
+            });
+
+
+            detalles("#ventas_credito",table);
 
         }
 
