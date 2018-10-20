@@ -22,7 +22,7 @@ if (!isset($_SESSION["nombre"])) {
 
 
             <div class="wrapper wrapper-content">
-               <div class="container" style="padding-right: 15px;padding-left: 0;margin-right: 0;margin-left: 0;">
+               <div class="container" >
                    <div class="row">
                    <div class="col-lg-3">
                    <label>Fecha:</label>
