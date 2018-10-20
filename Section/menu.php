@@ -14,6 +14,8 @@
                         <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Vales <span class="caret"></span></a>
                           <ul role="menu" class="dropdown-menu">
                             <li><a href="vales.php"><i class="fa fa-id-card"></i>&nbsp;&nbsp;Vale chalio</a></li>
+                            <li><a href="creditos.php"><i class="fa fa-credit-card"></i>&nbsp;&nbsp;Reportes Creditos</a></li>
+
                           </ul>
                         </li>
                         <li class="dropdown">
@@ -50,7 +52,6 @@
                           <ul role="menu" class="dropdown-menu">
                             <li><a href="puntoventa.php"><i class="fa fa-calculator"></i>&nbsp;&nbsp;Caja</a></li>
                             <li><a href="corte_caja.php"><i class="fa fa-line-chart"></i>&nbsp;&nbsp;Ventas</a></li>
-                            <li><a href="creditos.php"><i class="fa fa-credit-card"></i>&nbsp;&nbsp;Creditos</a></li>
                             <!--<li><a href="devolucion.php"><i class="fa fa-exchange"></i>&nbsp;&nbsp;Devoluciones</a></li>-->
                             <li><a href="pagos_abonos.php"><i class="fa fa-money"></i>&nbsp;&nbsp;Prestamos o Pagos</a></li>
                             <li><a href="borrar_tiket.php"><i class="fa fa-trash"></i>&nbsp;&nbsp;Borrar Tiket Completo</a></li>

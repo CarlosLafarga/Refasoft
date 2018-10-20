@@ -22,69 +22,7 @@ if (!isset($_SESSION["nombre"])) {
 
                  <div class="wrapper wrapper-content">
                    <div class="container">
-                    <div class="col-lg-12">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>AGREGAR PRODUCTO <small></small></h5>
-                            <div class="ibox-tools">
-
-                            </div>
-                        </div>
-                        <div class="ibox-content">
-                            <form method="get" class="form-horizontal">
-
-
-                                <div class="form-group">
-
-                                  <div class="hr-line-dashed"></div>
-                                    <div class="col-sm-12">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                              <label class=" control-label">Codigo</label>
-                                              <input type="text" placeholder="" class="form-control">
-                                            </div>
-
-                                            <div class="col-md-4">
-                                              <label class=" control-label">Producto</label>
-                                              <input type="text" placeholder="" class="form-control">
-                                            </div>
-
-                                            <div class="col-md-4">
-                                               <label class=" control-label">Unidad</label>
-                                               <select class="form-control">
-                                                 <option></option>
-                                               </select>
-                                            </div>
-
-                                             <div class="col-md-4">
-                                               <label class=" control-label">Unidad</label>
-                                              <input type="number" placeholder="" class="form-control">
-                                            </div>
-
-                                            <div class="col-md-4">
-                                              <label class=" control-label">Unidad</label>
-                                             <input type="number" placeholder="" class="form-control">
-                                           </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-
-
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group">
-                                    <div class="col-sm-4 col-sm-offset-2">
-                                        <button class="btn btn-white" type="submit">Cancel</button>
-                                        <button class="btn btn-primary" type="submit">Save changes</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
+                     <?PHP include "../Section/formAlmacen.php";?>
                     </div>
                  </div>
 
@@ -93,3 +31,124 @@ if (!isset($_SESSION["nombre"])) {
    </div>
 
 </body>
+
+<script type="text/javascript">
+    //$(document).ready(function(){
+        $("#fregistro").validate({
+            rules: {
+                codigo: {
+                    required: true,
+                    minlength: 1
+                },
+                producto: {
+                    required: true,
+                    minlength: 2
+                },
+                unidad: {
+                    required: true,
+                    minlength: 1
+                },
+                proveedor: {
+                    required: true,
+                    minlength: 1
+                },
+                ppv: {
+                    required: true,
+                    minlength: 1
+                },
+                cantidad: {
+                    required: true,
+                    minlength: 1
+                },
+                facturas:{
+                    required: true,
+                    notEqualTo: " "
+                },
+
+
+          SelectName: { valueNotEquals: "seleccione una opcion! " }
+
+            },
+            //For custom messages
+            messages: {
+                codigo:{
+                    required: "Ingrese el codigo",
+                    minlength: "Debe ser codigo valido"
+                },
+                producto:{
+                    required: "Ingrese un producto",
+                    minlength: "Debe ingresar un producto"
+                },
+                unidad:{
+                    required: "seleccione la unidad ",
+                    minlength: "debe seleccionar una opcion"
+                },
+                proveedor:{
+                    required: "seleccione el proveedor ",
+                    minlength: "seleccione un proveedor"
+                },
+                ppv:{
+                    required: "Ingrese un precio ",
+                    minlength: "Ingrese un precio"
+                },
+                cantidad:{
+                    required: "Ingrese una cantidad ",
+                    minlength: "Ingrese una cantidad"
+                },
+                facturas:{
+                    required: "Ingrese la respuesta",
+                    notEqualTo : "Seleccione una opcion"
+                },
+
+
+
+
+          SelectName: { valueNotEquals: "seleccione una opcion!" }
+
+            },
+            errorElement : 'div',
+            errorPlacement: function(error, element) {
+              var placement = $(element).data('error');
+              if (placement) {
+                $(placement).append(error)
+              } else {
+                error.insertAfter(element);
+              }
+            }
+        });
+    //});
+
+    // add the rule here
+     $.validator.addMethod(" ", function(value, element, arg){
+      return arg != value;
+     }, "Value must not equal arg.");
+
+    $(document).ready(function() {
+
+      $('select').material_select();
+    });
+    $('select#facturas').on('change', function() {
+          var opcion = this.value;
+          if (opcion == 0) {
+          if ($( "#facturacion" ).hasClass("factura") == false) {
+          $( "#facturacion" ).addClass("factura");
+          Limpiarfactura();
+          }
+        }
+        else{
+          if ($( "#facturacion" ).hasClass("factura") == true) {
+          $( "#facturacion" ).removeClass("factura");
+          Limpiarfactura();
+          }
+        }
+      });
+  </script>
+</html>
+
+
+<?php
+if (isset($_POST['submit'])) {
+    require 'calcular.php';
+}
+
+?>

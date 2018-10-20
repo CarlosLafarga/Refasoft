@@ -71,11 +71,11 @@ if (!isset($_SESSION["nombre"])) {
                                 <table  id="ventas" class="table table-striped table-bordered table-hover dataTables-example">
                                 <thead>
                                 <tr>
-                                    <th>No Ticket</th>
-                                    <th>Vendedor</th>
-                                    <th>Codigo</th>
-                                    <th>Producto</th>
+                                    <th >ID</th>
                                     <th>Cantidad</th>
+                                    <th width="10px">Codigo</th>
+                                    <th>Unidad</th>
+                                    <th>Producto</th>
                                     <th>Precio</th>
                                     <th>Total</th>
                                     <th>Fecha Venta</th>

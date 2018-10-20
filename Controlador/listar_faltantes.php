@@ -10,7 +10,7 @@ $fecha_anterior = dia_anterior($fecha_hoy);
 
 //echo $fecha_anterior;
 
-$select = "SELECT cantidad,codigo,unidad,descripcion,precio,total from ventas,venta_articulos
+$select = "SELECT venta_articulos.Id,cantidad,codigo,unidad,descripcion,precio,total from ventas,venta_articulos
 where (cliente_credito like '%rosalio%') and venta_articulos.fecha_venta=DATE(NOW())
 and venta_articulos.no_tiket=ventas.no_tiket";
 

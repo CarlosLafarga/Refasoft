@@ -102,12 +102,14 @@
 
 
             var table = $("#faltantes").DataTable({
+                "pageLength":50,
                 "destroy":true,
                 "ajax":{
                     "method" : "POST",
                     "url": "../Controlador/listar_faltantes.php"
                 },
                 "columns":[
+                    {"data":"Id"},
                     {"data":"cantidad"},
                     {"data":"codigo"},
                     {"data":"unidad"},
@@ -134,6 +136,7 @@
 
 
             var table = $("#faltantes2").DataTable({
+              "pageLength":50,
                 "destroy":true,
                 "ajax":{
                     "method" : "POST",
@@ -166,6 +169,7 @@
 
 
             var table = $("#faltantes3").DataTable({
+              "pageLength":50,
                 "destroy":true,
                 "ajax":{
                     "method" : "POST",
@@ -176,11 +180,11 @@
                     {"data":"unidad"},
                     {"data":"descripcion"},
                     {"data":"cantidad"},
-                    {"data":"inventario"},
                     {"data":"cliente_credito"},
                     {"data":"fecha_venta"},
                     {"data":"Proveedor"},
-                    {"data":"tipo_pago"},
+                    {"data":"inventario"},
+
                 ],
                  dom: '<"html5buttons"B>lTfgitp',
                          //'Bfrtip',
@@ -199,6 +203,7 @@
 
 
             var table = $("#faltantes4").DataTable({
+                "pageLength":50,
                 "destroy":true,
                 "ajax":{
                     "method" : "POST",
@@ -209,11 +214,10 @@
                     {"data":"unidad"},
                     {"data":"descripcion"},
                     {"data":"cantidad"},
-                    {"data":"inventario"},
                     {"data":"cliente_credito"},
                     {"data":"fecha_venta"},
                     {"data":"Proveedor"},
-                    {"data":"tipo_pago"},
+                    {"data":"inventario"},
                 ],
                  dom: '<"html5buttons"B>lTfgitp',
                          //'Bfrtip',

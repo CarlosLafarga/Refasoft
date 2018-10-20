@@ -70,22 +70,30 @@
           var a = moment(fecha_a).format('YYYY/MM/DD');
             //console.log(tipo_fact);
             var table = $("#ventas").DataTable({
+                 "pageLength":50,
                 "destroy":true,
                 "ajax":{
                     "method" : "POST",
                     "url": "../Controlador/listar_credito.php?cliente="+cliente+"&de="+de+"&a="+a+""
                 },
                 "columns":[
-                    {"data":"no_tiket"},
-                    {"data":"vendedor"},
-                    {"data":"codigo"},
-                    {"data":"descripcion"},
+                    {"data":"Id"},
                     {"data":"cantidad"},
+                    {"data":"codigo"},
+                    {"data":"unidad"},
+                    {"data":"descripcion"},
                     {"data":"precio"},
                     {"data":"total"},
                     {"data":"fecha_venta"},
 
 
+                ],
+                  dom: '<"html5buttons"B>lTfgitp',
+                         //'Bfrtip',
+
+                 "buttons":[
+
+                    {extend: 'excel', title: 'Vale '+cliente+' de '+de+' a '+a}
                 ]
             });
 

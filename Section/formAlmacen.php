@@ -87,7 +87,7 @@
                         </div>
                         <div class="form-group">
                         <label>&nbsp;Peldaño</label>
-                        <input type="text" id="peldano" name="peldaño" placeholder="Peldaño"  class="form-control">
+                        <input type="text" id="peldano" name="peldano" placeholder="Peldaño"  class="form-control">
                             </div>
                         <hr>
                         <center><h4>&nbsp;&nbsp;Datos de Factura</h4></center>

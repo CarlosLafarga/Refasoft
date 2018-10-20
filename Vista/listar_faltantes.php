@@ -31,9 +31,10 @@ if (!isset($_SESSION["nombre"])) {
                                 <div class="panel-heading">
                                     <div class="panel-options">
                                         <ul class="nav nav-tabs">
-                                            <li class=""><a href="#tab-1" data-toggle="tab">Faltantes De la tabla de productos</a></li>
-                                            <li class=""><a href="#tab-2" data-toggle="tab">Faltantes de martes a sabado</a></li>
-                                            <li class=""><a href="#tab-3" data-toggle="tab">Faltantes si es lunes</a></li>
+
+                                            <li class=""><a href="#tab-2" data-toggle="tab">FALTANTES de martes a sabado</a></li>
+                                            <li class=""><a href="#tab-3" data-toggle="tab">FALTANTES  lunes</a></li>
+                                            <li class=""><a href="#tab-4" data-toggle="tab">LISTA productos Negativos</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -41,12 +42,75 @@ if (!isset($_SESSION["nombre"])) {
                                 <div class="panel-body">
 
                                 <div class="tab-content">
-                                
-                                  <!--Panel numero 1 -->
-                                 <div class="tab-pane active" id="tab-1">
+
+
+                                 <!--Panel numero 2-->
+                                 <div class="tab-pane active" id="tab-2">
                                   <div class="ibox-title">
                                      <span class="pull-right"></span>
                                      <h5>Productos Faltantes</h5>
+                                  </div>
+
+                                 <div class="ibox-content">
+                                 <div class="table-responsive">
+                                   <table  id="faltantes3" class="table table-striped table-bordered table-hover dataTables-example">
+                                   <thead>
+                                   <tr>
+                                       <th>Codigo</th>
+                                       <th>Unidad</th>
+                                       <th>Descripcion</th>
+                                       <th>Cantidad</th>
+                                       <th>Cliente Credito</th>
+                                       <th>Fecha Venta</th>
+                                       <th>Proveedor</th>
+                                        <th>Inventario</th>
+
+                                   </tr>
+                                  </thead>
+
+                                  </table>
+
+
+                                 </div>
+                                 </div>
+                                 </div>
+
+                                 <!--Panel numero 3-->
+                                  <div class="tab-pane" id="tab-3">
+                                  <div class="ibox-title">
+                                     <span class="pull-right"></span>
+                                     <h5>Productos Faltantes LUNES</h5>
+                                  </div>
+
+                                 <div class="ibox-content">
+                                 <div class="table-responsive">
+                                   <table  id="faltantes4" class="table table-striped table-bordered table-hover dataTables-example">
+                                   <thead>
+                                   <tr>
+
+                                       <th>Codigo</th>
+                                       <th>Unidad</th>
+                                       <th>Descripcion</th>
+                                       <th>Cantidad</th>
+                                       <th>Cliente Credito</th>
+                                       <th>Fecha Venta</th>
+                                       <th>Proveedor</th>
+                                       <th>Inventario</th>
+                                   </tr>
+                                  </thead>
+
+                                  </table>
+
+
+                                 </div>
+                                 </div>
+                                 </div>
+
+   <!--Panel numero 4 -->
+                                 <div class="tab-pane" id="tab-4">
+                                  <div class="ibox-title">
+                                     <span class="pull-right"></span>
+                                     <h5>Lista de Productos Negativos</h5>
                                   </div>
 
                                  <div class="ibox-content">
@@ -71,70 +135,7 @@ if (!isset($_SESSION["nombre"])) {
                                  </div>
                                  </div>
                                  </div>
-                                 <!--Panel numero 2-->
-                                 <div class="tab-pane" id="tab-2">
-                                  <div class="ibox-title">
-                                     <span class="pull-right"></span>
-                                     <h5>Productos Faltantes</h5>
-                                  </div>
 
-                                 <div class="ibox-content">
-                                 <div class="table-responsive">
-                                   <table  id="faltantes3" class="table table-striped table-bordered table-hover dataTables-example">
-                                   <thead>
-                                   <tr>
-                                       <th>Codigo</th>
-                                       <th>Unidad</th>
-                                       <th>Descripcion</th>
-                                       <th>Cantidad</th>
-                                       <th>Inventario</th>
-                                       <th>Cliente Credito</th>
-                                       <th>Fecha Venta</th>
-                                       <th>Proveedor</th>
-                                       <th>Tipo Pago</th>
-
-                                   </tr>
-                                  </thead>
-
-                                  </table>
-
-
-                                 </div>
-                                 </div>
-                                 </div>
-
-                                 <!--Panel numero 3-->
-                                  <div class="tab-pane" id="tab-3">
-                                  <div class="ibox-title">
-                                     <span class="pull-right"></span>
-                                     <h5>Productos Faltantes</h5>
-                                  </div>
-
-                                 <div class="ibox-content">
-                                 <div class="table-responsive">
-                                   <table  id="faltantes4" class="table table-striped table-bordered table-hover dataTables-example">
-                                   <thead>
-                                   <tr>
-                                       
-                                       <th>Codigo</th>
-                                       <th>Unidad</th>
-                                       <th>Descripcion</th>
-                                       <th>Cantidad</th>
-                                       <th>Inventario</th>
-                                       <th>Cliente Credito</th>
-                                       <th>Fecha Venta</th>
-                                       <th>Proveedor</th>
-                                       <th>Tipo Pago</th>
-
-                                   </tr>
-                                  </thead>
-
-                                  </table>
-
-
-                                 </div>
-                                 </div>
-                                 </div>
 
                                 </div>
                                 </div>

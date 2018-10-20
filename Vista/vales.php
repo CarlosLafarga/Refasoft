@@ -32,7 +32,7 @@ if (!isset($_SESSION["nombre"])) {
                                     <div class="panel-options">
                                         <ul class="nav nav-tabs">
                                             <li class="active"><a href="#tab-1" data-toggle="tab">Vale chalio</a></li>
-                                           
+
                                         </ul>
                                     </div>
                                 </div>
@@ -51,6 +51,7 @@ if (!isset($_SESSION["nombre"])) {
                                    <table  id="faltantes" class="table table-striped table-bordered table-hover dataTables-example">
                                    <thead>
                                    <tr>
+                                       <th>ID</th>
                                        <th>Cantidad</th>
                                        <th>Codigo</th>
                                        <th>Unidad</th>
@@ -67,9 +68,9 @@ if (!isset($_SESSION["nombre"])) {
                                  </div>
                                  </div>
 
-                             
-                               
-                                  
+
+
+
 
                                 </div>
 

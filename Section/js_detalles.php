@@ -58,7 +58,7 @@
                     {"data":"codigo"},
                     {"data":"descripcion"},
                     {"data":"cantidad"},
-                    {"defaultContent":"<center><input type='number' id='cant_dev' value='0' min='0' class='form-control'></center>"},
+                    {"defaultContent":"<center><input type='number' id='cant_dev' value='1' min='0' class='form-control'></center>"},
                     {"data":"precio"},
                     {"data":"total"},
                     {"data":"fecha_venta"},
