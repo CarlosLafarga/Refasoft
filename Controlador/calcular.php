@@ -8,7 +8,7 @@ $cantidad  = $_POST['cantidad'];
 $proveedor = $_POST['proveedor'];
 $piso      = $_POST['piso'];
 $pasillo   = $_POST['pasillo'];
-$peldano   = $_POST['peldano'];
+$peldano  = $_POST['peldano'];
 $estante   = $_POST['estante'];
 $factura   = $_POST['factura'];
 $fechafac  = $_POST['fechafac'];
@@ -32,8 +32,11 @@ if ($proveedor == 'Dirco') {
 if ($proveedor == 'ciosa') {
     $CN = $ppv * 1.16;
 }
+if ($proveedor == 'BDH') {
+    $CN = $ppv ;
+}
 
-//evaluar PRECIO PB--------------------------------------------------------------------------*/
+//evaluar PRECIO PuBlico--------------------------------------------------------------------------*/
 if ($proveedor == 'permor') {
     $PB = $ppv * 1.024;
 }
@@ -51,6 +54,10 @@ if ($proveedor == 'Dirco') {
 }
 if ($proveedor == 'ciosa') {
     $PB = ($ppv * 1.8) * 1.16;
+}
+
+if ($proveedor == 'BDH') {
+    $PB = $ppv ;
 }
 
 //evaluar PRECIO TALLER----------------------------------------------------------------------*/
@@ -71,6 +78,10 @@ if ($proveedor == 'Dirco') {
 }
 if ($proveedor == 'ciosa') {
     $PT = $PB * 0.8;
+}
+
+if ($proveedor == 'BDH') {
+    $PT = $PB * 1.16;
 }
 
 ?>

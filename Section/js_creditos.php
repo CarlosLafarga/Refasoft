@@ -67,6 +67,7 @@
           var cliente = $("#clientes").val();
 
           var de = moment(fecha_de).format('YYYY/MM/DD');
+          
           var a = moment(fecha_a).format('YYYY/MM/DD');
             //console.log(tipo_fact);
             var table = $("#ventas").DataTable({
