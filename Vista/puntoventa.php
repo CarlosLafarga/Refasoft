@@ -20,7 +20,7 @@ if (!isset($_SESSION["nombre"])) {
 
 
             <div class="wrapper wrapper-content">
-               <div class="container" style=" width: 1370px; padding-right: 0;padding-left: 0;margin-right: 0;margin-left: 0;">
+               <div class="container" style=" width: 1270px; padding-right: 0;padding-left: 0;margin-right: 0;margin-left: 0;">
                     <div class="row">
                     <div class="col-md-6">
 
