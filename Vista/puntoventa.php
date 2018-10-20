@@ -20,9 +20,9 @@ if (!isset($_SESSION["nombre"])) {
 
 
             <div class="wrapper wrapper-content">
-               <div class="container">
+               <div class="container" style=" width: 1370px; padding-right: 0;padding-left: 0;margin-right: 0;margin-left: 0;">
                     <div class="row">
-                    <div class="col-md-7">
+                    <div class="col-md-6">
 
                       <!--TABLA DONDE APARECEN LOS PRODUCTOS-->
                       <div class="ibox">
@@ -42,7 +42,7 @@ if (!isset($_SESSION["nombre"])) {
                                     <th>PT</th>
                                     <th>PB</th>
                                     <th>PROV</th>
-                                    <th>Acciones</th>
+                                    <th>Acc</th>
                                 </tr>
                                 </thead>
 
@@ -55,7 +55,7 @@ if (!isset($_SESSION["nombre"])) {
                       <!--TABLA DONDE APARECEN LOS PRODUCTOS-->
                       </div>
                 <!--TOTAL CAJA-->
-                <div class="col-md-5">
+                <div class="col-md-6">
                      <!--Inicio panel de total acumulado-->
                     <div class="ibox">
                         <div class="ibox-title">
@@ -123,12 +123,12 @@ if (!isset($_SESSION["nombre"])) {
                               <table id="ventas" class="table table-bordered">
                               <thead>
                               <tr>
-                                    <th width="5">prod</th>
-                                    <th width="5%">uni</th>
-                                    <th width="40%">cant</th>
-                                    <th width="150%">precio</th>
-                                    <th width="20%">Total</th>
-                                    <th width="10%">Accion</th>
+                                    <th width="">prod</th>
+                                    <th width="">uni</th>
+                                    <th width="">cant</th>
+                                    <th width="">precio</th>
+                                    <th width="">Total</th>
+                                    <th width="">Acc</th>
                               </tr>
                               </thead>
                               <tbody id="tablita">

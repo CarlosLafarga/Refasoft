@@ -98,18 +98,19 @@
                     if (isConfirm){
 
                     var no_tiket = data.no_tiket;
-                    var cantidad = $("#cant_dev").val();
+                    var cantidad_input = $("#cant_dev").val();
+                    var cantidad = data.cantidad;
                     var precio = data.precio;
                     var codigo = data.codigo;
                     var total = data.total;
 
-                    console.log(no_tiket+"----"+cantidad+"----"+total+"----"+codigo+"");
+                    console.log(no_tiket+"----"+cantidad+"-----"+cantidad_input+"----"+total+"----"+codigo+"");
 
 
                     $.ajax({
                     url:"../Controlador/devolucion.php",
                     method:"POST",
-                    data:{no_tiket:no_tiket,cantidad:cantidad,precio:precio,codigo:codigo},
+                    data:{no_tiket:no_tiket,cantidad:cantidad,cantidad_input:cantidad_input,precio:precio,codigo:codigo},
 
                     success:function(data){
 

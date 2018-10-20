@@ -22,7 +22,7 @@ if (!isset($_SESSION["nombre"])) {
 
 
             <div class="wrapper wrapper-content">
-               <div class="container">
+               <div class="container" style="padding-right: 15px;padding-left: 0;margin-right: 0;margin-left: 0;">
                    <div class="row">
                    <div class="col-lg-3">
                    <label>Fecha:</label>
@@ -38,7 +38,7 @@ if (!isset($_SESSION["nombre"])) {
                    <div id="txtHint">
 
                    </div>
-                    
+
                                                 <div class="row m-t-sm">
                                 <div class="col-lg-12">
                                 <div class="panel blank-panel">
@@ -55,7 +55,7 @@ if (!isset($_SESSION["nombre"])) {
 
                                 <div class="tab-content">
                                 <div class="tab-pane active" id="tab-1">
-                                    
+
                                  <div class="ibox">
                                  <div class="ibox-title">
                                  <span class="pull-right"></span>

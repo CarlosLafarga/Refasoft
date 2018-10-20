@@ -68,6 +68,7 @@
 
 
             var table = $("#productos").DataTable({
+
                 "destroy":true,
                 "ajax":{
                     "method" : "POST",
@@ -81,7 +82,7 @@
                     {"data":"PT"},
                     {"data":"PB"},
                     {"data":"Proveedor"},
-                    {"defaultContent": " <button type='button' class='agregar btn-sm btn-primary'>Agregar</button>"}
+                    {"defaultContent": " <button type='button' class='agregar btn-sm btn-primary'><i class='fa fa-arrow-circle-right'><i></button>"}
 
                 ]
             });
