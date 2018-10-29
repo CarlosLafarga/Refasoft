@@ -86,7 +86,7 @@
                     <div class="col-sm-4">
                       <div class="form-group">
                         <label>&nbsp;Peldaño</label>
-                        <input type="text" id="peldaño" name="peldaño" placeholder="Peldaño" readonly="ver" value="<?php echo $peldaño; ?>" class="form-control">
+                        <input type="text" id="peldano" name="peldano" placeholder="Peldaño" readonly="ver" value="<?php echo $peldano; ?>" class="form-control">
                       </div>
                     </div>
                     <div class="col-sm-4">
