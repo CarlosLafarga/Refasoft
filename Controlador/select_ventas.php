@@ -35,15 +35,29 @@ if ($resultado_chkda == 0) {$resultado_chkda = 0;} else { $resultado_chkda;}
 if ($resultado_prestamo == 0) {$resultado_prestamo = 0;} else { $resultado_prestamo;}
 if ($resultado_pagos == 0) {$resultado_pagos = 0;} else { $resultado_pagos;}
 
-$total_efectivo = ($resultado_efectivo + $resultado_chkda + $resultado_pagos) - $resultado_prestamo;
-$total_venta    = $resultado_efectivo + $resultado_tarjeta + $resultado_pagos + $resultado_chkda;
+$total_efectivo = ($resultado_efectivo  + $resultado_pagos) - $resultado_prestamo;
+$total_venta    = $resultado_efectivo + $resultado_tarjeta + $resultado_pagos;
+$venta_del_dia = $resultado_efectivo +$resultado_tarjeta;
 
 echo '<div class="row">
                     <div class="col-lg-3">
                         <div class="ibox float-e-margins">
                             <div class="ibox-title">
                                 <span class="label label-primary pull-right">' . DATE($fecha) . '</span>
-                                <h5>EFECTIVO</h5>
+                                <h5>VENTA DEL DIA</h5>
+                            </div>
+                            <div class="ibox-content">
+                                <h1 class="no-margins">$' . $venta_del_dia . '</h1>
+                                <div class="stat-percent font-bold text-info"></div>
+                                <small>Total</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <span class="label label-primary pull-right">' . DATE($fecha) . '</span>
+                                <h5>VENTA EFECTIVO</h5>
                             </div>
                             <div class="ibox-content">
                                 <h1 class="no-margins">$' . $resultado_efectivo . '</h1>
@@ -56,7 +70,7 @@ echo '<div class="row">
                         <div class="ibox float-e-margins">
                             <div class="ibox-title">
                                 <span class="label label-primary pull-right">' . DATE($fecha) . '</span>
-                                <h5>TARJETA</h5>
+                                <h5>VENTA TARJETA</h5>
                             </div>
                             <div class="ibox-content">
                                 <h1 class="no-margins">$' . $resultado_tarjeta . '</h1>
@@ -119,7 +133,7 @@ echo '<div class="row">
                             </div>
                         </div>
             </div>
-             <div class="col-lg-6">
+             <div class="col-lg-3">
                         <div class="ibox float-e-margins">
                             <div class="ibox-title">
                                 <span class="label label-primary pull-right">' . DATE($fecha) . '</span>

@@ -1,11 +1,7 @@
 <?php
 session_start();
-
-$db   = "refaccionaria";
-$host = "localhost";
-$pw   = "";
-$user = "root";
-$con  = mysqli_connect($host, $user, $pw, $db) or die("Error al conectar " . mysql_error());
+include "../conect/conexion.php";
+$cn    = Conectarse();
 
 $codigo    = $_POST['codigo'];
 $producto  = $_POST['producto'];
@@ -28,16 +24,31 @@ $fechafac = $_POST['fechafac'];
 if (!empty($factura)) {
 
     $q = ("INSERT INTO productos2(codigo,unidad,Descripcion,cantidad,PT,PB,Proveedor,ppv,CN,Piso,Pasillo,Estante,Peldano,ult_factura) VALUES ('$codigo',' $unidad',' $producto',' $cantidad','$PT','$PB','$proveedor','$ppv','$CN','$piso','$pasillo','$estante','$peldano','$factura')");
-    $r = mysqli_query($con, $q) or die("error al insertar");
+        mysql_query($q,$cn) or die(mysql_error());
 
     $qf        = ("INSERT INTO compras(factura_compra,codigo_compra,cantidad_compra,fechafac,Proveedor_compra,ppv_compra) VALUES ('$factura','$codigo','$cantidad','$fechafac','$proveedor','$ppv')");
-    $resultado = mysqli_query($con, $qf) or die("error al insertar");
+               mysql_query($qf,$cn) or die(mysql_error());
 
 } else {
 
     $q = ("INSERT INTO productos2(codigo,unidad,Descripcion,cantidad,PT,PB,Proveedor,ppv,CN,Piso,Pasillo,Estante,Peldano) VALUES ('$codigo','$unidad',' $producto','$cantidad','$PT','$PB','$proveedor','$ppv','$CN','$piso','$pasillo','$estante','$peldano')");
-    $r = mysqli_query($con, $q) or die("error al insertar2");
+        mysql_query($q,$cn) or die(mysql_error());
 }
 
 header("location: ../Vista/almacen.php");
-echo "<br> Registro Insertado Correctamente! <br>";
+echo "<script>
+		   swal({
+                 title:'Buen trabajo!',
+                 text: 'Buen Trabajo Deolucion echa con exito.',
+                 type: 'success',
+                 showCancelButton: false,
+                 confirmButtonText: 'Aceptar',
+                 closeOnConfirm: true
+                 },
+                 function(){
+
+
+                 location.reload();
+
+                 });
+		</script>";

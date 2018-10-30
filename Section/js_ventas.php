@@ -215,7 +215,7 @@
 
                 $(tbody).on("click", "button.tiket", function(){
                     var data = table.row($(this).parents("tr")).data();
-                    window.open("ticket.php?no_ticket="+data.no_tiket+"", "Ticket", "width=600, height=800");
+                    window.open("ticket2.php?no_ticket="+data.no_tiket+"", "Ticket", "width=600, height=800");
                     console.log(data.no_tiket);
                 });
 

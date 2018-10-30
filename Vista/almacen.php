@@ -127,6 +127,7 @@ if (!isset($_SESSION["nombre"])) {
 
       $('select').material_select();
     });
+    
     $('select#facturas').on('change', function() {
           var opcion = this.value;
           if (opcion == 0) {
