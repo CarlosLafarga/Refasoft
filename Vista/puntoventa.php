@@ -62,11 +62,14 @@ if (!isset($_SESSION["nombre"])) {
                             <h5>Total Compra</h5>
                         </div>
                         <div class="ibox-content">
+                          <div class="row">
                             <div class="col-md-12">
+
+
                             <span><h1>Total</h1></span>
                             <input type="text" style = "font-size: 30px; text-align:right" readonly id="total" name="total"
                             value="0" class="form-control"><br>
-                            </div>
+
 
                             <div class="col-md-6">
                             <label>Tipo de pago</label>
@@ -75,7 +78,7 @@ if (!isset($_SESSION["nombre"])) {
                             <option value="tarjeta">Pago con Tarjeta</option>
                             <option value="credito">Credito</option>
                             </select>
-                            <br>
+
                             </div>
 
                             <div class="col-md-6">
@@ -84,31 +87,39 @@ if (!isset($_SESSION["nombre"])) {
                             <option value="precio_taller">Precio Taller</option>
                             <option value="precio_publico">Precio Publico</option>
                             </select>
-                            <br>
+
                             </div>
                             <div class="col-md-6">
                             <label>Pago con </label>
                             <input type="number" name="pago_con" class="form-control" id="pagocon" >
                             <br>
                             </div>
-                            <div class="col-md-6" style="display: none;" id="clientediv">
+
+
+
+                            <div  style="display: none;" id="clientediv">
+                            <div class="col-md-6">
                             <label>Cliente</label>
                             <select id="clientes" class="form-control" ></select>
-                            <br>
-                            <label>Fecha:</label>
-                            <input type="date" name="fecha_vale" class="form-control" id="fecha_vale">
                             </div>
-                            <hr/>
+                            <br><br>
+                            <div class="col-md-6">
+                            <label>Fecha:</label>
+                            <input type="date" name="fecha_vale" class="form-control" id="fecha_vale" value="<?php echo date("Y-m-d"); ?>">
+                            </div>
+                            </div>
 
-                            <div class="col-md-12" style="margin-top: -10px;">
+                                <br>
+                                <br><br><br>
+                                <div class="col-md-12">
 
-                                <div class="btn-group">
                                 <a href="#" id="save" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i>&nbsp;Pagar</a>
                                 <a href="#" id="cancelar" class="btn btn-danger btn-sm"><i class="fa fa-times"></i>&nbsp;Cancelar</a>
+                                <br><br>
+                                </div>
 
                                 </div>
                             </div>
-                            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                         </div><!--fin del div content-->
                     </div>
                   <!--fin de inputs con precio-->
