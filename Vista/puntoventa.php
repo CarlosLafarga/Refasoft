@@ -95,19 +95,21 @@ if (!isset($_SESSION["nombre"])) {
                             <label>Cliente</label>
                             <select id="clientes" class="form-control" ></select>
                             <br>
+                            <label>Fecha:</label>
+                            <input type="date" name="fecha_vale" class="form-control" id="fecha_vale">
                             </div>
                             <hr/>
-                            <span class="text-muted small">
-                            </span>
-                            <div class="col-md-12">
+
+                            <div class="col-md-12" style="margin-top: -10px;">
 
                                 <div class="btn-group">
                                 <a href="#" id="save" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i>&nbsp;Pagar</a>
                                 <a href="#" id="cancelar" class="btn btn-danger btn-sm"><i class="fa fa-times"></i>&nbsp;Cancelar</a>
 
                                 </div>
-                            </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                             </div>
+                            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                        </div><!--fin del div content-->
                     </div>
                   <!--fin de inputs con precio-->
 
