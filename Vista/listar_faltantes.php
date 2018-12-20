@@ -31,11 +31,11 @@ if (!isset($_SESSION["nombre"])) {
                                 <div class="panel-heading">
                                     <div class="panel-options">
                                         <ul class="nav nav-tabs">
-
+                                            <li class=""><a href="#tab-5" data-toggle="tab">FALTANTES x fecha</a></li>
                                             <li class=""><a href="#tab-2" data-toggle="tab">FALTANTES de martes a sabado</a></li>
                                             <li class=""><a href="#tab-3" data-toggle="tab">FALTANTES  lunes</a></li>
                                             <li class=""><a href="#tab-4" data-toggle="tab">LISTA productos Negativos</a></li>
-                                            <li class=""><a href="#tab-5" data-toggle="tab">LISTA x fecha</a></li>
+                                           
                                         </ul>
                                     </div>
                                 </div>
@@ -46,7 +46,7 @@ if (!isset($_SESSION["nombre"])) {
 
 
                                  <!--Panel numero 2-->
-                                 <div class="tab-pane active" id="tab-2">
+                                 <div class="tab-pane" id="tab-2">
                                   <div class="ibox-title">
                                      <span class="pull-right"></span>
                                      <h5>Productos Faltantes</h5>
@@ -140,7 +140,7 @@ if (!isset($_SESSION["nombre"])) {
 
 
                                  <!--Panel numero 5-->
-                                  <div class="tab-pane" id="tab-5">
+                                  <div class="tab-pane active" id="tab-5">
                                   <div class="ibox-title">
                                      <span class="pull-right"></span>
                                      <h5>Productos Faltantes X DIA</h5>
