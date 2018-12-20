@@ -86,14 +86,39 @@
 
        $(document).ready(function () {
 
+          $('#data_1 .input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: false,
+                autoclose: true
+                });
+
             listar();
             listar2();
             listar3();
             listar4();
+            /*listar5();*/
 
             });
 
 
+
+
+          
+
+
+
+               // $.ajax({
+               //      type:"POST",
+               //      url: "../Controlador/listar_clientes.php",
+               //      success: function(response){
+
+               //        $('#clientes').html(response).fadeIn();
+               //      }
+               //      });
+
+          
 
 
 
@@ -231,5 +256,88 @@
 
            // agregar_venta("#productos",table);
           }
+
+
+          // var listar5 = function(){
+
+
+
+          //   var table = $("#faltantes5").DataTable({
+          //       "pageLength":50,
+          //       "destroy":true,
+          //       "ajax":{
+          //           "method" : "POST",
+          //           "url": "../Controlador/listar_faltantes_xdia.php"
+          //       },
+          //       "columns":[
+          //           {"data":"codigo"},
+          //           {"data":"unidad"},
+          //           {"data":"descripcion"},
+          //           {"data":"cantidad"},
+          //           {"data":"cliente_credito"},
+          //           {"data":"fecha_venta"},
+          //           {"data":"Proveedor"},
+          //           {"data":"inventario"},
+          //       ],
+          //        dom: '<"html5buttons"B>lTfgitp',
+          //                //'Bfrtip',
+
+          //        "buttons":[
+
+          //           {extend: 'excel', title: 'Faltantes si hoy es lunes'}
+          //       ]
+          //   });
+
+
+          //  // agregar_venta("#productos",table);
+          // }
+
+
+
+          $( "#consultar" ).click(function() {
+
+           
+
+            //console.log("lala");
+
+          var fecha_de = $("#de").val();
+          var fecha_a = $("#a").val();
+          
+          var de = moment(fecha_de).format('YYYY/MM/DD');
+          
+          var a = moment(fecha_a).format('YYYY/MM/DD');
+            //console.log(tipo_fact);
+            var table = $("#faltantes5").DataTable({
+                 "pageLength":50,
+                "destroy":true,
+                "ajax":{
+                    "method" : "POST",
+                    "url": "../Controlador/listar_faltantes_xdia.php?de="+de+"&a="+a+""
+                    //"url": "../Controlador/listar_faltantes_xdia.php?cliente="+cliente+"&de="+de+"&a="+a+""
+                },
+                
+                    "columns":[
+                    {"data":"codigo"},
+                    {"data":"unidad"},
+                    {"data":"descripcion"},
+                    {"data":"cantidad"},
+                    {"data":"cliente_credito"},
+                    {"data":"fecha_venta"},
+                    {"data":"Proveedor"},
+                    {"data":"inventario"},
+              
+
+
+                ],
+                  dom: '<"html5buttons"B>lTfgitp',
+                         //'Bfrtip',
+
+                 "buttons":[
+
+                    {extend: 'excel', title: 'Vale  de '+de+' a '+a}
+                ]
+            });
+
+         });
 
        </script>
