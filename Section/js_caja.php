@@ -263,6 +263,7 @@
               var nombre_usuario = $("#name").val();
               var tipo_cliente = $("#tipo_cliente").val();
               var nombre_credito = $("#clientes").val();
+              var fecha_vale = $("#fecha_vale").val();
 
 
           $('.id').each(function(){
@@ -295,7 +296,7 @@
                  $.ajax({
                  url:"../Controlador/insertar_Ventas.php",
                  method:"POST",
-                 data:{id:id,codigo:codigo,unidad:unidad,producto:producto, cantidad:cantidad, precios:precios,totals:totals,pago_con:pago_con,total_total:total_total,tipo_pago:tipo_pago,nombre_usuario:nombre_usuario,tipo_cliente:tipo_cliente,nombre_credito:nombre_credito},
+                 data:{id:id,codigo:codigo,unidad:unidad,producto:producto, cantidad:cantidad, precios:precios,totals:totals,pago_con:pago_con,total_total:total_total,tipo_pago:tipo_pago,nombre_usuario:nombre_usuario,tipo_cliente:tipo_cliente,nombre_credito:nombre_credito,fecha_vale:fecha_vale},
 
                  success:function(data){
 
@@ -471,7 +472,7 @@
                   $.ajax({
                  url:"../Controlador/insertar_Ventas.php",
                  method:"POST",
-                 data:{id:id,codigo:codigo,unidad:unidad,producto:producto, cantidad:cantidad, precios:precios,totals:totals,pago_con:pago_con,total_total:total_total,tipo_pago:tipo_pago,nombre_usuario:nombre_usuario,tipo_cliente:tipo_cliente,nombre_credito:nombre_credito},
+                 data:{id:id,codigo:codigo,unidad:unidad,producto:producto, cantidad:cantidad, precios:precios,totals:totals,pago_con:pago_con,total_total:total_total,tipo_pago:tipo_pago,nombre_usuario:nombre_usuario,tipo_cliente:tipo_cliente,nombre_credito:nombre_credito,fecha_vale:fecha_vale},
 
 
                  success:function(data){

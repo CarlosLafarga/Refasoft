@@ -45,13 +45,20 @@ if (isset($_POST["codigo"])) {
     $tipo_cliente   = $_POST['tipo_cliente'];
     $pago_con       = $_POST['pago_con'];
     $nombre_cliente = $_POST['nombre_credito'];
+    $fecha_vale     = $_POST['fecha_vale'];
 
     $resultado_cuenta = $pago_con - $total_input;
 
     $int_rand = rand(100000, 1000000);
     date_default_timezone_set('America/Hermosillo');
     $tiket = crearfolio();
-    $hoy   = date("Y-m-d H:i:s");
+    if ($tipo_pago == 'credito') {
+        $hoy = $fecha_vale;
+
+    } else {
+
+        $hoy = date("Y-m-d H:i:s");
+    }
 
     $query  = '';
     $update = '';
@@ -93,7 +100,7 @@ if (isset($_POST["codigo"])) {
 
     }
 
-    $query2 = "INSERT INTO ventas(no_tiket,vendedor,venta_total,tipo_pago,cliente_credito,tipo_cliente,fecha_venta)VALUES('" . $random . "','" . $nombre_usuario . "','" . $total_input . "','" . $tipo_pago . "','" . $nombre_cliente . "','" . $tipo_cliente . "',NOW());";
+    $query2 = "INSERT INTO ventas(no_tiket,vendedor,venta_total,tipo_pago,cliente_credito,tipo_cliente,fecha_venta)VALUES('" . $random . "','" . $nombre_usuario . "','" . $total_input . "','" . $tipo_pago . "','" . $nombre_cliente . "','" . $tipo_cliente . "','" . $fecha . "');";
 
     if ($query != '' and $query2 != '' and $update != '') {
 
