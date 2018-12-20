@@ -35,6 +35,7 @@ if (!isset($_SESSION["nombre"])) {
                                             <li class=""><a href="#tab-2" data-toggle="tab">FALTANTES de martes a sabado</a></li>
                                             <li class=""><a href="#tab-3" data-toggle="tab">FALTANTES  lunes</a></li>
                                             <li class=""><a href="#tab-4" data-toggle="tab">LISTA productos Negativos</a></li>
+                                            <li class=""><a href="#tab-5" data-toggle="tab">LISTA x fecha</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -135,6 +136,68 @@ if (!isset($_SESSION["nombre"])) {
                                  </div>
                                  </div>
                                  </div>
+
+
+
+                                 <!--Panel numero 5-->
+                                  <div class="tab-pane" id="tab-5">
+                                  <div class="ibox-title">
+                                     <span class="pull-right"></span>
+                                     <h5>Productos Faltantes X DIA</h5>
+                                  </div>
+
+                                  <!-- LO DE LA FECHA -->
+                                  <div class="row">
+                                  <div class="col-lg-3">
+                                 <label>De:</label>
+                                 <div class="form-group" id="data_1">
+                                 <div class="input-group date">
+                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                     <input type="text"  name="de" id="de" value = "<?php echo date('m/d/Y'); ?>" class="form-control" >
+                                 </div>
+                                 </div>
+                                 </div>
+                                 <div class="col-lg-3">
+                                 <label>A:</label>
+                                 <div class="form-group" id="data_1">
+                                 <div class="input-group date">
+                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                     <input type="text"  name="a" id="a" value = "<?php echo date('m/d/Y'); ?>" class="form-control" >
+                                 </div>
+                                 </div>
+                                 </div>
+
+                                 <div class="col-lg-12">
+                                 <button class="btn btn-primary" id="consultar" name="consultar">Consultar</button>
+                               <!--   <button class="btn btn-info" id="imprimir" name="consultar">Imprimir</button> -->
+                                 </div>
+                                   </div>
+                                 <!-- HATA AQUI LO DE LA FECHA -->
+
+                                 <div class="ibox-content">
+                                 <div class="table-responsive">
+                                   <table  id="faltantes5" class="table table-striped table-bordered table-hover dataTables-example">
+                                   <thead>
+                                   <tr>
+
+                                       <th>Codigo</th>
+                                       <th>Unidad</th>
+                                       <th>Descripcion</th>
+                                       <th>Cantidad</th>
+                                       <th>Cliente Credito</th>
+                                       <th>Fecha Venta</th>
+                                       <th>Proveedor</th>
+                                       <th>Inventario</th>
+                                   </tr>
+                                  </thead>
+
+                                  </table>
+
+
+                                 </div>
+                                 </div>
+                                 </div>
+                                 <!-- hasta aqui -->
 
 
                                 </div>
