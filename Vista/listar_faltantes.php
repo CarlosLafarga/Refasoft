@@ -147,6 +147,7 @@ if (!isset($_SESSION["nombre"])) {
                                   </div>
 
                                   <!-- LO DE LA FECHA -->
+                                    <div class="ibox-content">
                                   <div class="row">
                                   <div class="col-lg-3">
                                  <label>De:</label>
@@ -171,6 +172,7 @@ if (!isset($_SESSION["nombre"])) {
                                  <button class="btn btn-primary" id="consultar" name="consultar">Consultar</button>
                                <!--   <button class="btn btn-info" id="imprimir" name="consultar">Imprimir</button> -->
                                  </div>
+                                   </div>
                                    </div>
                                  <!-- HATA AQUI LO DE LA FECHA -->
 
