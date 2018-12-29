@@ -26,6 +26,9 @@
                             <li><a href="almacen.php"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Agregar</a></li>
                             <li><a href="listar_prod.php"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Lista Almacen</a></li>
                             <li><a href="listar_faltantes.php"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Faltantes</a></li>
+
+                            <li><a href="inventario.php"><i class="fa fa-cubes"></i>&nbsp;&nbsp;Inventario</a></li>
+
                           </ul>
                         </li>
                         <li class="dropdown">
