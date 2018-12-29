@@ -340,4 +340,53 @@
 
          });
 
+
+
+          // llenar el vale chalio
+
+          $( "#consultar_vale" ).click(function() {
+
+           
+
+            //console.log("lala");
+
+          var fecha_de = $("#de").val();
+         
+          
+          var de = moment(fecha_de).format('YYYY/MM/DD');
+          
+          
+            //console.log(tipo_fact);
+            var table = $("#vale_chalio").DataTable({
+                 "pageLength":50,
+                "destroy":true,
+                "ajax":{
+                    "method" : "POST",
+                    "url": "../Controlador/listar_vale_chalio.php?de="+de+""
+                    //"url": "../Controlador/listar_faltantes_xdia.php?cliente="+cliente+"&de="+de+"&a="+a+""
+                },
+                
+                     "columns":[
+                    {"data":"Id"},
+                    {"data":"cantidad"},
+                    {"data":"codigo"},
+                    {"data":"unidad"},
+                    {"data":"descripcion"},
+                    {"data":"precio"},
+                    {"data":"total"}, 
+              
+
+
+                ],
+                  dom: '<"html5buttons"B>lTfgitp',
+                         //'Bfrtip',
+
+                 "buttons":[
+
+                    {extend: 'excel', title: 'Vale  de '+de}
+                ]
+            });
+
+         });
+
        </script>
