@@ -30,29 +30,32 @@ if (isset($_POST["codigo"])) {
 
            
 
-               if($cantidad_clean >= 0){
+               if($invbd_clean == 0){
 
                 $nvo_inv= $inv_clean-$cantidad_clean;
 
-                $update .= '
-               UPDATE productos2 SET Inventario =' . $nvo_inv . ' WHERE Num_Producto = ' . $id_clean . ';
-               ';
-
-               }
+                }
 
                else{
 
-                    $nvo_inv= $inv_clean+$cantidad_clean;
+                  $dif_inv= $cantidad_clean-$inv_clean;
 
-                    $update .= '
-                   UPDATE productos2 SET Inventario =' . $nvo_inv . ' WHERE Num_Producto = ' . $id_clean . ';
-                   ';
+                    if($dif_inv >= 0){
+
+                      $nvo_inv= $invbd_clean-$dif_inv;
+
+                    }
+                   
+                    else {
+
+                      $nvo_inv= $invbd_clean-$dif_inv;
+
+                    }
 
                }
 
-
                 $update .= '
-               UPDATE productos2 SET cantidad =' . $inv_clean . ' WHERE Num_Producto = ' . $id_clean . ';
+               UPDATE productos2 SET cantidad =' . $inv_clean . ', Inventario =' . $nvo_inv . ' WHERE Num_Producto = ' . $id_clean . ';
                ';
         }
 
