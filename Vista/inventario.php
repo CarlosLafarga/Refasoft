@@ -39,7 +39,7 @@ if (!isset($_SESSION["nombre"])) {
                                     <th>COD</th>
                                     <th>PROD</th>
                                     <th>CANT</th>
-                                    <th>Inv actual</th>
+                                    <th>Inv Inicial</th>
                                     <th>PROV</th>
 
                                     <th>Acc</th>
@@ -59,7 +59,7 @@ if (!isset($_SESSION["nombre"])) {
                      <!--Inicio panel de total acumulado-->
                     <div class="ibox">
                         <div class="ibox-title">
-                            <h5>Inventario</h5>
+                            <h5>INVENTARIO</h5>
                         </div>
                         <div class="ibox-content">
                           <div class="row">
@@ -88,11 +88,11 @@ if (!isset($_SESSION["nombre"])) {
                     </div>
                   <!--fin de inputs con precio-->
 
-                  <!--Inicio Tabla productos en venta.-->
+                  <!--Inicio Tabla productos para actualizar-->
                    <div class="ibox">
                             <div class="ibox-title">
                                    <span class="pull-right">(<strong id="num_prod" value="0" >0</strong>) Articulos</span>
-                                   <h5>Productos en Venta</h5>
+                                   <h5>Productos para actualizar</h5>
                             </div>
 
                               <div class="ibox-content">
@@ -103,7 +103,6 @@ if (!isset($_SESSION["nombre"])) {
                                     <th width="">prod</th>
                                     <th width="">uni</th>
                                     <th width="">cant</th>
-                                  
                                     <th width="">Inventario Actual</th>
                                     <th width="">Acc</th>
                               </tr>
