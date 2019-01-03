@@ -125,7 +125,7 @@
                    var i = r.parentNode.parentNode.rowIndex;
                     swal({
                          title: "Estas Seguro?",
-                         text: "¿Desea eliminar el producto de la venta   "+i+" ?",
+                         text: "¿Desea eliminar la actualizadion de INVENTARIO del producto: "+i+" ?",
                          type: "warning",
                          showCancelButton: true,
                          confirmButtonColor: '#DD6B55',
@@ -163,7 +163,7 @@
               var id = [];
               var invbd = [];
               var cantidad = [];
-
+             
               $('.id').each(function(){
                id.push($(this).val());
               });
@@ -182,7 +182,7 @@
               $('.cantidad').each(function(){
                cantidad.push($(this).text());
                });
-
+              
 
 
             
@@ -203,7 +203,7 @@
 
                              swal({
                              title:"Buen trabajo!",
-                             text: "Se guardo venta con exito. \n  Su cambio es de:    ",
+                             text: "Se guardo su INVENTARIO con exito",
                              type: "success",
                              showCancelButton: false,
                              confirmButtonText: "Aceptar",
@@ -224,7 +224,7 @@
 
                    swal({
                          title: "Estas Seguro?",
-                         text: "¿Desea cancelar la venta ?",
+                         text: "¿Desea cancelar la actualizacion de INVENTARIO ?",
                          type: "warning",
                          showCancelButton: true,
                          confirmButtonColor: '#DD6B55',
