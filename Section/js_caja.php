@@ -319,7 +319,7 @@
                          },
                          function(){
 
-                          window.open("ticket.php?no_ticket="+obj.no_tiket+"", "Ticket", "width=600, height=800");
+                          window.open("ticket2.php?no_ticket="+obj.no_tiket+"", "Ticket", "width=600, height=800");
                           location.reload();
                          });
 
@@ -493,7 +493,7 @@
                          },
                          function(){
 
-                          window.open("ticket.php?no_ticket="+obj.no_tiket+"", "Ticket", "width=600, height=800");
+                          window.open("ticket2.php?no_ticket="+obj.no_tiket+"", "Ticket", "width=600, height=800");
                           location.reload();
 
                          });
